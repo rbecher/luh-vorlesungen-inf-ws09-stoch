@@ -1,0 +1,29 @@
+h2. Vorlesungsmitschriften für Stochastik A 
+Leibniz Universität Hannover
+Prof. Dr. Baringhaus
+Wintersemester 2009/2010
+<hr />
+
+h3. Wie komme ich an diese Mitschrift ran?
+
+# Installiere dir Git
+# @git clone git://github.com/rbecher/luh-vorlesungen-inf-ws09-stoch.git@
+# Fertig!
+
+h3. Gibt es noch andere Mitschriften?
+
+Klar, siehe git://github.com/rbecher/luh-vorlesungen-inf-ws09
+
+h3. Wie kann ich mitmachen/mitarbeiten/helfen?
+
+* Du kannst dieses Projekt forken (z.B. hier auf github) und verbessern
+* Du kannst Patches einschicken
+* Ich habe auch eine Amazon-Wunschliste :D
+
+h3. Awesome!
+
+Indeed
+
+h3. Wer hat hier mitgearbeitet?
+
+Siehe Datei @authors.tex@
