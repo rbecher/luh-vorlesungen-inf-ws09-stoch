@@ -10,12 +10,36 @@ h3. Wie komme ich an diese Mitschrift ran?
 # @git clone git://github.com/rbecher/luh-vorlesungen-inf-ws09-stoch.git@
 # Fertig!
 
+h3. Wie mache ich daraus ein Pdf?
+
+# Installiere dir eine LaTeX-Distribution
+# Installiere dir pdflatex (empfohlen)
+# Kompiliere dir die Hauptdatei, z.B. mit @pdflatex stochastik.tex && pdfopen --file stochastik.pdf@
+
 h3. Gibt es noch andere Mitschriften?
+
 Klar, werden im "Hauptrepository":http://github.com/rbecher/luh-vorlesungen-inf-ws09 aufgeführt.
+
+h3. Reicht es, die Mitschrift zu lesen, um zu bestehen?
+
+# Nö
+# Nein
+# ...
+# Leider immer noch nicht
+# Hier eine erprobte Lösung dieses Debakels:
+## Geh zur Vorlesung
+## Schreib mit oder mach dir zumindest Notizen
+## Bereite den Stoff nach (hier kannst du diese Mitschrift zu Rate ziehen)
+## Geh zur Übung
+## Bearbeite die Übung
+## Gib deine Lösung der Übung ab
+## Bestehe die Prüfung
+## Alles gut!
 
 h3. Wie kann ich mitmachen/mitarbeiten/helfen?
 
-* Du kannst dieses Projekt forken (z.B. hier auf github) und verbessern
+* Du kannst dieses Projekt forken (z.B. hier auf github) und Verbesserungen einarbeiten
+** danach am besten mit pull requests arbeiten, siehe auch "Github Guides":http://github.com/guides
 * Du kannst Patches einschicken
 * Ich habe auch eine Amazon-Wunschliste :D
 
