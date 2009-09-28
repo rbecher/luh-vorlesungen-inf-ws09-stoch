@@ -16,6 +16,12 @@ h3. Wie mache ich daraus ein Pdf?
 # Installiere dir pdflatex (empfohlen)
 # Kompiliere dir die Hauptdatei, z.B. mit @pdflatex stochastik.tex && pdfopen --file stochastik.pdf@
 
+h3. Muss das sein mit dem selbst kompilieren?
+
+* Eigentlich ja
+* ...
+* na gut. In mehr oder weniger regelmäßigen Abständen wird eine Pdf-Version gepusht ...
+
 h3. Gibt es noch andere Mitschriften?
 
 Klar, werden im "Hauptrepository":http://github.com/rbecher/luh-vorlesungen-inf-ws09 aufgeführt.
