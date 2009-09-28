@@ -1,1 +1,7 @@
 *~
+*.aux
+*.log
+*.tps
+*.toc
+*.pdf
+*.synctex
