@@ -11,8 +11,7 @@ h3. Wie komme ich an diese Mitschrift ran?
 # Fertig!
 
 h3. Gibt es noch andere Mitschriften?
-
-Klar, siehe git://github.com/rbecher/luh-vorlesungen-inf-ws09
+Klar, werden im "Hauptrepository":http://github.com/rbecher/luh-vorlesungen-inf-ws09 aufgeführt.
 
 h3. Wie kann ich mitmachen/mitarbeiten/helfen?
 
