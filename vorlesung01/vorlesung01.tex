@@ -1,0 +1,65 @@
+\part{Einführung}
+\label{sec:Einführung}
+
+\section{Noch leer}
+\label{sec:Mengen}
+
+\subsection{Die Formel von Sylvester-Poincaré}
+\label{sec:Siebformel}
+
+\par Und hier kommt schon die schwierigste Formel in der ganzen Vorlesung:
+\begin{displaymath}
+\mathsf{P}\left(\bigcup_{i=1}^nA_i\right) = \sum_{k=1}^n(-1)^{k+1}\!\!\sum_{I\subseteq\{1,\dots,n\},\atop |I|=k}\!\!\!\!\mathsf{P}\left(\bigcap_{i\in I}A_i\right)
+\end{displaymath}
+
+\subsection{Spielereien mit fancybox}
+\label{sec:fancybox}
+
+\begin{displaymath}
+	x + y = \fbox{$\Omega$}
+\end{displaymath}
+
+\begin{equation}
+\fbox{$\displaystyle
+\int_{\Omega_0} \zeta(\omega) d\omega
+\geq \bar{r}$}
+\end{equation}
+
+\newlength{\mylength}
+\[
+\setlength{\fboxsep}{15pt}
+\setlength{\mylength}{\linewidth}
+\addtolength{\mylength}{-2\fboxsep}
+\addtolength{\mylength}{-2\fboxrule}
+\fbox{%
+\parbox{\mylength}{
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\begin{equation}
+x + y = z
+\end{equation}}}
+\]
+
+\newenvironment{FramedEqn}%
+{\setlength{\fboxsep}{15pt}
+\setlength{\mylength}{\linewidth}%
+\addtolength{\mylength}{-2\fboxsep}%
+\addtolength{\mylength}{-2\fboxrule}%
+\Sbox
+\minipage{\mylength}%
+\setlength{\abovedisplayskip}{0pt}%
+\setlength{\belowdisplayskip}{0pt}%
+\equation}%
+{\endequation\endminipage\endSbox
+\[\fbox{\TheSbox}\]}
+
+\begin{FramedEqn}
+\Rightarrow P\sim\xi(P_\gamma)- \frac{1}{3}
+\end{FramedEqn}
+
+\fbox{%
+\begin{Beqnarray*}
+x & = & y\\
+y & > & x \\
+\int_4^5 f(x)dx & = & \sum_{i\in F} x_i
+\end{Beqnarray*}}

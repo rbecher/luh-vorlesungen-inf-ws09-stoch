@@ -1,0 +1,98 @@
+%% Basierend auf einer TeXnicCenter-Vorlage von Tino Weinkauf.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,twoside,12pt,notitlepage]{article}
+% Alternative Optionen:
+%	Papiergröße: a4paper / a5paper / b5paper / letterpaper / legalpaper / executivepaper
+% Duplex: oneside / twoside
+% Grundlegende Fontgrößen: 10pt / 11pt / 12pt
+
+%% Deutsche Anpassungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{setspace}
+
+\usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
+
+%% Packages für Grafiken & Abbildungen %%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{graphicx} %%Zum Laden von Grafiken
+%\usepackage{graphics}
+%\usepackage{subfig} %%Teilabbildungen in einer Abbildung
+%\usepackage{tikz} %%Vektorgrafiken aus LaTeX heraus erstellen
+%\usepackage{qtree}
+
+%% Packages für Formeln %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{amsmath}
+%\usepackage{amsthm}
+%\usepackage{amsfonts}
+
+%% Zeilenabstand %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{setspace}
+\singlespacing        %% 1-zeilig (Standard)
+
+
+%% Andere Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{a4wide} %%Kleinere Seitenränder = mehr Text pro Zeile.
+\usepackage{fancyhdr} %%Fancy Kopf- und Fußzeilen
+\renewcommand{\headheight}{15pt}
+\usepackage{fancybox}
+
+%\usepackage{longtable} %%Für Tabellen, die eine Seite überschreiten
+\usepackage{ifpdf}
+\ifpdf
+	\usepackage[hyperindex,colorlinks,bookmarks,urlcolor=blue]{hyperref}
+\else
+	\usepackage{url}
+\fi
+
+%% FancyHeader Definitionen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lhead{Stochastik A, WS 2009}
+%\chead{}
+\rhead{Mitschrift}
+\cfoot{\thepage}
+
+\include{optionen.tex}
+\include{layout.tex}
+\include{pdf_options.tex}
+
+
+
+\title{Stochastik Wintersemester 2009\\Leibniz Universität Hannover\\Vorlesungsmitschrift}
+
+\author{Dozent: \href{mailto:lbaring@stochastik.uni-hannover.de}{Prof. Dr. L. Baringhaus}\\ \vspace{1em} \\
+Mitschrift von\\
+\input{authors.tex}}
+
+\begin{document}
+\pagestyle{empty}
+\maketitle
+\begin{abstract}
+	Diese Mitschrift wird erstellt im Zuge der Vorlesung \href{http://www.stochastik.uni-hannover.de/bachws09/index.html}{Stochastik A} im Wintersemester 2009 an der \href{http://www.uni-hannover.de}{Leibniz Universität Hannover}. Obwohl mit gro\ss er Sorgfalt geschrieben, werden sich sicherlich Fehler einschleichen. Diese bitte ich zu melden, damit sie korrigiert werden können. Ihr könnt euch dazu an jeden der genannten Autoren (mit Ausnahme des Dozenten) wenden.
+	
+	Dieses Skript wird primär über \href{http://github.com/rbecher/luh-vorlesungen-inf-ws09-stoch}{Github} verteilt und "`gepflegt"'. Dort kann man es auch forken, verbessern und dann (idealerweise) ein "`Pull Request"' losschicken. Siehe auch  \href{http://github.com/guides}{Github Guides}. Auch wenn ihr gute Grafiken zur Verdeutlichung beitragen könnt, dürft ihr diese gerne schicken oder selbst einfügen (am besten als \LaTeX -geeignete Datei (Tikz, SVG, PNG, \dots)).
+	
+	\textbf{Hinweis}: Es wird o.B.d.A. davon abgeraten, die Vorlesung zu versäumen, nur weil eine Mitschrift angefertigt wird! Selbiges gilt für den Übungsbetrieb! Stochastik besteht ihr nur, wenn ihr auch zu der Veranstaltung geht.
+\end{abstract}
+
+\newpage % \newpage works far better than \pagebreak
+
+\tableofcontents
+
+%Part: Für große Themenblöcke (z.B. Einführung, Kombinatorik, etc)
+%Section: Für Abschnitte (z.B. Mengen, von Mengen zu anderen Mengen, etc)
+%Subsection: Beweise, Sätze, Lemmata
+
+\newpage
+
+\pagestyle{fancy}
+
+% Here comes content
+
+\include{vorlesung01/vorlesung01}
+
+\end{document}
