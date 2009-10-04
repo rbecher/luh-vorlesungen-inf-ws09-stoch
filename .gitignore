@@ -6,3 +6,5 @@
 *.pdf
 *.synctex
 *.out
+*.texshop
+._*
