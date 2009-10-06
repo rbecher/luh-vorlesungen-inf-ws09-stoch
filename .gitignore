@@ -6,3 +6,6 @@
 *.pdf
 *.synctex
 *.out
+*.texshop
+._*
+*_region_.tex
