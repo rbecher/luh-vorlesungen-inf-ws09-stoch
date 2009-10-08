@@ -1,68 +1,106 @@
-\part{Einführung}
-\label{sec:Einführung}
+\part{Einführung / Organisatorisches}
+\label{sec:Einführung / Organisatorisches}
 
-\section{Noch leer}
-\label{sec:Mengen}
+\par Die Klausur wird am \textbf{01.02.2010 von 9:15 - 10:45} stattfinden, es wird wöchentliche Haus- und Stundenübungen geben.\\
+Die abgegebenen Hausübungen werden korrigiert und in den Übungsgruppen zurückgegeben werden. 
+Übungsgruppen wird es folgende geben:
+\begin{itemize}
+	\item Mo, 12:15 - 13:00 Uhr (F309)
+	\item Mo, 14:15 - 15:00 Uhr (G123) [max. 20 Teilnehmer]
+	\item Di, 10:15 - 11:00 Uhr (F428)
+	\item Di, 12:15 - 13:00 (F442)
+	\item Mi, 12:15 - 13:00 (B305)
+\end{itemize}
 
-\subsection{Die Formel von Sylvester-Poincaré}
-\label{sec:Siebformel}
+\part{Wahrscheinlichkeitstheorie}
+\label{sec:Wahrscheinlichkeitstheorie}
 
-\par Und hier kommt schon die schwierigste Formel in der ganzen Vorlesung:
-\begin{displaymath}
-\mathsf{P}\left(\bigcup_{i=1}^nA_i\right) = \sum_{k=1}^n(-1)^{k+1}\!\!\sum_{I\subseteq\{1,\dots,n\},\atop |I|=k}\!\!\!\!\mathsf{P}\left(\bigcap_{i\in I}A_i\right)
-\end{displaymath}
-\par Blubb
+"`Was ist das richtige Modell, um ein Experiment zu beschreiben?"' ist die wichtigste Frage, die die mathematische Statistik zu beantworten hat, und diese Modelle an die Wirklichkeit anzupassen, ist die hauptsächliche Aufgabe der Stochastik. Der letzte Teil wird vor allm in der Vorlesung \textbf{Stochastik B} behandelt.
 
-$\sum_i^ni=\frac{n(n+1)}{2}$
+\section{Wahrscheinlichkeitsräume}
+\label{sec:Wahrscheinlichkeitsräume}
 
-\subsection{Spielereien mit fancybox}
-\label{sec:fancybox}
+Zufallsexperimente werden beschrieben durch
+\begin{itemize}
+	\item die Menge der möglichen Ergebnisse $\Omega$\\
+	Im \textbf{Würfelwurf} sei beispielsweise $\Omega := \{1,2,3,4,5,6\}$
+	\item die Menge A $\subset \mathfrak{P}(\Omega):=\{A; A\subset\Omega\}$ als Menge der interessienden Ergebnisse\\ % Sütterlin-A undR
+	$\mathfrak{A}$ ist eine so genannte $\sigma$-Algebra auf $\Omega$, d.h. 
+	\begin{enumerate}
+	\item $\Omega \in \mathfrak{A}$
+	\item Mit $A \in \mathfrak{A} \Leftrightarrow A^c \in \mathfrak{A}$
+	\item Mit $A_1,A_2,\dots\in \mathfrak{A}$ ist auch $\bigcup_{n=1}^{\infty}A_n\in \mathfrak{A}$
+\end{enumerate}
+	Im \textbf{Würfelwurf} sei beispielsweise $A := \{2,4,6\}$ das Ergeignis "`Es fällt eine gerade Zahl"' und 
+	\item durch ein Wahrscheinlichkeitsma\ss\ $P$ (lat: "`Probabilitas"'=Glaubwürdigkeit) mit \nolinebreak{$P:\mathfrak{A} \rightarrow [0,1]$}, das ist eine Mengenfunktion auf $\mathfrak{A}$ mit den Eigenschaften
+	\begin{enumerate}
+	\item $P(\Omega)=1$
+	\item Für jede Folge von \textbf{paarweise disjunkten} $A_1,A_2,\dots\in \mathfrak{A}$ gilt:\\
+	$P\left(\bigcup_{n=1}^{\infty}A_n\right)=\sum_{n=1}^{\infty}{P(A_n)}$\ \ \ ($\sigma$-Additivität von $P$)\\
+	Für $A\in \mathfrak{A}$ ist $P(A)$ die Wahrscheinlichkeitsfkt. (für das Eintreten) von A
+\end{enumerate}
+\end{itemize}
 
-\begin{displaymath}
-	x + y = \fbox{$\Omega$}
-\end{displaymath}
+Das Tripe $(\Omega,\mathfrak{A},P)$ hei\ss t \textbf{Wahrscheinlichkeitsraum}. 
 
-\begin{equation}
-\fbox{$\displaystyle
-\int_{\Omega_0} \zeta(\omega) d\omega
-\geq \bar{r}$}
-\end{equation}
+\par\noindent $\omega\in\Omega$ nennen wir das Ergebnis des Zufallsexperimentes Das Ereignis $A\in \mathfrak{A}$ tritt genau dann ein, wenn $\omega\in A$.\\
+$\omega\in\bigcup_{n=1}^{\infty}A_n \Leftrightarrow$ Es gibt ein $n\in N$ mit $\omega\in A_n$\\
+Das durch $\bigcup_{n=1}^{\infty}A_n$ beschriebene Ereignis tritt genau dann ein, wenn mindestens eines der Ereignisse $A_n, n\in N$ eintritt.
 
-\newlength{\mylength}
-\[
-\setlength{\fboxsep}{15pt}
-\setlength{\mylength}{\linewidth}
-\addtolength{\mylength}{-2\fboxsep}
-\addtolength{\mylength}{-2\fboxrule}
-\fbox{%
-\parbox{\mylength}{
-\setlength{\abovedisplayskip}{0pt}
-\setlength{\belowdisplayskip}{0pt}
-\begin{equation}
-x + y = z
-\end{equation}}}
-\]
+Auf die Frage, ob auch $\emptyset$ eine gültige Menge ist, sei gesagt, dass $\emptyset =\Omega^c \in \mathfrak{A}$ das "`unmögliche Ereignis"' genannt wird.
 
-\newenvironment{FramedEqn}%
-{\setlength{\fboxsep}{15pt}
-\setlength{\mylength}{\linewidth}%
-\addtolength{\mylength}{-2\fboxsep}%
-\addtolength{\mylength}{-2\fboxrule}%
-\Sbox
-\minipage{\mylength}%
-\setlength{\abovedisplayskip}{0pt}%
-\setlength{\belowdisplayskip}{0pt}%
-\equation}%
-{\endequation\endminipage\endSbox
-\[\fbox{\TheSbox}\]}
+Seien $A_1,A_2,\dots \in \mathfrak{A}$. Dann $\bigcap{n=1}^{\infty}A_n=\left(\bigcup_{n=1}^{\infty}A_n^c\right)^c\in \mathfrak{A}$.\\
+Anmerkung: $\bigcap_{n=1}^{\infty}A_n$ tritt genau dann ein, wenn alle $A_n,n\in N$ eintreten.
 
-\begin{FramedEqn}
-\Rightarrow P\sim\xi(P_\gamma)- \frac{1}{3}
-\end{FramedEqn}
+Wenn nun $A,B \in \mathfrak{A}$, dann
+\begin{itemize}
+	\item $A\cup B = A\cup B \cup \emptyset \cup \emptyset \cup \dots \in \mathfrak{A}$
+	\item $A\cap B = A\cap B \cap \Omega \cap \Omega \cap \dots \in \mathfrak{A}$
+	\item $A \Delta B = (A\cap B^c) \cup (B\cap A^c)$ (Die symmetrische Differenz) beschreibt das Ereignis "`Entweder A oder B"'
+	\item $A \subset B$ hei\ss t: "`Das Ereignis A hat das Ereignis B zur Folge"' % ???
+\end{itemize}
 
-\fbox{%
-\begin{Beqnarray*}
-x & = & y\\
-y & > & x \\
-\int_4^5 f(x)dx & = & \sum_{i\in F} x_i
-\end{Beqnarray*}}
+\subsection{Eigenschaften von W-Ma\ss en}
+
+\begin{itemize}
+	\item Aus $P(\emptyset)=P(\emptyset\cup\emptyset\cup\dots)=\sum{P_{n=1}^{\infty}(\emptyset)}$ folgt $P(\emptyset)=0$.\\
+	\item Für $A,B\in \mathfrak{A}$ mit $A\subset B$ ist $P(B)=P(A \cup B \cap A^c)=P(A \cup B \cap A^c \cup \emptyset \cup \dots)=P(A)+P(B \cap A^c) \geq P(A)$\\
+	Also 
+	\begin{itemize}
+	\item $P(A)\leq P(B)$ (Isotonie)
+	\item $P(B \cap A^c)=P(B)-P(A)$ (Subtraktivität)
+\end{itemize}
+\end{itemize}
+
+\subsection{Beispiel}
+
+$\emptyset \neq \Omega$ sei endlich, $|\Omega|$ Anzahl der Elemente von $\Omega$, $\mathfrak{A}=\mathfrak{P}(\Omega)$. Sei $P$ definiert durch\\
+$P(A)=\frac{|A|}{|\Omega|},\ A \subset \Omega$\\
+$P$ hei\ss t "`diskretes Lapacesches W-Ma\ss "` auf $\Omega$.\\
+Es ist $P(\{\gamma\})=\frac{1}{|\Omega|}, \omega\in\Omega$, also folgert man:\\
+"`Alle möglichen Ergebnisse sind \textbf{gleich wahrscheinlich}."'
+
+\section{Grundformeln der Kombinatorik}
+\label{sec:Grundformeln der Kombinatorik}
+
+$n,r\in N$, $M_n$ ist eine $n$-elementige Menge, o.B.d.A. $M_n=\{1,\dots,n\}$.
+\begin{itemize}
+	\item $P_n^r=\{(x_1,\dots,x_r);\ x_i \in M_n, 1 \leq i \leq r\}$, das sind die $r$-Permutationen aus $M_n$ mit Wiederholzung.
+	\item $P_n^{(r)}=\{(x_1,\dots,x_r);\ x_i \in M_n, 1 \leq i \leq r,\ paarweise\ verschieden\}$ (im Falle $r \leq n$), das sind die $r$-Permutationen aus $M_n$ ohne Wiederholung.
+	\item $K_n^{(r)}=\{(x_1,\dots,x_r);\ x_i \in M_n, 1 \leq i \leq r,\ x_1 < x_2 < \dots < x_n\}$ (im Falle $r \leq n$), das sind die $r$-Kombinationen aus $M_n$ ohne Wiederholung.
+	\item $K_n^{(r)}=\{(x_1,\dots,x_r);\ x_i \in M_n, 1 \leq i \leq r,\ x_1 \leq x_2 \leq \dots \leq x_n\}$ (im Falle $r \leq n$), das sind die $r$-Kombinationen aus $M_n$ mit Wiederholung.
+\end{itemize}
+Es gilt
+\begin{itemize}
+	\item $|P_n^r|=n^r$
+	\item $|P_n^{(r)}|=n(n-1)\cdots(n-r+1)$, im Fall $n=r$: $|P_n^{(r)}|=r!$
+	\item $r!|K_n^{(r)}|=|P_n^{(r)}|\ \Rightarrow\ |K_n^{(r)}|=\frac{n(n-1)\dots(n-r+1)}{r!}=(\stackrel{n}{r})$\\
+	Dann gilt auch $|\{A; A\subset M_n, |A|=r\}|^r=\stackrel{n}{r}$. Gilt auch noch für $r=0$\\
+	Dann folgt: $|\mathfrak{P}(M_n)|=\sum_{r=0}^{r}{\stackrel{n}{r}1^r1^{n-r}}=(1+1)^n=2^n$
+	\item $K_n^r \rightarrow (x_1,\dots,x_r) \underbrace{\longrightarrow}_{ist bijektiv} (x_1,x_1+1,\dots,x_r+r-1)\in K_{n+r-1}^{(r)}$\\
+	$\Rightarrow |K_n^r| = |K_{n+r-1}^{(r)}| = \stackrel{n+r-1}{r}$\\
+	Identifiziere $(x_1,\dots,x_r) \in K_n^r$ mit dem Besetzungszahlvektor $(k_1,\dots,k_n)$,
+	wobei $k_i=|\{j\in \{ 1,\dots,r \}; x_j=i\}|,\ 1 \leq i \leq n$. Dann ist $K-1+\dots+k_n=r$.\\
+	Dann ist $|\{(K_1,\dots,k_n)\in N_0^n; k_1+\dots+k_n=r\}|=\stackrel{n+r-1}{r}$\\
+	Folgerung: $|\{(K_1,\dots,k_n)\in N^n; k_1+\dots+k_n=r\}|=\stackrel{n+(r-n)-1}{r-n}=\stackrel{r-1}{r-n}=\stackrel{r-1}{n-1}, r \geq n$\\
+\end{itemize}
