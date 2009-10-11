@@ -12,6 +12,8 @@ Die abgegebenen Hausübungen werden korrigiert und in den Übungsgruppen zurückgeg
 	\item Mi, 12:15 - 13:00 (B305)
 \end{itemize}
 
+\newpage
+
 \part{Wahrscheinlichkeitstheorie}
 \label{sec:Wahrscheinlichkeitstheorie}
 
@@ -37,40 +39,56 @@ Zufallsexperimente werden beschrieben durch
 	\item $A := \{2,4,6\}$ das Ergeignis "`Es fällt eine gerade Zahl"', und
 	\item $A := \{5,6\}$ das Ergeignis "`Es fällt eine Zahl grö\ss er gleich 5"'.
 \end{itemize}
-	\item durch ein Wahrscheinlichkeitsma\ss\ $P$ (lat: "`Probabilitas"'=Glaubwürdigkeit) mit \nolinebreak{$P:\mathfrak{A} \rightarrow [0,1]$}, also eine Mengenfunktion auf $\mathfrak{A}$ mit den Eigenschaften
+	\item durch ein \href{http://de.wikipedia.org/wiki/Wahrscheinlichkeitsmass}{Wahrscheinlichkeitsma\ss}\ $P$ (lat: "`Probabilitas"'=Glaubwürdigkeit) mit \linebreak[4] $P:\mathfrak{A} \rightarrow [0,1]$, also eine Mengenfunktion auf $\mathfrak{A}$ mit den Eigenschaften
 	\begin{enumerate}
 	\item $P(\Omega)=1$ (die so genannte "`Normiertheit"').
-	\item Für jede Folge von \textbf{paarweise disjunkten} $A_1,A_2,\dots\in \mathfrak{A}$ gilt:\\
-	$P\left(\bigcup_{n=1}^{\infty}A_n\right)=\sum_{n=1}^{\infty}{P(A_n)}$\ \ \ ($\sigma$-Additivität von $P$)\\
-	Für $A\in \mathfrak{A}$ ist $P(A)$ die Wahrscheinlichkeitsfkt. (für das Eintreten) von A
+	\item Für jede Folge von \textbf{paarweise disjunkten} $A_1,A_2,\dots\in \mathfrak{A}$ gilt:
+	\begin{equation}
+		P\left(\bigcup_{n=1}^{\infty}A_n\right)=\sum_{n=1}^{\infty}{P(A_n)}
+	\end{equation}
+	\[\sigma\text{-Additivität von }P\]
+	\noindent Für $A\in \mathfrak{A}$ ist $P(A)$ die Wahrscheinlichkeitsfunktion (für das Eintreten) von A
 \end{enumerate}
 \end{itemize}
 
-\par\noindent Das Tripel $(\Omega,\mathfrak{A},P)$ hei\ss t \textbf{Wahrscheinlichkeitsraum}. 
+\par\noindent Das Tripel $(\Omega,\mathfrak{A},P)$ hei\ss t \href{http://de.wikipedia.org/wiki/Wahrscheinlichkeitsraum}{\textbf{Wahrscheinlichkeitsraum}}.\\
 
-\par\noindent $\omega\in\Omega$ nennen wir das Ergebnis des Zufallsexperimentes Das Ereignis $A\in \mathfrak{A}$ tritt genau dann ein, wenn $\omega\in A$.\\
-$\omega\in\bigcup_{n=1}^{\infty}A_n \Leftrightarrow$ Es gibt ein $n\in N$ mit $\omega\in A_n$\\
-Das durch $\bigcup_{n=1}^{\infty}A_n$ beschriebene Ereignis tritt genau dann ein, wenn mindestens eines der Ereignisse $A_n, n\in N$ eintritt.
+\par\noindent $\omega\in\Omega$ nennen wir das Ergebnis des Zufallsexperimentes. Das Ereignis $A\in \mathfrak{A}$ tritt genau dann ein, wenn $\omega\in A$.
+\begin{equation}
+\label{ }
+\omega\in\bigcup_{n=1}^{\infty}A_n \iff \exists n\in \mathbb{N} \wedge \omega\in A_n
+\end{equation}
+Das durch $\bigcup_{n=1}^{\infty}A_n$ beschriebene Ereignis tritt genau dann ein, wenn mindestens eines der Ereignisse $A_n,\ n\in N$ eintritt.
 
-\noindent Auf die Frage, ob auch $\emptyset$ eine gültige Menge ist, sei gesagt, dass $\emptyset =\Omega^c \in \mathfrak{A}$ das "`unmögliche Ereignis"' genannt wird.
+\noindent Auf die Frage, ob auch $\emptyset$ eine gültige Menge ist, sei gesagt, dass \[\emptyset =\Omega^c \in \mathfrak{A}\] das "`unmögliche Ereignis"' genannt wird (Die Antwort ist also ``ja'').\\
 
-\noindent Seien $A_1,A_2,\ldots \in \mathfrak{A}$. Dann $\bigcap_{n=1}^{\infty}{A_n}=\left(\bigcup_{n=1}^{\infty}A_n^c\right)^c\in \mathfrak{A}$.\\
-Anmerkung: $\bigcap_{n=1}^{\infty}A_n$ tritt genau dann ein, wenn alle $A_n,n\in N$ eintreten.
+\noindent Seien $A_1,A_2,\ldots \in \mathfrak{A}$. Dann 
+\begin{equation}
+\bigcap_{n=1}^{\infty}{A_n}=\left(\bigcup_{n=1}^{\infty}A_n^c\right)^c\in \mathfrak{A}
+\end{equation}
+Anmerkung: $\bigcap_{n=1}^{\infty}A_n$ tritt genau dann ein, wenn alle $A_n,n\in N$ eintreten.\\
 
-Wenn nun $A,B \in \mathfrak{A}$, dann
+\par\noindent Wenn nun $A,B \in \mathfrak{A}$, dann gilt
 \begin{itemize}
-	\item $A\cup B = A\cup B \cup \emptyset \cup \emptyset \cup \dots \in \mathfrak{A}$
-	\item $A\cap B = A\cap B \cap \Omega \cap \Omega \cap \dots \in \mathfrak{A}$
-	\item $A \Delta B = (A\cap B^c) \cup (B\cap A^c)$ (Die symmetrische Differenz) beschreibt das Ereignis "`Entweder A oder B"'
-	\item $A \subset B$ hei\ss t: "`Das Ereignis A hat das Ereignis B zur Folge"' % ???
+	\item \[A\cup B = A\cup B \cup \emptyset \cup \emptyset \cup \dots \in \mathfrak{A}\]
+	(Die Vereinigung von $A,B$ ist auch ein interessierendes Ereignis und steht f\"ur ``das Ereignis $A$ oder $B$ treten ein'')
+	\item \[A\cap B = A\cap B \cap \Omega \cap \Omega \cap \dots \in \mathfrak{A}\]
+	(Die Schnittmenge von $A,B$ ist auch ein interessierendes Ereignis und steht f\"ur ``das Ereignis $A$ \textbf{und} $B$ treten ein'')
+	\item \[A \Delta B = (A\cap B^c) \cup (B\cap A^c)\]
+	(Die ``symmetrische Differenz'' beschreibt das Ereignis ``Entweder A oder B'')
+	\item $A \subseteq B$ hei{\ss}t: ``Das Ereignis A hat das Ereignis B zur Folge''.\\
+	(Kurz erkl\"art: Wenn $A$ eintritt, folgt $\omega \in A\ \wedge\ A \subseteq B \Rightarrow \omega \in B$)
 \end{itemize}
 
-\subsection{Eigenschaften von W-Ma\ss en}
+\subsection{Eigenschaften von Wahrscheinlichkeits-Ma{\ss}en}
 
 \begin{itemize}
-	\item Aus $P(\emptyset)=P(\emptyset\cup\emptyset\cup\dots)=\sum_{n=1}^{\infty}{P(\emptyset)}$ folgt $P(\emptyset)=0$.\\
-	\item Für $A,B\in \mathfrak{A}$ mit $A\subset B$ ist $P(B)=P(A \cup B \cap A^c)=P(A \cup B \cap A^c \cup \emptyset \cup \dots)=P(A)+P(B \cap A^c) \geq P(A)$\\
-	Also 
+	\item Aus $P(\emptyset)=P(\emptyset\cup\emptyset\cup\dots)=\sum_{n=1}^{\infty}{P(\emptyset)}$ folgt $P(\emptyset)=0$.
+	\item Für $A,B\in \mathfrak{A}$ mit $A\subseteq B$ ist 
+	\begin{equation}
+P(B)=P(A \cup B \cap A^c)=P(A \cup B \cap A^c \cup \emptyset \cup \dots)=P(A)+P(B \cap A^c) \geq P(A)
+\end{equation}
+	Also gelten folgende Eigenschaften / Gesetzm\"a{\ss}igkeiten
 	\begin{itemize}
 	\item $P(A)\leq P(B)$ (Isotonie)
 	\item $P(B \cap A^c)=P(B)-P(A)$ (Subtraktivität)
@@ -79,11 +97,19 @@ Wenn nun $A,B \in \mathfrak{A}$, dann
 
 \subsection{Beispiel}
 
-$\emptyset \neq \Omega$ sei endlich, $|\Omega|$ Anzahl der Elemente von $\Omega$, $\mathfrak{A}=\mathfrak{P}(\Omega)$. Sei $P$ definiert durch\\
-$P(A)=\frac{|A|}{|\Omega|},\ A \subset \Omega$\\
+$\emptyset \neq \Omega$ sei endlich, $|\Omega|$ Anzahl der Elemente von $\Omega$ und $\mathfrak{A}=\mathfrak{P}(\Omega)$.\\
+Sei $P$ definiert durch 
+\begin{equation}
+P(A)=\frac{|A|}{|\Omega|},\ A \subset \Omega
+\end{equation}
 $P$ hei\ss t "`diskretes Laplace'sches W-Ma\ss "` auf $\Omega$.\\
-Es ist $P(\{\omega\})=\frac{1}{|\Omega|}, \omega\in\Omega$, also folgert man:\\
-"`Alle möglichen Ergebnisse sind \textbf{gleich wahrscheinlich}."'
+Es ist 
+\begin{equation}
+P(\{\omega\})=\frac{1}{|\Omega|},\ \omega\in\Omega
+\end{equation}
+also folgert man: "`Alle möglichen Ergebnisse sind \textbf{gleich wahrscheinlich}."'
+
+\newpage
 
 \section{Grundformeln der Kombinatorik}
 \label{sec:Grundformeln der Kombinatorik}
