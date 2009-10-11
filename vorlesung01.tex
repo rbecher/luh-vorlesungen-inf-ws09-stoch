@@ -1,5 +1,5 @@
-\chapter{Einführung / Organisatorisches}
-\label{sec:Einführung / Organisatorisches}
+\part{Einführung / Organisatorisches}
+\label{sec:EinführungOrganisatorisches}
 
 \par Die Klausur wird am \textbf{01.02.2010 von 9:15 - 10:45} stattfinden, es wird wöchentliche Haus- und Stundenübungen geben.\\
 Die abgegebenen Hausübungen werden korrigiert und in den Übungsgruppen zurückgegeben werden, es gibt allerdings keine Bonuspunkteregelung.
@@ -12,7 +12,7 @@ Die abgegebenen Hausübungen werden korrigiert und in den Übungsgruppen zurückgeg
 	\item Mi, 12:15 - 13:00 (B305)
 \end{itemize}
 
-\chapter{Wahrscheinlichkeitstheorie}
+\part{Wahrscheinlichkeitstheorie}
 \label{sec:Wahrscheinlichkeitstheorie}
 
 "`Was ist das richtige Modell, um ein Experiment zu beschreiben?"' ist die wichtigste Frage, die die mathematische Statistik zu beantworten hat, und diese Modelle an die Wirklichkeit anzupassen, ist die hauptsächliche Aufgabe der Stochastik. Der letzte Teil wird vor allem in der Vorlesung \textbf{Stochastik B} behandelt.
@@ -25,13 +25,14 @@ Zufallsexperimente werden beschrieben durch
 	\item die Menge der möglichen Ergebnisse $\Omega$\\
 	Im \textbf{Würfelwurf} sei beispielsweise $\Omega := \{1,2,3,4,5,6\}$
 	\item die Menge $\mathfrak{A}$ $\subset \mathfrak{P}(\Omega):=\{A; A\subset\Omega\}$ als Menge der interessierenden Ergebnisse.\\
-	$\mathfrak{A}$ ist eine so genannte $\sigma$-Algebra auf $\Omega$, d.h. 
+	$\mathfrak{A}$ ist eine so genannte \href{http://de.wikipedia.org/wiki/Sigma-Algebra}{$\sigma$-Algebra} auf $\Omega$, d.h. 
 	\begin{enumerate}
-	\item $\Omega \in \mathfrak{A}$.
-	\item Mit $A \in \mathfrak{A} \Leftrightarrow A^c \in \mathfrak{A}$.
-	\item Mit $A_1,A_2,\dots\in \mathfrak{A}$ ist auch $\bigcup_{n=1}^{\infty}A_n\in \mathfrak{A}$.
+	\item $\Omega \in \mathfrak{A}$.\\(Die Grundmenge $\Omega$ ist in $\mathfrak{A}$ enthalten)
+	\item Mit $A \in \mathfrak{A} \Leftrightarrow A^c \in \mathfrak{A}$.\\ (Wenn $\mathfrak{A}$ eine Teilmenge $A\in\Omega$ als mögliches Ergebnis enthält, dann auch deren Komplement $A^c=\Omega \setminus A$)
+	\item Mit $A_1,A_2,\dots\in \mathfrak{A}$ ist auch $\bigcup_{n=1}^{\infty}A_n\in \mathfrak{A}$.\\
+	(Wenn für jede natürliche Zahl $n$ die Menge $A_n \in \mathfrak{A}$ ist, so ist auch die abzählbare Vereinigung aller $A_n\in\mathfrak{A}$)
 \end{enumerate}
-	Im \textbf{Würfelwurf} seien beispielsweise Ereignisse:
+	Im \textbf{Würfelwurf} seien beispielsweise gültige Ereignisse:
 	\begin{itemize}
 	\item $A := \{2,4,6\}$ das Ergeignis "`Es fällt eine gerade Zahl"', und
 	\item $A := \{5,6\}$ das Ergeignis "`Es fällt eine Zahl grö\ss er gleich 5"'.

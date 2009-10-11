@@ -11,3 +11,4 @@
 *_region_.tex
 *.prv
 *.tcp
+*.synctex*
