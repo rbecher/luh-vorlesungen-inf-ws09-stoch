@@ -34,25 +34,23 @@ Zufallsexperimente werden beschrieben durch
 	\item Mit $A_1,A_2,\dots\in \mathfrak{A}$ ist auch $\bigcup_{n=1}^{\infty}A_n\in \mathfrak{A}$.\\
 	(Wenn für jede natürliche Zahl $n$ die Menge $A_n \in \mathfrak{A}$ ist, so ist auch die abzählbare Vereinigung aller $A_n\in\mathfrak{A}$)
 \end{enumerate}
-
-\par\noindent Im \textbf{Würfelwurf} seien beispielsweise gültige Ereignisse:
+	Im \textbf{Würfelwurf} seien beispielsweise gültige Ereignisse:
 	\begin{itemize}
 	\item $A := \{2,4,6\}$ das Ergeignis "`Es fällt eine gerade Zahl"', und
 	\item $A := \{5,6\}$ das Ergeignis "`Es fällt eine Zahl grö\ss er gleich 5"'.
 \end{itemize}
 	\item durch ein \href{http://de.wikipedia.org/wiki/Wahrscheinlichkeitsmass}{Wahrscheinlichkeitsma\ss}\ $P$ (lat: "`\textbf{P}robabilitas"'=Glaubwürdigkeit) mit \linebreak[4] $P:\mathfrak{A} \rightarrow [0,1]$, also eine Mengenfunktion auf $\mathfrak{A}$ mit den Eigenschaften
 	\begin{enumerate}
-	\item	 \begin{equation}
+	\item \begin{equation}
 		P(\Omega)=1
-	\end{equation} 
-	\textit{(die so genannte ``Normiertheit'').}
-	\newpage
+	\end{equation}
+	\textit{(Die so genannte ``Normiertheit'').}
 	\item Für jede Folge von \textbf{paarweise disjunkten} $A_1,A_2,\dots\in \mathfrak{A}$ gilt:
 	\begin{equation}
 		P\left(\bigcup_{n=1}^{\infty}A_n\right)=\sum_{n=1}^{\infty}{P(A_n)}
 	\end{equation}
 	\[\sigma\text{-Additivität von }P\]
-\noindent Für $A\in \mathfrak{A}$ ist $P(A)$ die Wahrscheinlichkeitsfunktion (für das Eintreten) von A
+	\noindent Für $A\in \mathfrak{A}$ ist $P(A)$ die Wahrscheinlichkeitsfunktion (für das Eintreten) von A
 \end{enumerate}
 \end{itemize}
 
@@ -125,7 +123,7 @@ $n,r\in \mathbb{N}$, $M_n$ ist eine $n$-elementige Menge, o.B.d.A. $M_n=\{1,\ldo
 	\begin{equation}
 P_n^{r}=\{(x_1,\dots,x_r);\ x_i \in M_n, 1 \leq i \leq r\}
 \end{equation}
-	das sind die $r$-\href{http://de.wikipedia.org/wiki/Permutation}{Permutationen} aus $M_n$ mit Wiederholzung.
+	das sind die $r$-\href{http://de.wikipedia.org/wiki/Permutation}{Permutationen} aus $M_n$ mit Wiederholung.
 	\item 
 	\begin{equation}
 	P_n^{(r)}=\{(x_1,\dots,x_r);\ x_i \in M_n, 1 \leq i \leq r, \text{paarweise\ verschieden}\}\ (r \leq n)
@@ -136,7 +134,7 @@ P_n^{r}=\{(x_1,\dots,x_r);\ x_i \in M_n, 1 \leq i \leq r\}
 \end{equation}
 	das sind die $r$-Kombinationen aus $M_n$ ohne Wiederholung.
 	\item 
-	\begin{equation}K_n^{(r)}=\{(x_1,\dots,x_r);\ x_i \in M_n, 1 \leq i \leq r,\ x_1 \leq x_2 \leq \dots \leq x_n\}\ (r \leq n)
+	\begin{equation}K_n^{r}=\{(x_1,\dots,x_r);\ x_i \in M_n, 1 \leq i \leq r,\ x_1 \leq x_2 \leq \dots \leq x_n\}\ (r \leq n)
 \end{equation}
 	das sind die $r$-Kombinationen aus $M_n$ mit Wiederholung.
 \end{itemize}
@@ -181,13 +179,22 @@ Es gilt
 		\end{cases}
 	\end{equation}
 	\textit{(Erklärung: Lege ich meine Zettel nicht wieder in die Urne zurück, habe ich beim nächsten Versuch natürlich eine Möglichkeit weniger, welche Zettel ich ziehen könnte)}
-	\item $r!|K_n^{(r)}|=|P_n^{(r)}|\ \Rightarrow\ |K_n^{(r)}|=\frac{n(n-1)\dots(n-r+1)}{r!}=(\stackrel{n}{r})$\\
-	Dann gilt auch $|\{A; A\subset M_n, |A|=r\}|^r=\stackrel{n}{r}$. Gilt auch noch für $r=0$\\
-	Dann folgt: $|\mathfrak{P}(M_n)|=\sum_{r=0}^{r}{\stackrel{n}{r}1^r1^{n-r}}=(1+1)^n=2^n$
+	\item 
+	\begin{align}
+		r!\cdot|K_n^{(r)}|	&=|P_n^{(r)}| \label{lab2.3.1}\\
+												& \Updownarrow \nonumber \\
+		|K_n^{(r)}|					&=\frac{n(n-1)\dots(n-r+1)}{r!}	&=\binom{n}{r} \label{lab2.3.2}\\
+												& \Downarrow \nonumber \\
+		&|\{A; A\subset M_n, |A|=r\}|^r&=\binom{n}{r} \label{lab2.3.3} \\
+												& \Downarrow \nonumber \\
+		|\mathfrak{P}(M_n)|	&=\sum_{r=0}^{r}{\binom{n}{r}1^r1^{n-r}}=(1+1)^n &=2^n \label{lab2.3.4}
+	\end{align}
+	\eqref{lab2.3.3} Gilt auch noch für $r=0$.\\
+	\textit{(Erklärung: \eqref{lab2.3.1} und äquivalent \eqref{lab2.3.2} kann man sich so vorstellen, dass man sich seine $r$-elementige Teilmenge (ohne Zurücklegen) zusammensuchen kann, aber die verschiedenen Möglichkeiten, sie zu permutieren (``die Kinobesucher umzusetzen''), interessieren den Betrachter hier nicht, also müssen wir die aus der Rechnung rausnehmen.)}
 	\item $K_n^r \rightarrow (x_1,\dots,x_r) \underbrace{\longrightarrow}_{ist\ bijektiv} (x_1,x_1+1,\dots,x_r+r-1)\in K_{n+r-1}^{(r)}$\\
 	$\Rightarrow |K_n^r| = |K_{n+r-1}^{(r)}| = \stackrel{n+r-1}{r}$\\
 	Identifiziere $(x_1,\dots,x_r) \in K_n^r$ mit dem Besetzungszahlvektor $(k_1,\dots,k_n)$,
 	wobei $k_i=|\{j\in \{ 1,\dots,r \}; x_j=i\}|,\ 1 \leq i \leq n$. Dann ist $K-1+\dots+k_n=r$.\\
-	Dann ist $|\{(K_1,\dots,k_n)\in N_0^n; k_1+\dots+k_n=r\}|=\stackrel{n+r-1}{r}$\\
-	Folgerung: $|\{(K_1,\dots,k_n)\in N^n; k_1+\dots+k_n=r\}|=\stackrel{n+(r-n)-1}{r-n}=\stackrel{r-1}{r-n}=\stackrel{r-1}{n-1}, r \geq n$\\
+	Dann ist $|\{(K_1,\dots,k_n)\in \mathbb{N}_0^n; k_1+\dots+k_n=r\}|=\binom{n+r-1}{r}$\\
+	Folgerung: $|\{(K_1,\dots,k_n)\in \mathbb{N}^n; k_1+\dots+k_n=r\}|=\binom{n+(r-n)-1}{r-n}=\binom{r-1}{r-n}=\binom{r-1}{n-1}, r \geq n$\\
 \end{itemize}
