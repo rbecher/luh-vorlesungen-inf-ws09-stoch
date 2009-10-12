@@ -26,15 +26,27 @@ Zufallsexperimente werden beschrieben durch
 \begin{itemize}
 	\item die Menge der möglichen Ergebnisse $\Omega$\\
 	Im \textbf{Würfelwurf} sei beispielsweise $\Omega := \{1,2,3,4,5,6\}$
-	\item die Menge $\mathfrak{A}$ $\subset \mathfrak{P}(\Omega):=\{A; A\subset\Omega\}$ als Menge der interessierenden Ergebnisse.\\
+	\item die Menge $\mathfrak{A}$ $\subset \mathfrak{P}(\Omega) \footnote{Potenzmenge} :=\{A; A\subset\Omega\}$ als Menge der interessierenden Ergebnisse.\\
 	$\mathfrak{A}$ ist eine so genannte \href{http://de.wikipedia.org/wiki/Sigma-Algebra}{$\sigma$-Algebra} auf $\Omega$, d.h. 
 	\begin{enumerate}
-	\item $\Omega \in \mathfrak{A}$.\\(Die Grundmenge $\Omega$ ist in $\mathfrak{A}$ enthalten)
-	\item Mit $A \in \mathfrak{A} \Leftrightarrow A^c \in \mathfrak{A}$.\\ (Wenn $\mathfrak{A}$ eine Teilmenge $A\in\Omega$ als mögliches Ergebnis enthält, dann auch deren Komplement $A^c=\Omega \setminus A$)
-	\item Mit $A_1,A_2,\dots\in \mathfrak{A}$ ist auch $\bigcup_{n=1}^{\infty}A_n\in \mathfrak{A}$.\\
+	\item 
+	\begin{equation}
+	\Omega \in \mathfrak{A}
+	\end{equation}
+	(Die Grundmenge $\Omega$ ist in $\mathfrak{A}$ enthalten)
+	\item 
+	\begin{equation}
+		A \in \mathfrak{A} \iff A^c \in \mathfrak{A}
+	\end{equation}
+	(Wenn $\mathfrak{A}$ eine Teilmenge $A\in\Omega$ als mögliches Ergebnis enthält, dann auch deren Komplement $A^c=\Omega \setminus A$)
+	\item 
+	\begin{equation}
+		A_1,A_2,\dots\in \mathfrak{A} \Rightarrow \bigcup_{n=1}^{\infty}A_n\in \mathfrak{A}
+	\end{equation}
 	(Wenn für jede natürliche Zahl $n$ die Menge $A_n \in \mathfrak{A}$ ist, so ist auch die abzählbare Vereinigung aller $A_n\in\mathfrak{A}$)
 \end{enumerate}
-	Im \textbf{Würfelwurf} seien beispielsweise gültige Ereignisse:
+
+\par\noindent	Im \textbf{Würfelwurf} seien beispielsweise gültige Ereignisse:
 	\begin{itemize}
 	\item $A := \{2,4,6\}$ das Ergeignis "`Es fällt eine gerade Zahl"', und
 	\item $A := \{5,6\}$ das Ergeignis "`Es fällt eine Zahl grö\ss er gleich 5"'.
@@ -91,10 +103,16 @@ Anmerkung: $\bigcap_{n=1}^{\infty}A_n$ tritt genau dann ein, wenn alle $A_n,n\in
 	\begin{equation}
 P(B)=P(A \cup B \cap A^c)=P(A \cup B \cap A^c \cup \emptyset \cup \dots)=P(A)+P(B \cap A^c) \geq P(A)
 \end{equation}
-	Also gelten folgende Eigenschaften / Gesetzm\"a{\ss}igkeiten
+	Also gelten folgende Eigenschaften / Gesetzm\"a{\ss}igkeiten:
 	\begin{itemize}
-	\item $P(A)\leq P(B)$ (Isotonie)
-	\item $P(B \cap A^c)=P(B)-P(A)$ (Subtraktivität)
+	\item \begin{equation}
+		P(A)\leq P(B)
+	\end{equation}
+	(Isotonie)
+	\item \begin{equation}
+		P(B \cap A^c)=P(B)-P(A)
+	\end{equation}
+	(Subtraktivität)
 \end{itemize}
 \end{itemize}
 
@@ -190,9 +208,12 @@ Es gilt
 		|\mathfrak{P}(M_n)|	&=\sum_{r=0}^{r}{\binom{n}{r}1^r1^{n-r}}=(1+1)^n &=2^n \label{lab2.3.4}
 	\end{align}
 	\eqref{lab2.3.3} Gilt auch noch für $r=0$.\\
-	\textit{(Erklärung: \eqref{lab2.3.1} und äquivalent \eqref{lab2.3.2} kann man sich so vorstellen, dass man sich seine $r$-elementige Teilmenge (ohne Zurücklegen) zusammensuchen kann, aber die verschiedenen Möglichkeiten, sie zu permutieren (``die Kinobesucher umzusetzen''), interessieren den Betrachter hier nicht, also müssen wir die aus der Rechnung rausnehmen.)}
+	\textit{Erklärungen:\\
+	\eqref{lab2.3.1} und äquivalent \eqref{lab2.3.2} kann man sich so vorstellen, dass man sich seine $r$-elementige Teilmenge (ohne Zurücklegen) zusammensuchen kann, aber die verschiedenen Möglichkeiten, sie zu permutieren (``die Kinobesucher umzusetzen''), interessieren den Betrachter hier nicht, also müssen wir die aus der Rechnung rausnehmen.\\
+	\eqref{lab2.3.3} ist die Anzahl aller $r$-elementigen Teilmengen von $M_n$ hoch $r$, und wegen \eqref{lab2.3.2} ebenfalls $\binom{n}{r}$.\\
+	\eqref{lab2.3.4} ist die Länge der Potenzmenge, also aller möglichen Kombinationen von Elementen aus $M_n$}
 	\item $K_n^r \rightarrow (x_1,\dots,x_r) \underbrace{\longrightarrow}_{ist\ bijektiv} (x_1,x_1+1,\dots,x_r+r-1)\in K_{n+r-1}^{(r)}$\\
-	$\Rightarrow |K_n^r| = |K_{n+r-1}^{(r)}| = \stackrel{n+r-1}{r}$\\
+	$\Rightarrow |K_n^r| = |K_{n+r-1}^{(r)}| = \binom{n+r-1}{r}$\\
 	Identifiziere $(x_1,\dots,x_r) \in K_n^r$ mit dem Besetzungszahlvektor $(k_1,\dots,k_n)$,
 	wobei $k_i=|\{j\in \{ 1,\dots,r \}; x_j=i\}|,\ 1 \leq i \leq n$. Dann ist $K-1+\dots+k_n=r$.\\
 	Dann ist $|\{(K_1,\dots,k_n)\in \mathbb{N}_0^n; k_1+\dots+k_n=r\}|=\binom{n+r-1}{r}$\\
