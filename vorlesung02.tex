@@ -1,0 +1,161 @@
+\par\noindent Aus der Menge der Permutationen betrachten wir eine spezifische Teilmenge.\\
+Sei $k_1,\ldots,k_n \in \mathbb{N}_0$ mit $k_1+\ldots+k_n=r$. Einen so genannter ``Besetzungszahlvektor'' drückt man beispielsweise so aus:
+\begin{equation*}
+	\begin{split}
+	a = b
+	\end{split}
+\label{eq:}
+\end{equation*}
+\begin{equation*}
+	\begin{split}
+	& \{(x_1,\ldots,x_n)\in\mathbb{P}_n^r;\ |\{j; j\in\{1,\ldots,r\}, x_j=i\}|=k_i, 1\leq i\leq n\}|
+%	=	& \{(x_1,\ldots,x_n)\in\mathbb{P}_n^r;\ \text{Genau $k_i$ der $r$ Komponenten $(x_1,\ldots,x_r)$ sind gleich $i$}, 1\leq i \leq n\}\\
+	\end{split}
+\end{equation*}
+
+Die Länge oder Mächtigkeit dieser Menge ist wie folgt:
+\begin{equation*}
+	\begin{split}
+	 =	& \binom{r}{k_1}\binom{r-k_1}{k_2}\binom{r-k_1-k_2}{k_3}\cdots\binom{r-k1-\ldots-k_{n-1}}{k_n}\\
+	 =	&	\frac{r!}{k_1!(r-k_1)!}\cdot \frac{(r-k_1)!}{k_2!(r-k_1-k_2)!}\cdots = \frac{r!}{k_1}!\cdots k_n! % (r-k_1)! durchstreichen ... strike?
+	\end{split}
+\end{equation*}
+
+% Binomischer Lehrsatz
+% => Multinomialer Lehrsatz durch Verallgemeinerung
+
+\begin{equation}
+n^r = \sum_{(k_1,\ldots,k_n)\in\mathbb{N}_0^n\\k_1+\ldots+k_n=r}{\frac{r!}{k_1!\cdots k_n!}} % Anzahl der Summanden = n+r-1 über r
+\end{equation}
+
+\subsection{Beispiel}
+O.B.d.A. sind $r$ Personen im Raum, $n=365$ seien die Anzahle der Tage im Jahr und $r\leq n$.\\
+Gesucht: Wahrscheinlickeit, dass mindestens $2$ der $r$ Personen am gleichen Tag Geburtstag haben.
+\begin{equation}
+\Omega = \{ (x_1,\ldots,x_r); x_i \  \}
+\end{equation}
+$\Sütt-A=Sütt-P(\Omega)$\\
+$P(A)=\frac{|A|}{|\Omega|}, A\subseteq\Omega$
+
+"`Alle möglichen r-Tupel von Geburtstagen sind gleich wahrscheinlich"'
+\begin{equation}
+A= \{ (x_1,\ldots,x_r)\in\Omega; i,j \in \{1,\ldots,r\}, i\neq j, x_i=x_j \}
+\end{equation}
+\begin{equation}
+	P(A) = 1-P(A^c)
+\end{equation}
+
+\begin{equation}
+	A^c = \{ (x_1,\ldots,x_r)\in\Omega; x_1,\ldots,x_r \text{paarweise verschieden} \}
+\end{equation}
+
+\begin{equation}
+|A^c|=n(n-1)\cdots(n-r+1)
+P(A)=1- \frac{n(n-1)\cdots(n-r+1)}{n^r}
+\end{equation}
+
+ab $r>23$ ist $P(A)>1/2$\\
+	 $r=30$ ist $P(A)=0,706$\\
+	 $r=60$ ist $P(A)=0,994$
+	 
+Seien $A_1,A_n$ Ereignisse in W-Raum $(\Omega,Sütt-A,P)$\\
+$P(A_1\cup A_2)$\\
+$= P(A_1 \cup (A_2 \cap (A_1 \cap A_2)^c))$\\
+$= P(A_1) + P(A_2 \cap (A_1 \cap A_2)^c)$\\
+$= P(A_1) + P(A_2) - P(A_1 \cap A_2)$
+
+\subsection{Die Siebformel}
+Seien $A_1,\ldots,A_n$ Ereignisse\\
+\begin{equation}
+	P(\bigcup_{k=1}^n{A_k}) ) \sum_{k-1}^n{(-1)^{k-1}\sum_{1\leq j_1<\ldots<j_k\leq n}{P(A_{j_1}\cap \ldots \cap A_{j_k})}}
+\end{equation}
+
+\subsection{Beispiel}
+$\Omega = \{ \pi; \pi:\{1,\ldots,n\} \rightarrow \{1,\ldots,n\} \text{bijektiv},\ |\Omega|=n!$\\
+$\mathfrak{A}=\mathfrak{P}(\Omega)$\\
+$P$ das diskrete Laplace'sche W-Ma\ss  auf $\Omega$\\
+$A_i= \{ \pi \in \Omega; \pi(i)=i\},\ 1\leq i \leq n \}$\\
+$\bigcup_{i=1}^n{A_i} = \{ \pi\in\Omega; \text{Es gibt ein $i\in\{1,\ldots,n\}$ mit $\pi(i)=i$}\}$\\
+$P(\bigcup_{i=1}^n{A_i})=\sum_{k-1}^n{(-1)^{k-1}\sum_{1\leq j_1<\ldots<j_k\leq n}{\frac{|A_{j_1}\cap\ldots\cap A_{j_k}|}{|\Omega|}}}$\\
+$= \sum_{k=1}^n{(-1)^{k-1}\sum_{...}{\frac{(n-k)!}{n!}}}=\sum_{k=1}^n{(-1)^{k-1}\binom{n}{k}\cdot \frac{(n-k)!}{n!}}=\sum_{k=1}^n{(-1)^{k-1}\frac{1}{k!}}$
+
+$\bigcap_{i=1}^n{A_i^c} = \left(\bigcup_{i=1}^nA_i\right)^c=\{\pi \in \Omega; \forall i \in \{1,\ldots,n\}\text{ist} \pi(i)\neq i\}$\\
+$P(\bigcap_{i=1}^n{A_i^c})=1-\sum_{k=1}^n{(-1)^{k-1} \frac{1}{k!}}=\sum_{k=0}^n{(-1)^{k} \frac{1}{k!}} \stackrel{\rightarrow}{(n\rightarrow\infty)}\sum_{k=0}^{\infty}{(-1)^k \frac{1}{k!}}=e^{-1} \approx 0.37$
+
+\subsection{Weitere Beispiele für W-Maße}
+
+$\emptyset\neq\Omega$, $\mathfrak{A}$ $\sigma$-Algebra mit $\{\omega\}\in \mathfrak{A}$ für jedes $\omega\in\Omega$.\\
+Sei $P$ W-Maß auf $\Omega$ mit der Eigenschaft, dass eine abzählbare Menge $\Omega_o\subseteq\Omega$ existiert mit:\\
+$P(\Omega_0)=1$\\
+Dann $P(\Omega_0^c)=1-P(\Omega_0^c)=0$
+Für $A\in \mathfrak{A}$ gilt:\\
+$P(A)=P((A\cap\Omega_0)+(A\cap\Omega_0^c))$\\
+$= P(A\cap\Omega_0) + P(A\cap\Omega_0^c)$\\ % last is disjunkt
+$= P(\sum_{\omega\in A\cap\Omega_0}{\{\omega\}})=\sum_{\omega\in A\cap\Omega_o}{P(\{\omega\})}$\\
+$=\sum_{\omega\in\Omega}{P(\{\omega\})\delta_\omega(A)}$
+
+Für $\omega\in\Omega$ heißt $\delta_\omega:\mathfrak{A} \rightarrow [0,1]$, definiert durch\\
+$\delta_\omega(A)=1, \omega\in A\ oder\ 0, \omega\not\in A$\\ %cases
+das Einpunktmaß oder Dirac-Maß in $\omega$.\\
+
+Es gilt also $P=\sum_{\omega\in\Omega_0}{P(\{\omega\})}\delta_\omega$.\\
+Solche W-Maße heißen \textbf{diskrete W-Maße}.
+
+Betrachte den Fall $\Omega=\mathbb{R}$\\
+$Suett-B=\mathfrak{A}=\bigcap_{\mathfrak{A}^* \sigma-Algebra auf \mathbb{R}\\\mathfrak{A}^*\supseteq\{(-\infty,x]; x\in\mathbb{R}\}}\mathfrak{A}^*$ ist die Borelsche $\sigma$-Algebra auf $\mathbb{R}$
+
+Wichtig: $Suett-B\neq \mathfrak{P}(\mathbb{R})$
+
+$Suett-B$ enthält alle offenen, abgeschlossenen und ohne Intervalle Teilmengen von R.
+
+Sei $F:R\rightarrow R$ Funktion mit folgenden Eigenschaften:
+\begin{enumerate}
+	\item $F$ ist monoton wachsend
+	\item $F$ ist rechtsseitig stetig
+	\item $\lim_{x\rightarrow-\infty}F(x)=0; \lim_{x\rightarrow+\infty}F(x)=1$
+\end{enumerate}
+
+Es existiert genau ein W-Maß $P$ auf $Suett-B$ (auf $\mathbb{R}$) mit der Eigenschaft, dass\\
+\begin{equation}
+P((-\infty,x]))=F(x),\ \forall x\in\mathbb{R}
+\end{equation}
+
+$F$ heißt die zu $P$ gehörige \textbf{Verteilungsfunktion}.
+
+Für $(a,b]$, $-\infty<a<b<+\infty$ ist
+\begin{equation}
+	P((a,b]) = P((-\infty,b]) - P(-\infty,a]) = F(b)-F(a)
+\end{equation}
+
+\subsection{Beispiel}
+
+Sei $f:\mathbb{R} \rightarrow \mathbb{R}_+$ (uneigentlich) Riemann-integrierbar mit  % Bildmenge ist genau [0,\infty)
+\begin{equation}
+	\int_{- \infty }^{+\infty}{f(t)dt}=1
+\end{equation}
+
+Setze 
+\begin{equation}
+	F(x)=\int_{- \infty}^{+ \infty}{f(t)dt},\ -\infty <x<+\infty s
+\end{equation}
+
+$F$ ist Verteilungsfunktion eines W-Maßes $P$ auf $R$.\\
+$f$ heißt Wahrscheinlichkeitsdichte (oder einfach "`Dichte"') von $P$.
+
+\subsubsection{Spezialfälle}
+
+\begin{itemize}
+	% a
+	\item $f(t)= 0 \forall x<a,\ and\ \frac{1}{b-a} \forall a\leq x\leq b\ oder\ 0 \forall x>b$\\ % cases
+				$F(x) = 0 \forall x<a,\ and\ \frac{x-a}{b-a} \forall a\leq x\leq b\ oder\ 1 \forall x>b$ % cases
+	% b
+	\item $f(t) = \frac{1}{\sqrt{2\pi\sigma^2}} exp(-\frac{1}{2}\frac{(t-a)^2}{\sigma^2}), -\infty<t<+\infty, (a\in R, \sigma^2>0)$\\ % das ist die glockenkurve
+Dann ist $\int_{-\infty}^{+\infty}{f(t)dt=1}$\\
+\begin{equation}
+	\begin{split}
+		F(x) 		& = \int_{-\infty}^{+\infty}{\frac{1}{\sqrt{2\pi\sigma^2}}exp(-\frac{1}{2}\frac{(t-a)^2}{\sigma^2})dt}\\
+				 		& = \phi(\frac{x-a}{\sigma})\\
+		\phi(x)	& = \int_{-\infty}^{+\infty}{\frac{1}{\sqrt{2\pi\sigma^2}}exp(-\frac{t^2}{2})}dt, x\in \mathbb{R}
+	\end{split}
+\end{equation}
+\end{itemize}
