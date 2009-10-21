@@ -15,6 +15,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[ansinew]{inputenc}
 \usepackage{setspace}
+\usepackage{cancel} % strikethrough in math mode
+\usepackage[osf]{mathpazo}	% Mathpazo package includes accompanying math fonts
 
 \usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
 
@@ -37,7 +39,7 @@
 %% Andere Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{a4wide} %%Kleinere Seitenränder = mehr Text pro Zeile.
 \usepackage{fancyhdr} %%Fancy Kopf- und Fußzeilen
-\renewcommand{\headheight}{15pt}
+%\renewcommand{\headheight}{15pt}
 \usepackage{fancybox}
 
 %\usepackage{longtable} %%Für Tabellen, die eine Seite überschreiten
@@ -50,10 +52,18 @@
 
 %% FancyHeader Definitionen %%%%%%%%%%%%%%%%a%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\lhead{Stchastik A, WS 2009}
+%\lhead{Stchastik A, WS 2009}
 %\chead{}
-\rhead{Mitschrift}
-\cfoot{\thepage}
+%\rhead{Mitschrift}
+
+%\pagestyle{fancy}{
+%	\fancyhead[LO,RE]{\rightmark}
+%	\fancyhead[RO,LE]{\leftmark}
+%	\fancyfoot[C]{\thepage}
+%}
+
+%\renewcommand{\sectionmark}[1]{\markright{#1}}
+%\renewcommand{\subsectionmark}[1]{\markleft{#1}}
 
 \include{optionen.tex}
 \include{layout.tex}
@@ -89,7 +99,12 @@ Mitschrift von\\
 \newpage
 
 \pagestyle{fancy}
-
+\addtolength{\headheight}{\baselineskip}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+%\rhead{\leftmark\\\rightmark}
+\fancyhead[LE,RO]{Mitschrift Stochastik A, WS 2009}
+\fancyhead[LO,RE]{\leftmark\\\rightmark}
 % Here comes content
 
 \include{vorlesung01}
