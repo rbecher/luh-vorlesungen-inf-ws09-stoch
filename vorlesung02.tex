@@ -201,7 +201,7 @@ Sei $f:\mathbb{R} \rightarrow \mathbb{R}_+$ (uneigentlich) Riemann-integrierbar 
 	F(x)=\int_{- \infty}^{+ \infty}{f(t)dt},\ -\infty <x<+\infty s
 \end{equation}
 
-\par\noindent $F$ ist Verteilungsfunktion eines W-Maßes $P$ auf $R$.
+\par\noindent $F$ ist Verteilungsfunktion eines W-Maßes $P$ auf $\mathbb{R}$.
 
 \par\noindent $f$ heißt \textbf{Wahrscheinlichkeitsdichte} (oder einfach "`Dichte"') von $P$.
 
@@ -209,16 +209,33 @@ Sei $f:\mathbb{R} \rightarrow \mathbb{R}_+$ (uneigentlich) Riemann-integrierbar 
 
 \begin{itemize}
 	% a
-	\item $f(t)= 0 \forall x<a,\ and\ \frac{1}{b-a} \forall a\leq x\leq b\ oder\ 0 \forall x>b$\\ % cases
-				$F(x) = 0 \forall x<a,\ and\ \frac{x-a}{b-a} \forall a\leq x\leq b\ oder\ 1 \forall x>b$ % cases
+	\item 
+	\begin{equation*}
+		f(t)=\begin{cases}
+		0	&	,\ x<a,\\
+		\frac{1}{b-a} & ,\ a\leq x\leq b,\\
+		0 & ,\ x>b.
+	\end{cases}
+	\end{equation*}
+	\begin{equation*}
+		F(x)=\begin{cases}
+		0	&	,\ x<a,\\
+		\frac{x-a}{b-a} & ,\ a\leq x\leq b,\\
+		1 & ,\ x>b.
+	\end{cases}
+	\end{equation*}
+	%f(t)= 0 \forall x<a,\ and\ \frac{1}{b-a} \forall a\leq x\leq b\ oder\ 0 \forall x>b$\\ % cases
+	%			$F(x) = 0 \forall x<a,\ and\ \frac{x-a}{b-a} \forall a\leq x\leq b\ oder\ 1 \forall x>b$ % cases
 	% b
-	\item $f(t) = \frac{1}{\sqrt{2\pi\sigma^2}} exp(-\frac{1}{2}\frac{(t-a)^2}{\sigma^2}), -\infty<t<+\infty, (a\in R, \sigma^2>0)$\\ % das ist die glockenkurve
-Dann ist $\int_{-\infty}^{+\infty}{f(t)dt=1}$\\
-\begin{equation}
+	\item \[
+		f(t) = \frac{1}{\sqrt{2\pi\sigma^2}} exp(-\frac{1}{2}\frac{(t-a)^2}{\sigma^2}), -\infty<t<+\infty, (a\in R, \sigma^2>0) % das ist die glockenkurve
+	\]
+Dann ist \[\int_{-\infty}^{+\infty}{f(t)dt=1}\] und somit
+\begin{equation*}
 	\begin{split}
 		F(x) 		& = \int_{-\infty}^{+\infty}{\frac{1}{\sqrt{2\pi\sigma^2}}exp(-\frac{1}{2}\frac{(t-a)^2}{\sigma^2})dt}\\
 				 		& = \phi(\frac{x-a}{\sigma})\\
 		\phi(x)	& = \int_{-\infty}^{+\infty}{\frac{1}{\sqrt{2\pi\sigma^2}}exp(-\frac{t^2}{2})}dt, x\in \mathbb{R}
 	\end{split}
-\end{equation}
+\end{equation*}
 \end{itemize}
