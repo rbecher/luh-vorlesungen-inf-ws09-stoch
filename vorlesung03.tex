@@ -1,0 +1,219 @@
+Sei $(R,\mathfrak{B},P)$ das W-Raum unserer Wahl. P habe Dichte $f$, also eine Teilfunktion $f:R\rightarrow$, $\int_{- \infty}^{+ \infty}{f(t)dt)}=1$. $F(x)=P((-\infty,x])=\int_{- \infty}^{+ \infty}{f(t)dt)},\ x \in R$.
+
+Allgemein gilt $P(E)=\int_{E}{f(t)dt)},\ E \in \mathfrak{B} (geeignet)$.
+
+Beispiel: 
+\[ f(t) = \begin{cases}
+0 & t < 0\\
+\lambda\cdot exp(-\lambda t) & t \geq 0
+\end{cases}
+\]
+
+% Graph dazu
+
+Aus
+
+\[
+	\int_0^x{\lambda exp(-\lambda t)dt} = \left[- exp(-\lambda t)\right]_o^x = 1-exp(-\lambda x) % aufleitung eigtl. mit unter und über ...
+\]
+
+folgt
+
+\[ F(x) = \int_{- \infty}^{+ \infty}{f(t)dt)}=\begin{cases}
+0 & x < 0\\
+1 - exp(-\lambda x) & x \geq 0
+\end{cases}
+\]
+
+% Graph dazu
+
+\section{Weitere Beispele von Wahrscheinlichkeitsmaßen}
+
+Sei $(R,\mathfrak{A},P)$ W-Raum. Seien $A_1,A_2,\ldots \in \mathfrak{A}$. Dann gilt
+\begin{equation}
+	P\left( \bigcup_{n=1}^{\infty}A_n \right) \leq \sum_{n=1}^{\infty}{P(A_n)}
+\end{equation}
+Diese Eigenschaft wird als \textbf{Sub-$\sigma$-Additivität} bezeichnet.
+
+\begin{equation}
+	\bigcup_{n=1}^{\infty}A_n = A_1 + \sum_{n=2}^{\infty}{(A_n \cap A_1^c\cap\ldots\cap A_{n-1}^c)}
+\end{equation}
+Wir können die Vereinigung auch als Summe von disjunkten Ereignissen auffassen und gelangen zu dieser Schreibweise in BEFORE
+
+Deshalb gilt auch BEFORE+1
+
+\begin{equation}
+	\begin{split}
+				& P\left( \bigcup_{n=1}^{\infty}A_n \right) \\
+	=			& \sum P(A_1) + \sum_{n=2}^{\infty}{P(A_n \cap A_1^c\cap\ldots\cap A_{n-1}^c)}\\ % klammer unter mengeninhalt \leq P(A_n)
+	\leq 	&  \sum_{n=1}^{\infty}{P(A_n)}
+	\end{split}
+\end{equation}
+
+Speziell folgt hieraus die so genannten ``Sub-Additivität von P'':
+\begin{equation}
+	P\left( \bigcup_{j=1}^{n}A_j \right) \leq \sum_{j=1}^{n}{P(A_j)}
+\end{equation}
+
+Seien $A_n \in \mathfrak{A}, n = 1,2,\ldots, A \in \mathfrak{A}$. Wir schreiben 
+\begin{itemize}
+	\item $A_n \uparrow A$ für $A_1 \subset A_2 \subset \ldots, A = P\left( \bigcup_{j=1}^{n}A_j \right)$\\
+				Man sagt ``$A_n$ konvergiert \textbf{isoton} gegen A'')
+	\item $A_n \downarrow A$ für $A_1 \subset A_2 \subset \ldots, A = P\left( \bigcap_{j=1}^{n}A_j \right)$\\
+				Man sagt ``$A_n$ konvergiert \textbf{antiton} gegen A'')
+\end{itemize}
+
+\section{Stetigkeitseigenschaften von W-Maßen}
+\begin{enumerate}
+	\item $A_n \uparrow A \Longrightarrow \lim_{n\rightarrow\infty}{P(A_n)=P(A)}$
+	\item $A_n \downarrow A \Longrightarrow \lim_{n\rightarrow\infty}{P(A_n)=P(A)}$
+\end{enumerate}
+
+\subsection{Beweis zu (1)}
+
+\begin{equation}
+	A = \bigcup_{n=1}^{\infty}{A_n} = A_1 + \sum_{n=2}^{\infty}{(A_n \cap A_{n-1}^c)}
+\end{equation}
+
+Also
+
+\begin{equation}
+	\begin{split}
+	P(A) 	&= P(A) + \sum_{n=2}^{\infty}{P(A_n \cap A_{n-1}^c)}\\ % in der Menge ist P(A_n) - P(A_n-1), heißt Subtraktivität von P 
+				&= P(A) + \sum_{n=2}^{\infty}{P(A_n - A_{n-1}^c)}\\
+				&= P(A) + \lim_{m\rightarrow\infty}{\sum_{n=2}^{m}{P(A_n - A_{n-1})}}\\
+				&= P(A_1) + \lim_{m\rightarrow\infty}{(P(A_m - A_{1}))}\\
+				&= \lim_{m\rightarrow\infty}{P(A_m)}
+	\end{split}
+\end{equation}
+
+\subsection{Beweis zu (2)}
+
+Mit Gegenmenge ... 
+
+\section{Beispiel}
+
+$\Omega=R, x\in R, (x_n)\subset R$ Folge, die monoton fallend gegen $x$ konvergiert.
+\[
+	(-\infty,x] = \bigcap_{n=1}^{\infty}(-\infty,x_n]
+\]
+
+$P$ ist W-Maß auf $R$
+\[
+	F(x) = P((-\infty,x])=\lim_{n\rightarrow\infty}P((-\infty,x_n]) = \lim_{n\rightarrow}F(x_n) % Hinweis: F(x) ist Verteilungsfkt. von P
+\]
+
+Hieraus folgt allgemein:\\
+Ist $(x_n)\subset R$ eine Folge, die von rechts gegen $x$ konvergiert (d.h. $x\leq x_n$ für jedes $n \leftarrow N$ und $\lim_{n\rightarrow}x_n=x$), so gilt
+\[
+	\lim_{n\rightarrow \infty} F(x_n)=F(x)
+\]
+(``$F$ ist rechtsseitig stetig'')
+
+\newpage
+
+\part{Zufallsvariablen und ihre Verteilung}
+\label{part:zufallsvariablen}
+
+Wir gehen von einem Wahrscheinlichkeitsraum $(\Omega,\mathfrak{A},P)$ aus, $R$ sei unsere gesuchte Bild-Menge, $\mathfrak{S}$ $\sigma$-Algebra auf $R$.
+\[X:\Omega \rightarrow R\]
+sei Wahrscheinlichkeitsfunktion mit der Eigenschaft, dass für jedes $B \in \mathfrak{S}$ gilt
+\begin{equation}
+	X^{-1}(B) = \{ \omega \in \Omega; X(\omega) \in B \} \in \mathfrak{A}
+\end{equation}
+heißt Zufallsvariable.
+
+\begin{itemize}
+	\item \begin{equation}
+	\{ X \in B \} = \{\omega \in \Omega; X(\omega) \in B \} = X^{-1}(B)
+\end{equation}
+	\item \begin{equation}
+				P(X\in B) \text{ für } P(\{ X \in B \}) = P(X^{-1}(B))
+			\end{equation}
+	\item Durch
+		\[
+			P^X:\mathfrak{S} \rightarrow [0,1]
+		\]
+		definiert durch
+		\[
+			P(B) = P(X^{-1}(B)) = P(X \in B),\ B\in \mathfrak{S}
+		\]
+		wird ein W-Maß $P^X$ auf $\mathfrak{S}$ definiert.
+	\item 
+		\[
+			X^{-1}\left( \sum_{n=1}^{\infty}{B_n} \right) = \sum_{n=1}^{\infty}{X^{-1}(B_n)}
+		\]
+\end{itemize}
+
+$P^X$ heißt die \textbf{Verteilung von $X$}.
+
+\section{Spezialfälle}
+\begin{enumerate}
+	\item $R=\mathbb{R}, \mathfrak{S} = \mathfrak{B}$. Eine Zufallsvariable $X:\Omega\rightarrow\mathbb{R}$ heißt \textbf{reelle Zufallsvariable}.\\
+				$F(x)=P^X((-\infty,x]) ) P(X\in ((-\infty,x]))=P(X\leq x), x\in \mathbb{R}$ % letztes = ist "`Schreibweise"'
+				ist die Verteilungsfunktion von $P^X$, kurz: Die Verteilungsfunktion von $X$.\\
+				Hat $P^X$ die Dichte $f$, so ist
+					\[
+						F(x) = P(X\leq x) = \int_{-\infty}^{x}{f(t)dt}, x\in\mathbb{R}
+					\]
+					Sprechweise: $X$ hat die Dichte $f$.
+	\item $R \neq \emptyset$, $\mathfrak{S}$ enthalte die Mengen $\{x\}$ für $x \in R$.\\
+				Es gibt eine abzählbare Menge $R_0 \subset R$ mit $P(X \in R_0)=1$.\\
+				Dann ist $P(X\not\in R_0)=1-P(X\in R_0)=0$\\
+				Es gilt daher
+					\[
+						P(X \in R_0^c \cap B) = 0,\ \forall B\in \mathfrak{S}
+					\]
+				und
+					\[
+						\begin{split}
+							P(X\in B)	&= P(X\in R_0 \cap B) + \cancel{P(X \in R_0^c \cap B)}\\
+												&= \sum_{x\in R_0\,\cap\,B}{P(X=x)}\\
+												&= \sum_{x\in R_0}{P(X=x)\delta_x(B)}
+						\end{split}
+					\]
+				Also
+					\[
+						P^X = \sum_{x\in R_0}{P(X=x)\delta_x}
+					\]
+				$X$ heißt dann diskret verteilt.\\
+				$P^X$ ist festgelegt durch die Werte $P(X=x), x\in R_0$
+\end{enumerate}
+
+\section{Beispiel: Würfelwurf von 2 echten Würfeln}
+\begin{itemize}
+	\item $\Omega = \{ (\omega_1,\omega_2); \omega_1,\omega_2 \in \{1,\ldots,6\}\}$
+	\item $|\Omega| = 6^2 = 36$
+	\item $\mathfrak{A} ) Suett-P(\Omega)$
+	\item $P(A) = \frac{|A|}{|\Omega|}, A \subset \Omega$
+	\item $X:\Omega \rightarrow \mathbb{R}$, $X(\omega_1,\omega_2)=\omega_1+\omega_2, (\omega_1,\omega_2)\in\Omega$
+	\item $P(X=k)$
+\end{itemize}
+Also
+\begin{equation}
+	\begin{split}
+	P(X=k) 	&= P(\{(\omega_1,\omega_2)\in\Omega; \omega_1+\omega_2=k\}) \\
+					&= \frac{|\{(\omega_1,\omega_2)\in\Omega; \omega_1+\omega_2=k\}|}{36}\\
+					&= \begin{cases}
+						 	\frac{1}{36} &, k=2\\
+						 	\frac{2}{36} &, k=3\\
+						 	\frac{3}{36} &, k=4\\
+						 	\vdots &\\
+						 	\frac{1}{36} &, k=12\\
+						 \end{cases}
+	\end{split}
+\end{equation}
+
+Natürlich kann man das auch allgemeiner schreiben:\\
+Sei $R=\mathbb{R}^d = \mathfrak{B}^d$. $X$ heißt dann d-dimensionaler Zufallsvektor $X:\Omega \rightarrow \mathbb{R}^d$.\\
+$X = (X_1,\ldots,X_d)$ mit reellen Zufallsvariablen $X_1,\ldots,X_n$ die Komponenten von $X$. $X$ heißt nun \textbf{Zufallsvektor}.
+
+Sei $f:\mathbb{R}^d \rightarrow \mathbb{R}_+$ mit 
+\[
+	\int_{-\infty}^{+\infty}{}\cdots\int_{-\infty}^{+\infty}{f(t_1,\ldots,t_d)dt_1\cdots dt_d}=1
+\]
+$f$ heißt Dichte des Zufallsvektors $X$, wenn gilt
+\[
+	F(x_1,\ldots,x_d)=P(X_1\leq x_1,\ldots,X_d\leq x_d) = \int_{-\infty}^{+\infty}{}\cdots\int_{-\infty}^{+\infty}{f(t_1,\ldots,t_d)dt_1\cdots dt_d}, (x_1,\ldots,x_d)\in\mathbb{R}^d
+\]
+F heißt Verteilungsfunktion des Zufallsvektors.
