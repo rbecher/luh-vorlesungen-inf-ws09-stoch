@@ -14,12 +14,12 @@ Beispiel:
 Aus
 
 \[
-	\int_0^x{\lambda exp(-\lambda t)dt} = \left[- exp(-\lambda t)\right]_o^x = 1-exp(-\lambda x) % aufleitung eigtl. mit unter und über ...
+	\int_0^x{\lambda \cdot exp(-\lambda t)dt} = \left[- exp(-\lambda t)\right]_o^x = 1-exp(-\lambda x) % aufleitung eigtl. mit unter und über ...
 \]
 
 folgt
 
-\[ F(x) = \int_{- \infty}^{+ \infty}{f(t)dt)}=\begin{cases}
+\[ F(x) = \int_{- \infty}^{+ \infty}{f(t)dt}=\begin{cases}
 0 & x < 0\\
 1 - exp(-\lambda x) & x \geq 0
 \end{cases}
@@ -32,15 +32,15 @@ folgt
 Sei $(R,\mathfrak{A},P)$ W-Raum. Seien $A_1,A_2,\ldots \in \mathfrak{A}$. Dann gilt
 \begin{equation}
 	P\left( \bigcup_{n=1}^{\infty}A_n \right) \leq \sum_{n=1}^{\infty}{P(A_n)}
+	\label{eq:subsigmaadd}
 \end{equation}
 Diese Eigenschaft wird als \textbf{Sub-$\sigma$-Additivität} bezeichnet.
 
 \begin{equation}
 	\bigcup_{n=1}^{\infty}A_n = A_1 + \sum_{n=2}^{\infty}{(A_n \cap A_1^c\cap\ldots\cap A_{n-1}^c)}
+	\label{eq:subsigmadisj}
 \end{equation}
-Wir können die Vereinigung auch als Summe von disjunkten Ereignissen auffassen und gelangen zu dieser Schreibweise in BEFORE
-
-Deshalb gilt auch BEFORE+1
+Wir können die Vereinigung auch als Summe von disjunkten Ereignissen auffassen und gelangen zu dieser Schreibweise in \eqref{eq:subsigmaadd}. Deshalb gilt auch \eqref{eq:subsigmadisj}
 
 \begin{equation}
 	\begin{split}
@@ -50,23 +50,23 @@ Deshalb gilt auch BEFORE+1
 	\end{split}
 \end{equation}
 
-Speziell folgt hieraus die so genannten ``Sub-Additivität von P'':
+Speziell folgt hieraus die so genannte ``Sub-Additivität von P'':
 \begin{equation}
 	P\left( \bigcup_{j=1}^{n}A_j \right) \leq \sum_{j=1}^{n}{P(A_j)}
 \end{equation}
 
 Seien $A_n \in \mathfrak{A}, n = 1,2,\ldots, A \in \mathfrak{A}$. Wir schreiben 
 \begin{itemize}
-	\item $A_n \uparrow A$ für $A_1 \subset A_2 \subset \ldots, A = P\left( \bigcup_{j=1}^{n}A_j \right)$\\
+	\item $A_n\!\uparrow\! A$ für $A_1 \subset A_2 \subset \ldots, A = P\left( \bigcup_{j=1}^{n}A_j \right)$\\
 				Man sagt ``$A_n$ konvergiert \textbf{isoton} gegen A'')
-	\item $A_n \downarrow A$ für $A_1 \subset A_2 \subset \ldots, A = P\left( \bigcap_{j=1}^{n}A_j \right)$\\
+	\item $A_n\!\downarrow\! A$ für $A_1 \subset A_2 \subset \ldots, A = P\left( \bigcap_{j=1}^{n}A_j \right)$\\
 				Man sagt ``$A_n$ konvergiert \textbf{antiton} gegen A'')
 \end{itemize}
 
 \section{Stetigkeitseigenschaften von W-Maßen}
 \begin{enumerate}
-	\item $A_n \uparrow A \Longrightarrow \lim_{n\rightarrow\infty}{P(A_n)=P(A)}$
-	\item $A_n \downarrow A \Longrightarrow \lim_{n\rightarrow\infty}{P(A_n)=P(A)}$
+	\item $A_n\! \uparrow\! A \Longrightarrow \lim_{n\rightarrow\infty}{P(A_n)=P(A)}$
+	\item $A_n\! \downarrow\! A \Longrightarrow \lim_{n\rightarrow\infty}{P(A_n)=P(A)}$
 \end{enumerate}
 
 \subsection{Beweis zu (1)}

@@ -11,7 +11,7 @@ $X$ hat dann eine Dichtefunktion (oder kurz "`Dichte"') $f(\geq 0)$, wenn gilt
 \subsection{Die Rechteck- oder Gleichverteilung}
 
 $X$ heißt gleichverteilt oder Rechteck-verteilt auf $[a,b]$. Die Schreibweise hierfür sieht aus wie folgt
-\[ X ~ Suett-R(a,b) \]
+\[ X \sim \mathfrak{R}(a,b) \]
 
 Soviel zu Rechteck- und Gleich-verteilung.
 
@@ -45,8 +45,17 @@ ist
 $X$ heißt Normal-verteilt mit dem Parameter $\mu \in \mathbb{R}$ und $\sigma^2 > 0$.
 Schreibweise:
 \begin{equation}
-	X ~  N(\mu, \sigma^2)
+	X \sim  N(\mu, \sigma^2)
 \end{equation}
+
+\subsubsection{Beispiele für Normalverteilungen}
+
+\begin{itemize}
+	\item \includegraphics[scale=0.25]{Dichtefunktion_StNorm.png}\\
+	Das \footnote{Quelle \href{http://de.wikipedia.org/wiki/Normalverteilung}{Wikipedia}} ist die so genannte Standard-Normal-Verteilung, auch bekannt als Gau\ss\ 'sche Glockenkurve
+	\item \includegraphics[scale=0.25]{Dichtefunktion_Norms.png}\\
+	Zum Vergleich Dichtefunktionen der Normalverteilungen $N(0,1)$ (blau), $N(0,2)$ (grün) und $N(-1,2)$ (rot)
+\end{itemize}
 
 \subsection{Die Exponential-Verteilung}
 
@@ -70,7 +79,7 @@ Dann
 $X$ heißt Exponential-verteilt mit dem Parameter $\lambda > 0$.
 Schreibweise:
 \begin{equation}
-	X ~  Exp(\lambda)
+	X \sim Exp(\lambda)
 \end{equation}
 
 % neuer abschnitt?
@@ -172,7 +181,7 @@ Dann ergibt sich bei diesen Fällen
 	\item \begin{equation}\begin{split}
 		P(B) 	&= P(B|A)\cdot P(A) + P(B|A^c)P(A^c) \\
 					&= \frac{a-1}{a+b-2}\cdot \frac{a}{a+b} + \frac{a}{a+b-2} \cdot \frac{b}{a+b} \\
-					&= \frac{a}{a+b}\cdot\left( \frac{a+b-1}{a+b-2} \right) > \frac{a}{a+b} > P(A) % das in großen klammern ist > 1
+					&= \frac{a}{a+b}\cdot\left(\underbrace{\frac{a+b-1}{a+b-2}}_{\geq 1} \right) > \frac{a}{a+b} > P(A)
 		\end{split}
 	\end{equation}
 	Sei nun $a=1,\ b=2$. Dann folgt sofort
