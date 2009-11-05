@@ -1,0 +1,130 @@
+
+$(\Omega,\mathfrak{A},P)$ sei W-Raum. Dann $X_i:\Omega \Rightarrow R_i,\ i=1,\ldots,n \text{Zufallsvariable}$
+$X_1,\ldots,X_n$ sind unabhängig, wenn gilt
+\[ P(X_1\in B_1,\ldots,X_n\in B_n) = P(X_1\in B_1)\cdots P(X_n\in B_n) \]
+für jede Auswahl von Ereignissen $B_i \in \mathfrak{A}, i=1,\ldots,n$
+
+\ldots
+
+\subsection{Spezialfälle}
+\begin{enumerate}
+	\item Die $X_1,\ldots,X_n$ haben je eine diskrete Verteilung.
+			  Dann sind 
+			  \[ X_1,\ldots,X_n \text{ unabhängig } \iff P(X_1=x_1,\ldots,X_n=x_n) = P(X_1=x_1)\cdots P(X_n = x_n)\] 
+			  für jede Auswahl von Elementen $x_i \in R_i,\ i=1,\ldots,n$.\\
+			  (Beachte hier: $\{x\}\in R_i,\ \forall x\in R,\ \forall i\in I$)
+	\item Sei $X=(X_1,\ldots,X_n)$ mit den reellen Zufallsvariablen $X_1,\ldots,X_n$.
+				Es habe $X$ eine Dichte $f$, das heißt
+				\[ P(X_1 \leq x_1, \ldots, X_n \leq x_n) = \int_{-\infty}^{x_n} \cdots \int_{-\infty}^{x_1}{f(t_1,\ldots,t_n)dt_1,\ldots,dt_n},\ (x_1,\ldots,x_n \in R^n) \]
+				Dann hat $X_i$ die Dichte
+				\[ f_i(x_i) = \int_{-\infty}^{+\infty} \cdots 	\int_{-\infty}^{+\infty}{f(t_1,\ldots,t_{i-1},x_i,t_{i+1},\ldots,t_n)dt_1,\ldots,dt_n} \]
+\end{enumerate}
+
+Gilt
+\begin{equation}
+	f(x_1,\ldots,x_n) = \prod_{i=1}^{n}{f_i(x_i)},\ (x_1,\ldots,x_n)\in\mathbb{R}^n
+\end{equation}
+so sind die Zufallsvariablen $X_1,\ldots,X_n$ unabhängig.
+
+\subsection{Beispiel}
+Ein Einzelexperiment, bei dem ein interessierendes Ereignis $A$ mit Wahrscheinlichkeit $p\in [0,1]$ eintritt, wird $n$-mal unter identischen Versuchsbedingungen ohne gegenseitige Beeinflussung (unabhängige Versuchswiederholungen) wiederholt.\\
+Beschreibe das Einzelexperiment durch den W-Raum $(\Omega_0,\mathfrak{A}_0,P_0)=(\{0,1\}, \mathfrak{P}(\{0,1\}),P_0)$ mit 
+\begin{itemize}
+	\item $P_0(\{0\})=1-p$
+	\item $P_0(\{1\})=p$
+	\item $0 \cong A \text{ tritt nicht ein}$
+	\item $1 \cong A \text{ tritt ein}$
+\end{itemize}
+
+Beschreibe das Gesamtexperiment durch
+\[ (\Omega,\mathfrak{A},P) \text{ mit } \Omega=\{0,1\}^n=\{(\omega_1,\ldots,\omega_n); \omega_i \in \{0,1\}, i=1,\ldots,n\}, \mathfrak{A}=\mathfrak{P}(\Omega) \]
+\begin{equation}
+	\begin{split}
+		P(\{\omega_1,\ldots,\omega_n\}) &= P_0(\{\omega_1\})\cdot P_0(\{\omega_n\}) \\
+																		&= p^{\omega_1}\cdot (1-p)^{1-\omega_1}\cdots p^{w_n}\cdot(1-p)^{1-\omega_n} \\
+																		&= p^{\omega_1+\ldots+\omega_n}\cdot (1-p)^{n-(\omega_1+\ldots+\omega_n)}, (\omega_1,\ldots,\omega_n) \in \Omega
+	\end{split}
+\end{equation}
+
+$X_i:\Omega\rightarrow\{0,1\}$ sei definiert durch
+\[ X_i(\omega_1,\ldots,\omega_n) = \omega_i, (\omega_1,\ldots,\omega_n)\in\Omega, i=1,\ldots,n \]
+Die $X_1,\ldots,X_n$ sind unabhängig, denn
+\begin{equation}
+	\begin{split}
+		&P(X_1=\epsilon_1,\ldots,X_n=\epsilon_n) \\
+	= &P(\text{w1toninOmega};\ X_1(\omega_1,\ldots,\omega_n)=\epsilon_1,\ldots,X_n(\omega_1,\ldots,\omega_n)=\epsilon_n) \\
+	=	& P(\{(\epsilon_1,\ldots,\epsilon_n)\}\\
+	=	& p^{\epsilon_1+\ldots+\epsilon_n}\cdot(1-p)^{n-(\epsilon_1+\ldots+\epsilon_n)} \\
+	=	& \prod_{i=1}^{n}{p_i^{\epsilon_i}\cdot(1-p)^{1-\epsilon_i}}
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		P(X_1=\epsilon_1) &= P(\{(\omega_1,\ldots,\omega_n)\in\Omega; X_1(\omega_1,\ldots,\omega_n)=\epsilon_1\}) \\
+											&= P(\{ (\epsilon_1,\omega_2,\ldots,\omega_n); \omega_i\in\{0,1\}, 2\leq i\leq n \}) \\
+											&= \sum_{nnn}{P}\ldots
+	\end{split}
+\end{equation}
+
+\begin{equation}
+	\begin{split}
+		P(X=k) &= \ldots
+	\end{split}
+\end{equation}
+
+\section{Definition: Binomialverteilung}
+
+Eine reelle (oder $\{0,1\}$-wertige) Zufallsvariable $X$ heißt Binomailverteilt mit den Parametern $n\in\mathbb{N}$ und $p\in[0,1]$, wenn gilt
+\begin{equation}
+	P(X=k) = \binom{n}{k}\cdot p^k \cdot (1-p)^{n-k}, k \in \{0,1,\ldots,n\}
+\end{equation}
+Schreibweise: \[ X \sim \mathfrak{B}(n,p) \]
+
+\subsection{Anwendung}
+Sei $(\Omega,\mathfrak{A},P)$ W-Raum, $A\in \mathfrak{A}$ Ereignis. Dann heißt $I_A:\Omega \rightarrow \{0,1\}$ \textbf{Indikator} (oder Indikatorvariable) von $A$, definiert durch
+\[ I_A(\omega) = \begin{cases}
+	1, &\ \omega \in A \\
+	0, &\ \omega \notin A.
+\end{cases} \]
+
+$I_A \sim \mathfrak{B}(1,p)$ mit $p=P(A)$.\\
+Seien $A_1,\ldots,A_n\in \mathfrak{A}$ unabhängige Ereignisse mit $p=P(A_i), i=1,\ldots,n.$.\\
+Dann gilt $\underbrace{X_1}_{=I_{A_1}},\ldots,\underbrace{X_n}_{=I_{A_n}}$ unabhängig und $X_i \sim \mathfrak{B}(1,p)$. $X=X_1+\ldots+X_n \sim \mathfrak{B}(n,p)$.
+
+\subsection{Beispiel}
+
+Eine Urne enthält $r$ rote und $s$ schwarze Kugeln. Uns können verschiedene Modi interessieren.
+\begin{enumerate}
+	\item Es wird $n$-mal mit Zurücklegen je eine Kugel gezogen.\\
+				Sei $X$ Zufallsvariable und bezeichne die Anzahl der gezogenen roten Kugeln in $n$ Ziehungen.\\
+				Dann $X \sim \mathfrak{B}\left(n,\frac{r}{r+s}\right)$
+	\item Es wird $n$-mal ohne Zurücklegen je eine Kugel gezogen mit $n\leq r+s =: a$.\\
+				Sei $X$ Zufallsvariable und bezeichne die Anzahl der gezogenen roten Kugeln in $n$ Ziehungen.\\
+				Nummeriere die Kugeln in folgender Weise:
+				\[\underbrace{1,\ldots,r}_{\text{rot}},\underbrace{r+1,\ldots,\overbrace{r+s}^{=a}}_{\text{schwarz}}\]
+				Dann
+				\begin{itemize}
+					\item $\Omega=\{(\omega_1,\ldots,\omega_n);\ \omega_i\in\{1,\ldots,a\} \text{paarweise verschieden}, 1\leq i \leq n \}$
+					\item $\mathfrak{A}=\mathfrak{P}(\Omega)$
+					\item $P(A) = \frac{|A|}{|\Omega|}=\frac{|A|}{a\cdot(a-1)\cdot(a-n+1)},\ A\subset\Omega$
+					\item \begin{equation}
+								\begin{split}
+									P(X=k) &= \frac{|\{(\omega_1,\ldots,\omega_n)\in\Omega; |j\in \{1,\ldots,n\}, \omega_j\in\{1,\ldots,r\}|=k\}|}{|\Omega|}\\
+												 &= \frac{\binom{n}{k}\cdot r\cdot(r-1)\cdots(r-k+1)\cdot s\cdot(s-1)\cdots(s-(n-k)+1)}{a\cdot(a-1)\cdots(a-n+1)} \\
+												 &= \frac{\binom{r}{k}\cdot\binom{a-r}{n-k}}{\binom{a}{n}}, k\in\mathbb{N}, max(0,a-r-n)\leq k \leq min(n,r)
+								\end{split}
+								\end{equation}
+				\end{itemize}
+\end{enumerate}
+
+\section{Definition: Hypergeometrische Verteilung}
+
+Eine reelle Zufallsvariable mit der Verteilung
+\[ P(X=k) = \frac{\binom{r}{k}\cdot\binom{a-r}{n-k}}{\binom{a}{n}} \]
+heißt hypergeometrisch verteilt mit den Parametern $a,r,n\in\mathbb{N}, r\leq a, n\leq a$ und der Schreibweise
+\begin{equation}
+	X \sim \mathfrak{H}(a,r,n).
+\end{equation}
+
+Das bekannteste Beispiel dürfte das Zahlenlotto ``6 aus 49'' sein.
