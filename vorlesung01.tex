@@ -166,7 +166,7 @@ P_n^{r}=\{(x_1,\dots,x_r);\ x_i \in M_n, 1 \leq i \leq r\}
 	\item Tupel in Permutationen sind nicht angeordnet, hier ist die Reihenfolge wichtig!
   \item Tupel in Kombinationen sind o.B.d.A. angeordnet, wir k\"onnen sie also ``vergleichen''.
   \item Bei Varianten \textbf{mit Wiederholung}, d\"urfen also zwei Elemente ``nebeneinander'' auch gleich sein, bei Varianten \textbf{ohne Wiederholung} ist das nicht der Fall, hier m\"ussen die Elemente also echt unterschiedlich sein.
-  \item Bei einer $r$-Permutation/Kombination haben wir eine $r$-elementige Teilmenge (die also kleiner oder gleich gro{\ss} der ``gro{\ss}en'' Menge $M_n$ ist).
+  \item Bei einer $r$-Kombination haben wir eine $r$-elementige Teilmenge (die also kleiner oder gleich gro{\ss} der ``gro{\ss}en'' Menge $M_n$ ist).
   \item ``mit Wiederholung'' nennt man auch ``mit Zur\"ucklegen''
 \end{enumerate}
 
@@ -175,7 +175,7 @@ P_n^{r}=\{(x_1,\dots,x_r);\ x_i \in M_n, 1 \leq i \leq r\}
 	\item Bei Kombinationen interessiert uns ausschließlich, welche Elemente wir aus $M_n$ bekommen, ein gutes Beispiel für eine Kombination
 	\begin{description}
 	\item[ohne Wiederholung] ist also das übliche Lotto-Spiel ``6 aus 49''. Hier ist es uns egal, ob die Reihenfolge $(1,2,3,4,5,6)$ ist oder $(6,5,4,3,2,1)$.
-	\item[mit Wiederholung] ist die Frage, ob wir mindestens zwei Mal in fünf Versuchen eine Zahl $\geq 5$ würfeln
+	\item[mit Wiederholung] ist die Frage, ob wir mindestens zwei Mal in fünf Versuchen eine Zahl $\geq 5$ würfeln %% TODO Urnenmodell
 \end{description}
 	\item Bei Permutationen interessiert uns neben der Auswahl auch die Anordnung (man sagt: die Elemente sind ``unterscheidbar''). Eine Permutation
 	\begin{description}
@@ -218,11 +218,11 @@ Es gilt
 	\textit{Erklärungen:\\
 	\eqref{lab2.3.1} und äquivalent \eqref{lab2.3.2} kann man sich so vorstellen, dass man sich seine $r$-elementige Teilmenge (ohne Zurücklegen) zusammensuchen kann, aber die verschiedenen Möglichkeiten, sie zu permutieren (``die Kinobesucher umzusetzen''), interessieren den Betrachter hier nicht, also müssen wir die aus der Rechnung rausnehmen.\\
 	\eqref{lab2.3.3} ist die Anzahl aller $r$-elementigen Teilmengen von $M_n$ hoch $r$, und wegen \eqref{lab2.3.2} ebenfalls $\binom{n}{r}$.\\
-	\eqref{lab2.3.4} ist die Länge der Potenzmenge, also aller möglichen Kombinationen von Elementen aus $M_n$}
+	\eqref{lab2.3.4} ist die Länge der Potenzmenge, also aller möglichen Teilmengen von Elementen aus $M_n$}
 	\item $K_n^r \rightarrow (x_1,\dots,x_r) \underbrace{\longrightarrow}_{ist\ bijektiv} (x_1,x_1+1,\dots,x_r+r-1)\in K_{n+r-1}^{(r)}$\\
 	$\Rightarrow |K_n^r| = |K_{n+r-1}^{(r)}| = \binom{n+r-1}{r}$\\
 	Identifiziere $(x_1,\dots,x_r) \in K_n^r$ mit dem Besetzungszahlvektor $(k_1,\dots,k_n)$,
-	wobei $k_i=|\{j\in \{ 1,\dots,r \}; x_j=i\}|,\ 1 \leq i \leq n$. Dann ist $K-1+\dots+k_n=r$.\\
-	Dann ist $|\{(K_1,\dots,k_n)\in \mathbb{N}_0^n; k_1+\dots+k_n=r\}|=\binom{n+r-1}{r}$\\
-	Folgerung: $|\{(K_1,\dots,k_n)\in \mathbb{N}^n; k_1+\dots+k_n=r\}|=\binom{n+(r-n)-1}{r-n}=\binom{r-1}{r-n}=\binom{r-1}{n-1}, r \geq n$\\
+	wobei $k_i=|\{j\in \{ 1,\dots,r \}; x_j=i\}|,\ 1 \leq i \leq n$. Dann ist $k_1+\ldots+k_n=r$.\\
+	Dann ist $|\{(k_1,\dots,k_n)\in \mathbb{N}_0^n; k_1+\dots+k_n=r\}|=\binom{n+r-1}{r}$\\
+	Folgerung: $|\{(k_1,\dots,k_n)\in \mathbb{N}^n; k_1+\dots+k_n=r\}|=\binom{n+(r-n)-1}{r-n}=\binom{r-1}{r-n}=\binom{r-1}{n-1}, r \geq n$\\
 \end{itemize}

@@ -36,6 +36,7 @@ ist
 
 \begin{equation}
 	\begin{split}
+		% ref auf 48
 		() &= \int_{- \infty}^{+ \infty}{\frac{1}{\sqrt{2 \pi }} \cdot exp(- \frac{1}{2} \cdot s^2 )dt} \\
 			 &= \Phi \left( \frac{x-\mu}{\sigma} \right)\\
 		\Phi(x) &= \frac{1}{\sqrt{2\pi}} \cdot \int_{- \infty}^{+ \infty}{exp(- \frac{1}{2} \cdot s^2 )dt},\ -\infty < x < +\infty
@@ -220,7 +221,7 @@ $(\Omega,\mathfrak{A},P)$ W-Raum, $A,B \in \mathfrak{A}$. $A,B$ heißen (stochast
 	\item $\emptyset \neq I$ endliche Indexmenge, $A_i \in \mathfrak{A}, i \in I$ Ereignisse.\\
 				$A_i$ heißen (stochastisch) unabhängig, wenn für jede $\emptyset \neq J \subset I$ gilt
 				\begin{equation}
-					P\left( \bigcap_{j\in J}{A_j} \right) = \Pi_{j \in J}{P(A_j)}
+					P\left( \bigcap_{j\in J}{A_j} \right) = \prod_{j \in J}{P(A_j)}
 				\end{equation}
 	\item $\emptyset \neq I$ beliebige Indexmenge, $A_i \in \mathfrak{A}, i \in I$ Ereignisse.\\
 				$\mathfrak{A}_i, i \in I$ heißen unabhängig, wenn für jede Teilmenge $\emptyset \neq J \subset I,\ J \text{endlich}$ die Ereignisse $A_j,j\in J$ unabhängig sind.

@@ -20,7 +20,7 @@ Die Länge oder Mächtigkeit dieser Menge ist wie folgt:
 % Binomischer Lehrsatz
 % => Multinomialer Lehrsatz durch Verallgemeinerung
 
-\subsection{Binomischer Lehrsatz}
+\subsection{Multinomialer Lehrsatz}
 
 Es folgt aus dem (bekannten) binomischen Lersatz durch Verallgemeinerung der multinomiale Lehrsatz.
 
@@ -31,15 +31,15 @@ n^r = \sum_{\substack{(k_1,\ldots,k_n)\in\mathbb{N}_0^n\\k_1+\ldots+k_n=r}}{\fra
 
 \begin{equation}
 	\begin{split}
-	|\ref{def:nhochr}| &= \binom{n+r-1}{r}
+	\text{Anzahl der Summanden aus }\ref{def:nhochr} &= \binom{n+r-1}{r}
 	\end{split}
 \end{equation}
 
 \subsection{Beispiel}
 O.B.d.A. sind $r$ Personen im Raum, $n=365$ seien die Anzahle der Tage im Jahr und $r\leq n$.\\
-Gesucht: Wahrscheinlickeit, dass mindestens $2$ der $r$ Personen am gleichen Tag Geburtstag haben.
+Gesucht: Wahrscheinlichkeit, dass mindestens $2$ der $r$ Personen am gleichen Tag Geburtstag haben.
 \begin{itemize}
-	\item $ \Omega = \{ (x_1,\ldots,x_r); x_i \  \} $
+	\item $ \Omega = \{ (x_1,\ldots,x_r); x_i = \{1,\ldots,n\}  \} $
 	\item $ \mathfrak{A}=\mathfrak{P}(\Omega) $
 	\item $ P(A)=\frac{|A|}{|\Omega|}, A\subseteq\Omega $
 	\item Alle möglichen r-Tupel von Geburtstagen sind gleich wahrscheinlich, also

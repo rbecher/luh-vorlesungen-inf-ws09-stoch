@@ -1,4 +1,4 @@
-Sei $(R,\mathfrak{B},P)$ das W-Raum unserer Wahl. P habe Dichte $f$, also eine Teilfunktion $f:R\rightarrow$, $\int_{- \infty}^{+ \infty}{f(t)dt)}=1$. $F(x)=P((-\infty,x])=\int_{- \infty}^{+ \infty}{f(t)dt)},\ x \in R$.
+Sei $(\Omega,\mathfrak{B},P)$ der W-Raum unserer Wahl. P habe Dichte $f$, also eine Teilfunktion $f:R\rightarrow$, $\int_{- \infty}^{+ \infty}{f(t)dt)}=1$. $F(x)=P((-\infty,x])=\int_{- \infty}^{+ \infty}{f(t)dt)},\ x \in R$.
 
 Allgemein gilt $P(E)=\int_{E}{f(t)dt)},\ E \in \mathfrak{B} (geeignet)$.
 
@@ -27,8 +27,9 @@ folgt
 
 % Graph dazu
 
-\section{Weitere Beispiele von Wahrscheinlichkeitsmaﬂen}
+\section{Weitere Eigenschaften von Wahrscheinlichkeitsmaﬂen}
 
+%% TODO Suche und ersetze R durch \Oemga in W-Ma0en
 Sei $(R,\mathfrak{A},P)$ W-Raum. Seien $A_1,A_2,\ldots \in \mathfrak{A}$. Dann gilt
 \begin{equation}
 	P\left( \bigcup_{n=1}^{\infty}A_n \right) \leq \sum_{n=1}^{\infty}{P(A_n)}
@@ -91,7 +92,7 @@ Also
 
 Mit Gegenmenge ... 
 
-\section{Beispiel}
+\subsection{Beispiel}
 
 $\Omega=R, x\in R, (x_n)\subset R$ Folge, die monoton fallend gegen $x$ konvergiert.
 \[
@@ -204,16 +205,19 @@ Also
 	\end{split}
 \end{equation}
 
-Nat¸rlich kann man das auch allgemeiner schreiben:\\
-Sei $R=\mathbb{R}^d = \mathfrak{B}^d$. $X$ heiﬂt dann d-dimensionaler Zufallsvektor $X:\Omega \rightarrow \mathbb{R}^d$.\\
+\noindent Nat¸rlich kann man das auch allgemeiner schreiben:\\
+Sei $R=\mathbb{R}^d = \mathfrak{B}^d$. $X$ heiﬂt dann $d$-dimensionaler Zufallsvektor $X:\Omega \rightarrow \mathbb{R}^d$.\\
 $X = (X_1,\ldots,X_d)$ mit reellen Zufallsvariablen $X_1,\ldots,X_n$ die Komponenten von $X$. $X$ heiﬂt nun \textbf{Zufallsvektor}.
 
-Sei $f:\mathbb{R}^d \rightarrow \mathbb{R}_+$ mit 
+\noindent Sei $f:\mathbb{R}^d \rightarrow \mathbb{R}_+$ mit 
 \[
 	\int_{-\infty}^{+\infty}{}\cdots\int_{-\infty}^{+\infty}{f(t_1,\ldots,t_d)dt_1\cdots dt_d}=1
 \]
 $f$ heiﬂt Dichte des Zufallsvektors $X$, wenn gilt
 \[
-	F(x_1,\ldots,x_d)=P(X_1\leq x_1,\ldots,X_d\leq x_d) = \int_{-\infty}^{+\infty}{}\cdots\int_{-\infty}^{+\infty}{f(t_1,\ldots,t_d)dt_1\cdots dt_d}, (x_1,\ldots,x_d)\in\mathbb{R}^d
+	\begin{split}
+	F(x_1,\ldots,x_d) &=P(X_1\leq x_1,\ldots,X_d\leq x_d)\\
+										&= \int_{-\infty}^{+\infty}{}\cdots\int_{-\infty}^{+\infty}{f(t_1,\ldots,t_d)dt_1\cdots dt_d},\  (x_1,\ldots,x_d)\in\mathbb{R}^d
+	\end{split}
 \]
 F heiﬂt Verteilungsfunktion des Zufallsvektors.
