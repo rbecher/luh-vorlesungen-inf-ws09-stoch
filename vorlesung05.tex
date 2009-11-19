@@ -7,18 +7,22 @@ für jede Auswahl von Ereignissen $B_i \in \mathfrak{A}, i=1,\ldots,n$
 \ldots
 
 \subsection{Spezialfälle}
-\begin{enumerate}
-	\item Die $X_1,\ldots,X_n$ haben je eine diskrete Verteilung.
+
+\subsubsection{Diskrete Verteilung}
+
+Die $X_1,\ldots,X_n$ haben je eine diskrete Verteilung.
 			  Dann sind 
 			  \[ X_1,\ldots,X_n \text{ unabhängig } \iff P(X_1=x_1,\ldots,X_n=x_n) = P(X_1=x_1)\cdots P(X_n = x_n)\] 
 			  für jede Auswahl von Elementen $x_i \in R_i,\ i=1,\ldots,n$.\\
 			  (Beachte hier: $\{x\}\in R_i,\ \forall x\in R,\ \forall i\in I$)
-	\item Sei $X=(X_1,\ldots,X_n)$ mit den reellen Zufallsvariablen $X_1,\ldots,X_n$.
+
+\subsubsection{Stetige Verteilung}
+
+Sei $X=(X_1,\ldots,X_n)$ mit den reellen Zufallsvariablen $X_1,\ldots,X_n$.
 				Es habe $X$ eine Dichte $f$, das heißt
 				\[ P(X_1 \leq x_1, \ldots, X_n \leq x_n) = \int_{-\infty}^{x_n} \cdots \int_{-\infty}^{x_1}{f(t_1,\ldots,t_n)dt_1,\ldots,dt_n},\ (x_1,\ldots,x_n \in R^n) \]
 				Dann hat $X_i$ die Dichte
 				\[ f_i(x_i) = \int_{-\infty}^{+\infty} \cdots 	\int_{-\infty}^{+\infty}{f(t_1,\ldots,t_{i-1},x_i,t_{i+1},\ldots,t_n)dt_1,\ldots,dt_n} \]
-\end{enumerate}
 
 Gilt
 \begin{equation}
@@ -92,14 +96,19 @@ $I_A \sim \mathfrak{B}(1,p)$ mit $p=P(A)$.\\
 Seien $A_1,\ldots,A_n\in \mathfrak{A}$ unabhängige Ereignisse mit $p=P(A_i), i=1,\ldots,n.$.\\
 Dann gilt $\underbrace{X_1}_{=I_{A_1}},\ldots,\underbrace{X_n}_{=I_{A_n}}$ unabhängig und $X_i \sim \mathfrak{B}(1,p)$. $X=X_1+\ldots+X_n \sim \mathfrak{B}(n,p)$.
 
-\subsection{Beispiel}
+\subsection{Beispiel Urnenmodell}
 
 Eine Urne enthält $r$ rote und $s$ schwarze Kugeln. Uns können verschiedene Modi interessieren.
-\begin{enumerate}
-	\item Es wird $n$-mal mit Zurücklegen je eine Kugel gezogen.\\
-				Sei $X$ Zufallsvariable und bezeichne die Anzahl der gezogenen roten Kugeln in $n$ Ziehungen.\\
-				Dann $X \sim \mathfrak{B}\left(n,\frac{r}{r+s}\right)$
-	\item Es wird $n$-mal ohne Zurücklegen je eine Kugel gezogen mit $n\leq r+s =: a$.\\
+
+\subsubsection{Mit Zurücklegen}
+
+Es wird $n$-mal mit Zurücklegen je eine Kugel gezogen.\\
+Sei $X$ Zufallsvariable und bezeichne die Anzahl der gezogenen roten Kugeln in $n$ Ziehungen.\\
+Dann $X \sim \mathfrak{B}\left(n,\frac{r}{r+s}\right)$
+
+\subsubsection{Ohne Zurücklegen}
+
+Es wird $n$-mal ohne Zurücklegen je eine Kugel gezogen mit $n\leq r+s =: a$.\\
 				Sei $X$ Zufallsvariable und bezeichne die Anzahl der gezogenen roten Kugeln in $n$ Ziehungen.\\
 				Nummeriere die Kugeln in folgender Weise:
 				\[\underbrace{1,\ldots,r}_{\text{rot}},\underbrace{r+1,\ldots,\overbrace{r+s}^{=a}}_{\text{schwarz}}\]
@@ -116,7 +125,6 @@ Eine Urne enthält $r$ rote und $s$ schwarze Kugeln. Uns können verschiedene Modi
 								\end{split}
 								\end{equation}
 				\end{itemize}
-\end{enumerate}
 
 \section{Definition: Hypergeometrische Verteilung}
 

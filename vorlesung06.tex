@@ -5,8 +5,8 @@
 Wir definieren Eerwartungswerte von Zufallsvariablen schrittweise, beginnend mit Indikatorvariablen. Es sei $X$ eine eine reelle Zufallsvariable auf dem Wahrscheinlichkeitsraum $()$.
 \renewcommand{\labelenumi}{(\theenumi)}
 \begin{enumerate}
-	\item Für eine Indikatorvariable$X=I_A$ mit $A \in Suett-A$ sei $E(X) = E_p(X) = P(A)$
-	\item Für eine nicht negative einfache Zufallsvariable $X=\sum_{k=1}^n{\alpha_kI_{A_k}}$ mit nicht negativen reellen Zahlen $\alpha_1,\ldots,\alpha_n$ und Ereignissen $A_1,\ldots,A_n \in Suett-A$ sei 
+	\item Für eine Indikatorvariable$X=I_A$ mit $A \in \mathfrak{A}$ sei $E(X) = E_p(X) = P(A)$
+	\item Für eine nicht negative einfache Zufallsvariable $X=\sum_{k=1}^n{\alpha_kI_{A_k}}$ mit nicht negativen reellen Zahlen $\alpha_1,\ldots,\alpha_n$ und Ereignissen $A_1,\ldots,A_n \in \mathfrak{A}$ sei 
 		\begin{equation}
 			E(X) = E_p(X) = \sum{\alpha_k\cdot P(A_k)}
 		\end{equation}
@@ -62,18 +62,18 @@ ist. Analgo sieht man
 
 \section{Rechnen mit Erwartungswerten}
 
-$()$ W-Raum, $\emptyset \neq R$ Menge, $Suett-L \sigma$-Algebra auf $R,\ f:R\rightarrow \mathbb{R}$, 
-$f^{-1}(B) \in Suett-L$ für jedes $B \in Suett-B$.
-Dann $P^X$ Verteilung von $X$, $P^X$ ist W-Maß auf $R$ und $(R,Suett-L,P^X)$ ist W-Raum für reelle Zufallsvarieblen auf $(R,Suett-L,P^X)$.
+$()$ W-Raum, $\emptyset \neq R$ Menge, $\mathfrak{L} \sigma$-Algebra auf $R,\ f:R\rightarrow \mathbb{R}$, 
+$f^{-1}(B) \in \mathfrak{L}$ für jedes $B \in \mathfrak{B}$.
+Dann $P^X$ Verteilung von $X$, $P^X$ ist W-Maß auf $R$ und $(R,\mathfrak{L},P^X)$ ist W-Raum für reelle Zufallsvarieblen auf $(R,\mathfrak{L},P^X)$.
 
-Der Erwartungswert von $F \cdot X$ existiert genau da,, wenn der Erwartungswert von $f$, aufgefasst als Erwartungswert auf $(R,Suett-L,P^X)$, existiert. Es gilt dann die \textbf{Transformationsformel}
+Der Erwartungswert von $F \cdot X$ existiert genau da,, wenn der Erwartungswert von $f$, aufgefasst als Erwartungswert auf $(R,\mathfrak{L},P^X)$, existiert. Es gilt dann die \textbf{Transformationsformel}
 \begin{equation}
 	E(f \cdot X) = E_P(f \cdot X) = E_{P^X}(f)
 \end{equation}
 
 \section{Spezialfälle}
 \begin{enumerate}
-	\item $(R,Suett-L) = (\mathbb{R},Suett-B)$, $X$ habe die Dichte $g$.
+	\item $(R,\mathfrak{L}) = (\mathbb{R},\mathfrak{B})$, $X$ habe die Dichte $g$.
 		\begin{enumerate}
 			\item $f = I_{(-\infty,x]}$
 				\begin{equation}
@@ -85,9 +85,9 @@ Der Erwartungswert von $F \cdot X$ existiert genau da,, wenn der Erwartungswert 
 					\end{split}
 				\end{equation}
 			\item Die Identität \[ E(f \cdot X) = \int_{-\infty}^{x}{f(t)g(t)dt} \]
-						gilt für ``beliebige'' $f:\mathbb{R}\rightarrow\mathbb{R}$ (mit $f^{-1}{(B)} \in Suett-B$ für jedes $B\in Suett-B$, mit existierendem $E(f\cdot X)$).\\
+						gilt für ``beliebige'' $f:\mathbb{R}\rightarrow\mathbb{R}$ (mit $f^{-1}{(B)} \in \mathfrak{B}$ für jedes $B\in \mathfrak{B}$, mit existierendem $E(f\cdot X)$).\\
 		\end{enumerate}
-	\item $X$ habe eine diskrete Verteilung, d.h. es gibt eine abzählbare Menge $A \subset R$ mit $P(X\in A)=1,\ (\{x\} \in Suett-L \forall x\in R)$.
+	\item $X$ habe eine diskrete Verteilung, d.h. es gibt eine abzählbare Menge $A \subset R$ mit $P(X\in A)=1,\ (\{x\} \in \mathfrak{L} \forall x\in R)$.
 	\[ P^X = \sum_{a \in A}{P(X=a)\cdot \delta_a} \]
 	Für $f \geq 0$ ist
 	\begin{equation*}
@@ -104,7 +104,7 @@ Der Erwartungswert von $F \cdot X$ existiert genau da,, wenn der Erwartungswert 
 
 \subsection{Erwartungswert der Rechteck-Verteilung}
 
-Mit $X \sim Suett-R(a,b)$ gilt \[ g(t) = \begin{cases} \frac{1}{b-a} &,\ a\leq t \leq b \\ b &,\ \text{sonst} \end{cases} \]
+Mit $X \sim \mathfrak{R}(a,b)$ gilt \[ g(t) = \begin{cases} \frac{1}{b-a} &,\ a\leq t \leq b \\ b &,\ \text{sonst} \end{cases} \]
 Dann ist der Erwartungswert
 \begin{equation}
 	E(X) = \frac{1}{b-a}\cdot \int_a^b{t\cdot dt} = \frac{a+b}{2}
