@@ -56,7 +56,7 @@ Die $X_1,\ldots,X_n$ sind unabhängig, denn
 \begin{equation}
 	\begin{split}
 		&P(X_1=\epsilon_1,\ldots,X_n=\epsilon_n) \\
-	= &P(\text{w1toninOmega};\ X_1(\omega_1,\ldots,\omega_n)=\epsilon_1,\ldots,X_n(\omega_1,\ldots,\omega_n)=\epsilon_n) \\
+	= &P(\omega=\{1,\ldots,n\}\in\Omega;\ X_1(\omega_1,\ldots,\omega_n)=\epsilon_1,\ldots,X_n(\omega_1,\ldots,\omega_n)=\epsilon_n) \\
 	=	& P(\{(\epsilon_1,\ldots,\epsilon_n)\}\\
 	=	& p^{\epsilon_1+\ldots+\epsilon_n}\cdot(1-p)^{n-(\epsilon_1+\ldots+\epsilon_n)} \\
 	=	& \prod_{i=1}^{n}{p_i^{\epsilon_i}\cdot(1-p)^{1-\epsilon_i}}
@@ -77,7 +77,9 @@ Die $X_1,\ldots,X_n$ sind unabhängig, denn
 	\end{split}
 \end{equation}
 
-\section{Definition: Binomialverteilung}
+\section{Binomialverteilung}
+
+\subsection{Definition}
 
 Eine reelle (oder $\{0,1\}$-wertige) Zufallsvariable $X$ heißt Binomailverteilt mit den Parametern $n\in\mathbb{N}$ und $p\in[0,1]$, wenn gilt
 \begin{equation}
@@ -126,7 +128,9 @@ Es wird $n$-mal ohne Zurücklegen je eine Kugel gezogen mit $n\leq r+s =: a$.\\
 								\end{equation}
 				\end{itemize}
 
-\section{Definition: Hypergeometrische Verteilung}
+\section{Hypergeometrische Verteilung}
+
+\subsection{Definition}
 
 Eine reelle Zufallsvariable mit der Verteilung
 \[ P(X=k) = \frac{\binom{r}{k}\cdot\binom{a-r}{n-k}}{\binom{a}{n}} \]

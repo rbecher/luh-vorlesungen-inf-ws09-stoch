@@ -72,8 +72,10 @@ Der Erwartungswert von $F \cdot X$ existiert genau da,, wenn der Erwartungswert 
 \end{equation}
 
 \section{Spezialfälle}
-\begin{enumerate}
-	\item $(R,\mathfrak{L}) = (\mathbb{R},\mathfrak{B})$, $X$ habe die Dichte $g$.
+
+\subsection{Stetige Verteilung}
+
+$(R,\mathfrak{L}) = (\mathbb{R},\mathfrak{B})$, $X$ habe die Dichte $g$.
 		\begin{enumerate}
 			\item $f = I_{(-\infty,x]}$
 				\begin{equation}
@@ -87,18 +89,19 @@ Der Erwartungswert von $F \cdot X$ existiert genau da,, wenn der Erwartungswert 
 			\item Die Identität \[ E(f \cdot X) = \int_{-\infty}^{x}{f(t)g(t)dt} \]
 						gilt für ``beliebige'' $f:\mathbb{R}\rightarrow\mathbb{R}$ (mit $f^{-1}{(B)} \in \mathfrak{B}$ für jedes $B\in \mathfrak{B}$, mit existierendem $E(f\cdot X)$).\\
 		\end{enumerate}
-	\item $X$ habe eine diskrete Verteilung, d.h. es gibt eine abzählbare Menge $A \subset R$ mit $P(X\in A)=1,\ (\{x\} \in \mathfrak{L} \forall x\in R)$.
+
+\subsection{Diskrete Verteilung}
+$X$ habe eine diskrete Verteilung, d.h. es gibt eine abzählbare Menge $A \subset R$ mit $P(X\in A)=1,\ (\{x\} \in \mathfrak{L} \forall x\in R)$.
 	\[ P^X = \sum_{a \in A}{P(X=a)\cdot \delta_a} \]
 	Für $f \geq 0$ ist
-	\begin{equation*}
+	\begin{equation}
 		\begin{split}
 		E(f\cdot X) &= E\left( \sum_{a\in A}{f(a)\cdot I(X=a)} + \underbrace{E\left( X \cdot I(X \neq A) \right)}{= 0} \right) \\
 								&= \sum_{a\in A}{f(a)\cdot E(I(X=a))} \\
 								&= \sum_{a\in A}{f(a)\cdot P(X=a)}
 		\end{split}								
-	\end{equation*}
+	\end{equation}
 	Diese Gleichung ist besonders wichtig, da sie für beliebige $f$ gilt mit existierendem $E(f \cdot X)$
-\end{enumerate}
 
 \section{Anwendungen}
 
@@ -112,7 +115,7 @@ Dann ist der Erwartungswert
 
 \subsection{Erwartungswert der Normalverteilung}
 
-Sei $X \sim N(a,\sigma)$. Dann ist der Erwartungswert\\
+Sei $X \sim \mathfrak{N}(a,\sigma)$. Dann ist der Erwartungswert\\
 \ldots
 
 \renewcommand{\labelenumi}{\theenumi}
