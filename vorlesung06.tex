@@ -1,0 +1,118 @@
+\part{Erwartungswerte}
+
+\section{Erwartungswerte von Zufallsvariablen}
+
+Wir definieren Eerwartungswerte von Zufallsvariablen schrittweise, beginnend mit Indikatorvariablen. Es sei $X$ eine eine reelle Zufallsvariable auf dem Wahrscheinlichkeitsraum $()$.
+\renewcommand{\labelenumi}{(\theenumi)}
+\begin{enumerate}
+	\item Für eine Indikatorvariable$X=I_A$ mit $A \in Suett-A$ sei $E(X) = E_p(X) = P(A)$
+	\item Für eine nicht negative einfache Zufallsvariable $X=\sum_{k=1}^n{\alpha_kI_{A_k}}$ mit nicht negativen reellen Zahlen $\alpha_1,\ldots,\alpha_n$ und Ereignissen $A_1,\ldots,A_n \in Suett-A$ sei 
+		\begin{equation}
+			E(X) = E_p(X) = \sum{\alpha_k\cdot P(A_k)}
+		\end{equation}
+		Der so definierte Wert $E(X)$ hängt nicht von der Darstellung von $X$ ab, d.h. ist $X=$ \ldots
+	\item Für eine nicht negative Zufallsvariable $X \geq 0$ gibt es eine Folge von nicht negativen einfachen Zufallsvariablen $X_n,\ n \in \mathbb{N}$, mit $0 \leq X_1 \leq \ldots$ mit $X = \sup_{n\in\mathbb{N}}X_n$. Es sei $E(X)=E-p(X)=\sup_{n\in\mathbb{N}}E(X)$
+	\item Jede reelle Zufallsvariable $X$ lässt sich in der Form $X=X^+-X^-$ mit den nicht negativen Zufallsvariablen $X^+=\max{(X,0)}$
+\end{enumerate}
+
+
+\section{Eigenschaften von Erwartungswerten}
+
+Es seien $X,Y$ reelle Zufallsvariablen auf dem Wahrscheinlichkeitsraum $()$, $\alpha,\beta$ reelle Zahlen.
+\begin{enumerate}
+	\item Sind $X,Y \geq 0$ und $\alpha,\beta \geq 0$, so ist \[E(\alpha\cdot X + \beta\cdot Y) = \alpha\cdot E(X) + \beta\cdot E(Y)\]
+	\item Sind $X,Y$ integrierbar, so ist $\alpha\cdot X + \beta\cdot Y$ integrierbar und es ist \[E(\alpha\cdot X + \beta\cdot Y) = \alpha\cdot E(X) + \beta\cdot E(Y)\]
+	\item ist $0 \leq X \leq Y$, so ist $0 \leq E(X) \leq E(Y)$.
+	\item Existiert für die Zufallsvariable $X$ der Erwartungswert, so ist $|E(X)| \leq E(|X|)$.
+	\item Sind $X,Y$ integrierbar und ist $X \leq Y$, so ist $E(X) \leq E(Y)$.
+	\item $X$ ist genau dann integrierbar, wen $|X|$ integrierbar ist.
+	\item Ist $|X| \leq |Y|$ und $Y$ integrierbar, so ist auch $X$ integrierbar.
+	\item Sind $X,\ldots,X_n,\ n \in \mathbb{N}$ nicht negative Zufallsvariablen mit $0 \leq X_1 \leq X_2 \leq \ldots$ und $X= \sup_{n\in\mathbb{N}}{X_n}$, so ist $E(X) = \sup_{n\in\mathbb{N}}{E(X_n)}$
+	\item Sind $X_n,\ n \in \mathbb{N}$ nicht negative Zufallsvariablen, so ist \[E(\liminf_{n\rightarrow\infty}{X_n}) \leq \liminf_{n\rightarrow\infty}{E(X_n)}\]
+	\item Sind $X,Y,X_n,\ n\in\mathbb{N}$ reelle Zufallsvariablen mit $X=\lim_{n\rightarrow\infty}{X_n}$ und $|X_n| \leq |Y|$ für jedes $n \in \mathbb{N}$, und es ist $Y$ integrierbar, so sind auch $X,X_n$ integrierbar und es gilt $\lim_{n\rightarrow\infty}{E(|X_n-X|)} = 0$. Insbesondere folgt hieraus auch $\lim_{n\rightarrow\infty}{E(X)}=E(X)$.
+	\item Ist $X \geq 0$, so ist $E(X)=0$ genau dann, wenn $P(X > 0) = 0$ ist.
+\end{enumerate}
+
+Aus der Eigenschaft (8) ergibt sich für eine Folge von nicht negativen, reellen Zufallsvariablen $X_n$ mit der Eigenschaft, dass die Reihe $\sum_{k=1}^{n}{X_k}$ gegen die reelle Zufallsvariable $X$ konvergiert, die Identität
+\begin{equation}
+	E\left( \sum_{n=1}^{\infty}{X_n} \right) = \ldots
+\end{equation}
+\ldots
+folgt hieraus
+\begin{equation}
+	|X| = \sum_{n=1}{|X|\cdot I(n-1 < X \leq n)},
+\end{equation}
+dass
+\begin{equation}
+	\begin{split}
+		E(|X|) &= \sum_{n=1}^{\infty}{E(|X|\cdot I(n-1 < X \leq n))} \\
+					 &\leq \sum_{n=1}^{\infty}{P(n-1 < |X| \leq n)} \\
+					 &= \ldots \\
+					 &= \sum_{k=1}^{\infty}{\sum_{n=k}^{\infty}{P(n-1 < |X| \leq n)}} \\
+					 &= \sum_{k=1}^{\infty}{P(|X| > n-1)} \\
+					 &= \sum_{k=0}^{\infty}{P(|X| > n)}
+	\end{split}
+\end{equation}
+ist. Analgo sieht man
+\begin{equation}
+	E() \ldots
+\end{equation}
+
+\ldots
+
+\section{Rechnen mit Erwartungswerten}
+
+$()$ W-Raum, $\emptyset \neq R$ Menge, $Suett-L \sigma$-Algebra auf $R,\ f:R\rightarrow \mathbb{R}$, 
+$f^{-1}(B) \in Suett-L$ für jedes $B \in Suett-B$.
+Dann $P^X$ Verteilung von $X$, $P^X$ ist W-Maß auf $R$ und $(R,Suett-L,P^X)$ ist W-Raum für reelle Zufallsvarieblen auf $(R,Suett-L,P^X)$.
+
+Der Erwartungswert von $F \cdot X$ existiert genau da,, wenn der Erwartungswert von $f$, aufgefasst als Erwartungswert auf $(R,Suett-L,P^X)$, existiert. Es gilt dann die \textbf{Transformationsformel}
+\begin{equation}
+	E(f \cdot X) = E_P(f \cdot X) = E_{P^X}(f)
+\end{equation}
+
+\section{Spezialfälle}
+\begin{enumerate}
+	\item $(R,Suett-L) = (\mathbb{R},Suett-B)$, $X$ habe die Dichte $g$.
+		\begin{enumerate}
+			\item $f = I_{(-\infty,x]}$
+				\begin{equation}
+					\begin{split}
+						F(x) = P(X \leq x) &= \underbrace{E(I_{(-\infty,x]}\cdot X)}_{= E(f\cdot X)} \\
+															 &= E_{P^X}(I_{(-\infty,x]}) \\
+															 &= P^X((-\infty,x]) = \int_{-\infty}^{x}{} \\
+															 &= \int_{-\infty}^{x}{f(t)g(t)dt}
+					\end{split}
+				\end{equation}
+			\item Die Identität \[ E(f \cdot X) = \int_{-\infty}^{x}{f(t)g(t)dt} \]
+						gilt für ``beliebige'' $f:\mathbb{R}\rightarrow\mathbb{R}$ (mit $f^{-1}{(B)} \in Suett-B$ für jedes $B\in Suett-B$, mit existierendem $E(f\cdot X)$).\\
+		\end{enumerate}
+	\item $X$ habe eine diskrete Verteilung, d.h. es gibt eine abzählbare Menge $A \subset R$ mit $P(X\in A)=1,\ (\{x\} \in Suett-L \forall x\in R)$.
+	\[ P^X = \sum_{a \in A}{P(X=a)\cdot \delta_a} \]
+	Für $f \geq 0$ ist
+	\begin{equation*}
+		\begin{split}
+		E(f\cdot X) &= E\left( \sum_{a\in A}{f(a)\cdot I(X=a)} + \underbrace{E\left( X \cdot I(X \neq A) \right)}{= 0} \right) \\
+								&= \sum_{a\in A}{f(a)\cdot E(I(X=a))} \\
+								&= \sum_{a\in A}{f(a)\cdot P(X=a)}
+		\end{split}								
+	\end{equation*}
+	Diese Gleichung ist besonders wichtig, da sie für beliebige $f$ gilt mit existierendem $E(f \cdot X)$
+\end{enumerate}
+
+\section{Anwendungen}
+
+\subsection{Erwartungswert der Rechteck-Verteilung}
+
+Mit $X \sim Suett-R(a,b)$ gilt \[ g(t) = \begin{cases} \frac{1}{b-a} &,\ a\leq t \leq b \\ b &,\ \text{sonst} \end{cases} \]
+Dann ist der Erwartungswert
+\begin{equation}
+	E(X) = \frac{1}{b-a}\cdot \int_a^b{t\cdot dt} = \frac{a+b}{2}
+\end{equation}
+
+\subsection{Erwartungswert der Normalverteilung}
+
+Sei $X \sim N(a,\sigma)$. Dann ist der Erwartungswert\\
+\ldots
+
+\renewcommand{\labelenumi}{\theenumi}

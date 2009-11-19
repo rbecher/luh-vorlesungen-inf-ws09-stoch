@@ -1,0 +1,174 @@
+\subsection{Beispiel}
+
+\begin{enumerate}
+	\item $X \sim Suett-B(n,p)$\\
+				Ohne Einschränkung $X=\sum_{j=1}^n{I_{A_j}}$\\
+				$p = P(A_j),\ j=1,\ldots,n$\\
+				\[E(X) = \sum_{j=1}^n{\underbrace{E(I_{A_j})}_{=P(A)=p}}=n \cdot p\]
+	\item $X \sim Suett-H(a,r,n)$\\
+				$X = \sum_{j=1}^n{I_{A_j}}$ \\
+				$A_{j} \stackrel{^}{=}$ Beim $n$-fachen Ziehen ohne Zurücklegen je eine Kugel aus einer Urne mit $r$ roten und $s=a-r$ schwarzen Kugeln und bei der $j$-ten Ziehung wird eine rote Kugel gezogen.\\
+				$E(X)=\sum_{j=1}^{n}{P(A_j)}$
+				\[ P(A_j) = \frac{r\cdot\cancel{(a-1)}\cdot\cancel{(a-2)}\cdots\cancel{(a-n+1)}}{a\cdot\cancel{(a-1)}\cdot\cancel{(a-2)}\cdots\cancel{(a-n+1)}} = \frac{r}{a} = \frac{r}{r+s},\ j=1,\ldots,n \]
+				Also: $E(X)=n\cdot\frac{r}{a}$\\
+				Beim $n$-fachen Ziehen mit Zurücklegen je eine Kugel aus einer Urne mit  $r$ roten und $s=a-r$ schwarzen Kugeln ist Anzahl $X$ der gezogenen roten Kugeln $Suett-B(n,\frac{r}{a}$-verteilt, also
+				\[ E(X)=n\cdot\frac{r}{a} \]
+\end{enumerate}
+
+\section{Die Varianz}
+
+Sei $r\in\mathbb{N}$, $X$ reelle Zufallsvariable mit $E(|X|^r) < \infty$.\\
+Für $1 \leq s \leq r, s \in \mathbb{N}$ gilt dann wegen $|X|^s \leq |X|^r+1$, dass $E(|X|^s) < \infty$ ist. 
+Sei $X$ reeelle Zufallsvariable mit $E(X^2) < \infty$. Dann ist $E(|X|) < \infty$.
+
+Für $a\in\mathbb{R}$ ist $|X-a|^2 \leq X^2+2\cdot |a|\cdot |X|+a^2$, also $E(|X-a|^2) < \infty$. Es ist
+\begin{equation*}
+	\begin{split}
+		E([X-a]^2) 	&= E\left( \left( [X-E(X)] + [E(X)-a] \right)^2 \right) \\
+								&= E\left( [X-E(X)]^2\right) + [E(X)-a]^2 + \underbrace{E\left( 2\cdot [E(X)-a]\cdot[X-E(X)] \right)}_{=0}\\
+								&\geq E\left( [X-E(X)]^2\right)
+	\end{split}
+\end{equation*}
+
+\subsection{Definition}
+
+Sei $X$ reelle Zufallsvariable mit $E(X^2) < \infty$. Dann heißt
+\begin{equation}
+	Var(X) = E\left([X-E(X)]^2\right)
+\label{def:varianz}
+\end{equation}
+die \textbf{Varianz} von X.
+
+Es ist
+\begin{equation}
+	Var(X) = \min_{a\in\mathbb{R}}{E\left([X-a]^2\right)}
+\end{equation}
+
+\subsection{Bemerkung}
+
+Es ist 
+\begin{equation}
+	\begin{split}
+		Var(X) = E\left([X-a]^2\right)	&= E\left( X^2 - 2\cdot X\cdot E(X) + (E(X))^2 \right) \\
+																		&= E(X^2) - 2\cdot\left( E(X)^2 + \left( E(X) \right)^2 \right) \\
+																		&= E(X^2)-(E(X))^2 \geq 0
+	\end{split}
+\end{equation}
+
+\subsection{Spezialfälle}
+
+\subsubsection{Zufallsvariablen mit diskreter Verteilung}
+\begin{equation}
+	\begin{split}
+		Var(X) 	&= \sum_{\substack{x\in\mathbb{R}\\ P(X0x) < 0}}{(x-E(X))^2\cdot P(X=x)} \\
+						&= \sum_{\substack{x\in\mathbb{R}\\ P(X0x) < 0}}{x^2\cdot P(X=x)}- \left( \sum_{\substack{x\in\mathbb{R}\\ P(X0x) < 0}}{x\cdot P(X=x)} \right)^2
+	\end{split}
+\end{equation}
+
+\subsubsection{Zufallsvariablen mit stetiger Verteilung}
+
+Hat $X$ die Dichte $f$, so gilt
+\begin{equation}
+	\begin{split}
+		Var(X) 	&= \int_{-\infty}^{+ \infty}{(x-E(X))^2\cdot f(x)\cdot dx} \\
+						&= \int_{-\infty}^{+ \infty}{x^2 \cdot f(x)\cdot dx} - \left( \int_{-\infty}^{+ \infty}{x\cdot f(x) \cdot dx} \right)^2
+	\end{split}
+\end{equation}
+
+\subsection{Beispiele}
+
+\begin{enumerate}
+	\item $X \sim Suett-R(a,b)$
+	\item $X \sim Suett-N(a,\sigma^2)$
+	\item $X \sim Exp(\lambda)$. $X$ hat Dichte 
+	\[ f(x) = \begin{cases} \lambda\cdot \exp{-\lambda\cdot x} &,\ x \geq 0 \\ 0 &,\ sonst \end{cases} \]
+	Dann ist
+	\begin{equation}
+		E(X) = \frac{1}{\lambda}
+	\end{equation}
+	\begin{equation}
+		\begin{split}
+			Var(X) &= \lambda\cdot\int_{0}^{+ \infty}{x^2\cdot\exp{-\lambda\cdot x}\cdot dx} - \left( \frac{1}{\lambda}\right)^2 \\
+						 &= \frac{1}{\lambda^2}
+		\end{split}
+	\end{equation}
+\end{enumerate}
+
+\section{Die Kovarianz}
+
+Seien $X,Y$ reelle Zufallsvariablen mit $E(X^2) < \infty$ und $E(Y^2) < \infty$.
+\[ |X|\cdot|Y| \leq \frac{1}{2}\cdot \left( |X|^2 + |Y|^2 \right) \iff 0 \leq \left( |X| - |Y| \right)^2 \Rightarrow E(|X\cdot Y|) < \infty \] 
+und es gilt
+\[ E\left( (X+ Y)^2 \right) = E(X^2)+E(Y^2)+2\cdot E(X\cdot Y) \]
+Also ist
+\begin{equation}
+	\begin{split}
+		Var(X+Y)	&= E\left( \left[ X+Y-(E(X)+E(Y)) \right]^2 \right) \\
+							&= E\left( \left[ (X-E(X)) + (Y-E(Y)) \right]^2 \right) \\
+							&= Var(X) + Var(Y) + 2\cdot E([X-E(X)]\cdot[Y-E(Y)])
+	\end{split}
+\end{equation}
+
+\subsection{Definition}
+
+$X,Y$ sind reelle Zufallsvariablen mit $E(X^2) < \infty,\ E(Y^2) < \infty$.
+Dann heißt 
+\begin{equation}
+Cov(X,Y) = E([X-E(X)]\cdot[Y-E(Y)])
+\label{def:kovarianz}
+\end{equation}
+die Kovarianz von $X$ und $Y$.
+
+\subsection{Bemerkung}
+
+Es ist \[Cov(X,Y)=E(X\cdot Y)-E(X)E(Y)\]
+Also gilt 
+\begin{equation}
+	Var(X+Y) = Var(X) + Var(Y) + 2\cdot Cov(X,Y)
+\end{equation}
+Mittels vollständiger Induktion folgt für reelle Zufallsvariablen $X_1,\ldots,X_n$ mit $E(X_j^2) < \infty, j=1,\ldots,n$.
+\begin{equation*}
+	\begin{split}
+		Var(X_1+\ldots,+X_n)	&= \sum_{j=1}^{n}{Var(X_j)} + 2\cdot \sum_{1 \leq i < j \leq n}{Cov(X_i,X_j)}\\
+													&= \sum_{j=1}^{n}{Var(X_j)} + 2\cdot \sum_{i,j=1, i\neq j}^{n}{Cov(X_i,X_j)}
+	\end{split}
+\end{equation*}
+
+\subsection{Spezialfall}
+
+$X=I_a, Y=I_B$. Dann \[ Cov(X,Y) = E( \underbrace{I_A\cdot I_B}_{I_{A\cap B}} - \underbrace{E(I_A)}_{P(A)}\cdot \underbrace{E(I_B)}_{P(B)}\]
+\[ Cov(I_A, I_B) = P(A\cap B) - P(A)\cdot P(B) \]
+Also insbesondere $Cov(I_A,I_B)=0$ falls $A,B$ unabhängige Ereignisse.
+Ferner gilt für die Ereignisse $A_1,\ldots,A_n$:
+\begin{equation*}
+	\begin{split}
+		Var(I_{A_1}+\ldots+I_{A_n})	&= \sum_{j=1}^{n}{\underbrace{Var(I_{A_i})}_{P(A-i)\cdot(1-P(A_i))}} + 2\cdot \sum_{1 \leq i < j \leq n}{\left[ P(A_i\cap A_j)-P(A_i)\cdot P(A_j)\right]} \\
+																&= \sum_{j=1}^{n}{P(A-i)\cdot(1-P(A_i))} + 2\cdot \sum_{1 \leq i < j \leq n}{\left[ P(A_i\cap A_j)-P(A_i)\cdot P(A_j)\right]}
+	\end{split}
+\end{equation*}
+
+\subsection{Beispiele}
+
+\subsubsection{Binomialverteilt}
+
+Sei $X \sim Suett-B(n,p)$. Dann wäre eigentlich
+\[ Var(X) = \sum_{k=0}^{n}{(k-n\cdot p)^2\cdot\binom{n}{k}\cdot p^k\cdot(1-p)^^{n-k}} \]
+Wir vereinfachen das im Folgenden: O.B.d.A. sei $X=\sum_{j=1}^{n}{I_{A_i}}$ mit \textbf{unabhängigen} Ereignissen $A_i, i=1,\ldots,n$.
+Dann
+\begin{equation}
+	Var(X) = \sum_{j=1}^{n}{Var(I_{A_i})} = n\cdot p \cdot (1-p)
+\end{equation}
+
+\subsubsection{Hypergeometrischverteilt}
+
+Sei $X \sim Suett-H(a,r,n)$. Dann wäre eigentlich
+\[ Var(X) = \sum_{k=\max{(0,n+r-a)}}^{\min{(r,n)}}{(k-n\cdot\frac{r}{a})^2\cdot \frac{\binom{r}{k}\cdot\binom{a-r}{n-k} }{\binom{a}{n}}} \]
+Wir vereinfachen das im Folgenden: O.B.d.A. fassen wir $X$ auf als die Anzahl der gezogenen roten Kugeln in $n$ Ziehungen bei $n$-fachem Ziehen ohne Zurücklegen je eine Kugel aus einer Urne mit $r$ roten und $s=a-r$ schwarzen Kugeln. Dann $X=\sum_{j=1}^n{I_{A_i}}$ und mit $P(A_i)=\frac{r}{a}$ sei
+\begin{equation}
+	\begin{split}
+		Var(X) &= n\cdot \frac{r}{a}\cdot(1-\frac{r}{a}) + n\cdot(n-1)\cdot \left[ \frac{r\cdot(r-1)}{a\cdot(a-1)} - \left( \frac{r}{a} \right)^2 \right] \\
+					 &= \underbrace{n\cdot \frac{r}{a}\cdot\left( 1-\frac{r}{a} \right)}_{\text{Varianz beim Ziehen mit Zurücklegen}}\cdot \frac{a-n}{n-1}
+	\end{split}
+\end{equation}
+da
+\[ P(A_i \cap A_j = \frac{r\cdot(r-1)(a-2)\cdots(a-n+1)}{a(a-1)(a-2)\cdots(a-n+1)} = \frac{r\cdot(r-1)}{a(a-1)} \]
