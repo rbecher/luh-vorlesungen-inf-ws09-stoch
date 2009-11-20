@@ -62,8 +62,22 @@ die Menge $\mathfrak{A}$ $\subset \mathfrak{P}(\Omega) \footnote{Potenzmenge} :=
 
 \par\noindent	Im \textbf{Würfelwurf} seien beispielsweise gültige Ereignisse:
 	\begin{itemize}
-	\item $A := \{2,4,6\}$ das Ergeignis "`Es fällt eine gerade Zahl"', und
-	\item $A := \{5,6\}$ das Ergeignis "`Es fällt eine Zahl grö\ss er gleich 5"'.
+	\item $A := \{2,4,6\}$ das Ereignis "`Es fällt eine gerade Zahl"', und
+	\item $A := \{5,6\}$ das Ereignis "`Es fällt eine Zahl grö\ss er gleich 5"'.
+\end{itemize}
+
+\subsubsection{Rechnen mit Ereignissen}
+
+\par\noindent Wenn nun $A,B \in \mathfrak{A}$, dann gilt (\cite[S. 15]{Huebner09})
+\begin{itemize}
+	\item \[A\cup B = A\cup B \cup \emptyset \cup \emptyset \cup \dots \in \mathfrak{A}\]
+	(Die Vereinigung von $A,B$ ist auch ein interessierendes Ereignis und steht f\"ur ``das Ereignis $A$ oder $B$ treten ein'')
+	\item \[A\cap B = A\cap B \cap \Omega \cap \Omega \cap \dots \in \mathfrak{A}\]
+	(Die Schnittmenge von $A,B$ ist auch ein interessierendes Ereignis und steht f\"ur ``das Ereignis $A$ \textbf{und} $B$ treten ein'')
+	\item \[A \Delta B = (A\cap B^c) \cup (B\cap A^c)\]
+	(Die ``symmetrische Differenz'' beschreibt das Ereignis ``Entweder A oder B'')
+	\item $A \subseteq B$ hei{\ss}t: ``Das Ereignis A hat das Ereignis B zur Folge''.\\
+	(Kurz erkl\"art: Wenn $A$ eintritt, folgt $\omega \in A\ \wedge\ A \subseteq B \Rightarrow \omega \in B$)
 \end{itemize}
 
 \subsection{Das Wahrscheinlichkeitsmaß $P$}
@@ -82,37 +96,7 @@ durch ein \href{http://de.wikipedia.org/wiki/Wahrscheinlichkeitsmass}{Wahrschein
 	\noindent Für $A\in \mathfrak{A}$ ist $P(A)$ die Wahrscheinlichkeitsfunktion (für das Eintreten) von A
 \end{enumerate}
 
-
-\par\noindent $\omega\in\Omega$ nennen wir das Ergebnis des Zufallsexperimentes. Das Ereignis $A\in \mathfrak{A}$ tritt genau dann ein, wenn $\omega\in A$.
-\begin{equation}
-\label{ }
-\omega\in\bigcup_{n=1}^{\infty}A_n \iff \exists n\in \mathbb{N} \wedge \omega\in A_n
-\end{equation}
-Das durch $\bigcup_{n=1}^{\infty}A_n$ beschriebene Ereignis tritt genau dann ein, wenn mindestens eines der Ereignisse $A_n,\ n\in \mathbb{N}$ eintritt.
-
-\noindent Auf die Frage, ob auch $\emptyset$ eine gültige Menge ist, sei gesagt, dass \[\emptyset =\Omega^c \in \mathfrak{A}\] das "`unmögliche Ereignis"' genannt wird (Die Antwort ist also ``ja'').\\
-
-\noindent Seien $A_1,A_2,\ldots \in \mathfrak{A}$. Dann 
-\begin{equation}
-\bigcap_{n=1}^{\infty}{A_n}=\left(\bigcup_{n=1}^{\infty}A_n^c\right)^c\in \mathfrak{A}
-\end{equation}
-Anmerkung: $\bigcap_{n=1}^{\infty}A_n$ tritt genau dann ein, wenn alle $A_n,n\in \mathbb{N}$ eintreten.\\
-
-\subsubsection{Rechnen mit Ereignissen}
-
-\par\noindent Wenn nun $A,B \in \mathfrak{A}$, dann gilt (\cite[S. 15]{Huebner09})
-\begin{itemize}
-	\item \[A\cup B = A\cup B \cup \emptyset \cup \emptyset \cup \dots \in \mathfrak{A}\]
-	(Die Vereinigung von $A,B$ ist auch ein interessierendes Ereignis und steht f\"ur ``das Ereignis $A$ oder $B$ treten ein'')
-	\item \[A\cap B = A\cap B \cap \Omega \cap \Omega \cap \dots \in \mathfrak{A}\]
-	(Die Schnittmenge von $A,B$ ist auch ein interessierendes Ereignis und steht f\"ur ``das Ereignis $A$ \textbf{und} $B$ treten ein'')
-	\item \[A \Delta B = (A\cap B^c) \cup (B\cap A^c)\]
-	(Die ``symmetrische Differenz'' beschreibt das Ereignis ``Entweder A oder B'')
-	\item $A \subseteq B$ hei{\ss}t: ``Das Ereignis A hat das Ereignis B zur Folge''.\\
-	(Kurz erkl\"art: Wenn $A$ eintritt, folgt $\omega \in A\ \wedge\ A \subseteq B \Rightarrow \omega \in B$)
-\end{itemize}
-
-\subsection{Eigenschaften von Wahrscheinlichkeits-Ma{\ss}en}
+\subsubsection{Eigenschaften von Wahrscheinlichkeits-Ma{\ss}en}
 
 \begin{itemize}
 	\item Aus $P(\emptyset)=P(\emptyset\cup\emptyset\cup\dots)=\sum_{n=1}^{\infty}{P(\emptyset)}$ folgt $P(\emptyset)=0$.
@@ -132,6 +116,23 @@ P(B)=P(A \cup B \cap A^c)=P(A \cup B \cap A^c \cup \emptyset \cup \dots)=P(A)+P(
 	(Subtraktivität)
 \end{itemize}
 \end{itemize}
+
+\subsection{Ergebnisse von Zufallsexperimenten}
+
+\par\noindent $\omega\in\Omega$ nennen wir das Ergebnis des Zufallsexperimentes. Das Ereignis $A\in \mathfrak{A}$ tritt genau dann ein, wenn $\omega\in A$.
+\begin{equation}
+\label{ }
+\omega\in\bigcup_{n=1}^{\infty}A_n \iff \exists n\in \mathbb{N} \wedge \omega\in A_n
+\end{equation}
+Das durch $\bigcup_{n=1}^{\infty}A_n$ beschriebene Ereignis tritt genau dann ein, wenn mindestens eines der Ereignisse $A_n,\ n\in \mathbb{N}$ eintritt.
+
+\noindent Auf die Frage, ob auch $\emptyset$ eine gültige Menge ist, sei gesagt, dass \[\emptyset =\Omega^c \in \mathfrak{A}\] das "`unmögliche Ereignis"' genannt wird (Die Antwort ist also ``ja'').\\
+
+\noindent Seien $A_1,A_2,\ldots \in \mathfrak{A}$. Dann 
+\begin{equation}
+\bigcap_{n=1}^{\infty}{A_n}=\left(\bigcup_{n=1}^{\infty}A_n^c\right)^c\in \mathfrak{A}
+\end{equation}
+Anmerkung: $\bigcap_{n=1}^{\infty}A_n$ tritt genau dann ein, wenn alle $A_n,n\in \mathbb{N}$ eintreten.\\
 
 \subsection{Beispiel}
 
