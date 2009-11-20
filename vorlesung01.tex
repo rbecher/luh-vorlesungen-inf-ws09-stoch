@@ -16,7 +16,13 @@ Die abgegebenen Hausübungen werden korrigiert und in den Übungsgruppen zurückgeg
 
 \par Der Dozent empfiehlt das Buch ``Stochastik für Einsteiger'' von Herrn N. Henze (Vieweg Verlag)
 
-%\newpage
+\par Leider richtet sich das oben genannte Buch primär an Mathematiker. Im selben Verlag ist ein Buch für Informatiker erschienen.
+
+\subsection{Referenzen}
+
+Im Folgenden werden ich, wenn möglich, beide Quellen referenzieren.
+
+\newpage
 
 \part{Grundlegende Wahrscheinlichkeitstheorie}
 \label{sec:Wahrscheinlichkeitstheorie}
@@ -26,11 +32,15 @@ Die abgegebenen Hausübungen werden korrigiert und in den Übungsgruppen zurückgeg
 \section{Wahrscheinlichkeitsräume}
 \label{sec:Wahrscheinlichkeitsräume}
 
-Zufallsexperimente werden beschrieben durch
-\begin{itemize}
-	\item die Menge der möglichen Ergebnisse $\Omega$\\
-	Im \textbf{Würfelwurf} sei beispielsweise $\Omega := \{1,2,3,4,5,6\}$
-	\item die Menge $\mathfrak{A}$ $\subset \mathfrak{P}(\Omega) \footnote{Potenzmenge} :=\{A; A\subset\Omega\}$ als Menge der interessierenden Ergebnisse.\\
+Zufallsexperimente werden beschrieben durch \href{http://de.wikipedia.org/wiki/Wahrscheinlichkeitsraum}{\textbf{Wahrscheinlichkeitsäume}}. Ein Wahrscheinlichkeitsraum ist ein Tripel $(\Omega,\mathfrak{A},P)$ und setzt sich wie folgt zusammen.
+
+\subsection{Die Ergebnismenge $\Omega$}
+Die Menge der möglichen Ergebnisse heißt $\Omega$ (\cite[S. 12]{Huebner09}).\\
+Im \textbf{Würfelwurf} sei beispielsweise $\Omega := \{1,2,3,4,5,6\}$
+
+\subsection{Der Ereignisraum $\mathfrak{A}$}
+
+die Menge $\mathfrak{A}$ $\subset \mathfrak{P}(\Omega) \footnote{Potenzmenge} :=\{A; A\subset\Omega\}$ als Menge der interessierenden Ergebnisse (\cite[S. 14]{Huebner09}).\\
 	$\mathfrak{A}$ ist eine so genannte \href{http://de.wikipedia.org/wiki/Sigma-Algebra}{$\sigma$-Algebra} auf $\Omega$, d.h. 
 	\begin{enumerate}
 	\item 
@@ -55,7 +65,10 @@ Zufallsexperimente werden beschrieben durch
 	\item $A := \{2,4,6\}$ das Ergeignis "`Es fällt eine gerade Zahl"', und
 	\item $A := \{5,6\}$ das Ergeignis "`Es fällt eine Zahl grö\ss er gleich 5"'.
 \end{itemize}
-	\item durch ein \href{http://de.wikipedia.org/wiki/Wahrscheinlichkeitsmass}{Wahrscheinlichkeitsma\ss}\ $P$ (lat: "`\textbf{P}robabilitas"'=Glaubwürdigkeit) mit \linebreak[4] $P:\mathfrak{A} \rightarrow [0,1]$, also eine Mengenfunktion auf $\mathfrak{A}$ mit den Eigenschaften
+
+\subsection{Das Wahrscheinlichkeitsmaß $P$}
+
+durch ein \href{http://de.wikipedia.org/wiki/Wahrscheinlichkeitsmass}{Wahrscheinlichkeitsma\ss}\ $P$ (lat: "`\textbf{P}robabilitas"'=Glaubwürdigkeit) mit \linebreak[4] $P:\mathfrak{A} \rightarrow [0,1]$, also eine Mengenfunktion auf $\mathfrak{A}$ mit den Eigenschaften
 	\begin{enumerate}
 	\item \begin{equation}
 		P(\Omega)=1
@@ -68,9 +81,7 @@ Zufallsexperimente werden beschrieben durch
 	\[\sigma\text{-Additivität von }P\]
 	\noindent Für $A\in \mathfrak{A}$ ist $P(A)$ die Wahrscheinlichkeitsfunktion (für das Eintreten) von A
 \end{enumerate}
-\end{itemize}
 
-\par\noindent Das Tripel $(\Omega,\mathfrak{A},P)$ hei\ss t \href{http://de.wikipedia.org/wiki/Wahrscheinlichkeitsraum}{\textbf{Wahrscheinlichkeitsraum}}.\\
 
 \par\noindent $\omega\in\Omega$ nennen wir das Ergebnis des Zufallsexperimentes. Das Ereignis $A\in \mathfrak{A}$ tritt genau dann ein, wenn $\omega\in A$.
 \begin{equation}
@@ -87,7 +98,9 @@ Das durch $\bigcup_{n=1}^{\infty}A_n$ beschriebene Ereignis tritt genau dann ein
 \end{equation}
 Anmerkung: $\bigcap_{n=1}^{\infty}A_n$ tritt genau dann ein, wenn alle $A_n,n\in \mathbb{N}$ eintreten.\\
 
-\par\noindent Wenn nun $A,B \in \mathfrak{A}$, dann gilt
+\subsubsection{Rechnen mit Ereignissen}
+
+\par\noindent Wenn nun $A,B \in \mathfrak{A}$, dann gilt (\cite[S. 15]{Huebner09})
 \begin{itemize}
 	\item \[A\cup B = A\cup B \cup \emptyset \cup \emptyset \cup \dots \in \mathfrak{A}\]
 	(Die Vereinigung von $A,B$ ist auch ein interessierendes Ereignis und steht f\"ur ``das Ereignis $A$ oder $B$ treten ein'')
