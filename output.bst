@@ -230,7 +230,8 @@ FUNCTION {bbl.edby}
 { "\bbledby{}" }
 
 FUNCTION {bbl.edition}
-{ "\bbledn{}" }
+{}
+%{ "\bbledn{}" }
 
 FUNCTION {bbl.volume}
 { "\bblvol{}" }

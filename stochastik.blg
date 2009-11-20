@@ -8,3 +8,6 @@ A level-1 auxiliary file: vorlesung06.aux
 A level-1 auxiliary file: vorlesung07.aux
 The style file: output.bst
 Database file #1: books.bib
+You can't pop an empty literal stack for entry Huebner09
+while executing---line 1786 of file output.bst
+(There was 1 error message)
