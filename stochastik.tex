@@ -41,6 +41,8 @@
 \usepackage{fancyhdr} %%Fancy Kopf- und Fußzeilen
 %\renewcommand{\headheight}{15pt}
 \usepackage{fancybox}
+\usepackage{cite}
+\usepackage{tocbibind}
 
 %\usepackage{longtable} %%Für Tabellen, die eine Seite überschreiten
 %\usepackage{ifpdf}
@@ -120,5 +122,14 @@ Mitschrift von\\
 \include{vorlesung06}
 
 \include{vorlesung07}
+
+
+\renewcommand\refname{Literaturangaben}
+
+%\nocite{*}
+
+\bibliography{books}
+
+\bibliographystyle{output}
 
 \end{document}

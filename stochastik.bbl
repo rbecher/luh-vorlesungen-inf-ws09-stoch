@@ -1,0 +1,20 @@
+\begin{thebibliography}{Hüb09}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\input{babelbst.tex}
+\newcommand{\Capitalize}[1]{\uppercase{#1}}
+\newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
+
+\bibitem[Hüb09]{Huebner09}
+Gerhard Hübner.
+\newblock \emph{Stochastik: Eine anwendungsorientierte Einführung für
+  Informatiker, Ingenieure und Mathematiker}.
+\newblock Vieweg+Teubner, 5. auflage. \bbledn{}, 2009.
+\newblock ISBN 9783834807175.
+\newline\urlprefix\url{http://amazon.de/o/ASIN/3834807176/}
+
+\end{thebibliography}
