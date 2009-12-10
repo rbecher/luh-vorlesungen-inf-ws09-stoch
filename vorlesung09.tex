@@ -1,0 +1,99 @@
+\part{Gesetze der großen Zahlen}
+
+\section{Einführung}
+
+Es handelt sich um Grenzwertsätze der Stochastik. Wir müssen uns hierfür erst einmal Konvergenzbegriffe überlegen.
+
+Seien $X,X_n,\ n\in \mathbb{N}$ neue, $d$-dim. Zufallsvariablen auf einem W-Raum $(\Omega,Suett-A,P)$.
+Die Folge der $X_n$ konvergiert ``$p$-fast-sicher'' gegen $X$, wenn gilt
+\begin{equation}
+	P\left( \lim_{n\rightarrow\infty}{X_n=X} \right) = P \left( \bigcap_{l\in\mathbb{N}>0}\bigcup_{m\in\mathbb{N}}\bigcap_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\} \right) = 1
+\end{equation}
+Hierbei sei $|\cdot |$ die euklidische Norm)
+
+Schreibweise: \[ X_n \rightarrow X,\ P\text{-f.s.} \]
+Die Folge der $X_n$ konvergiert stochastisch gegen $X$, wenn gilt
+\begin{equation}
+	\forall \epsilon>0 : \lim_{n\rightarrow\infty}P\left(|X_n-X| \geq \epsilon\right) = 0
+\end{equation}
+Schreibweise \[ X_n \stackrel{P}{\rightarrow} X\]
+
+\section{Bemerkungen}
+
+\subsection{a}
+
+\begin{equation}
+	\begin{split}
+		 & X_n \rightarrow X P\text{-f.s.} &= \iff \text{Es gibt eine P-Nullmenge $N\in Suett-A$, (d.h. $P(N)=0$) mit der Eig., dass}\\
+		 & & \lim_{n\rightarrow\infty}X_n(\omega)=X(\omega) \forall \omega }in N^c\\
+		"`\Rightarrow"' & \text{Wähle } N &=\left( \bigcap_{l\in\mathbb{N}>0}\bigcup_{m\in\mathbb{N}}\bigcap_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\}\right)^c \\
+		& & =  \bigcup_{l\in\mathbb{N}>0}\bigcap_{m\in\mathbb{N}}\bigcup_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\}\\
+		"`\Leftarrow"' & N^c & \subset  \bigcap_{l\in\mathbb{N}>0}\bigcup_{m\in\mathbb{N}}\bigcap_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\}
+	\end{split}
+\end{equation}
+
+\subsection{b}
+$X_n \rightarrow X$ $P$-f.s. $\Rightarrow X_n \stackrel{P}{\rightarrow} X$.\\
+Für $l\in\mathbb{N}$ ist
+\begin{equation}
+	\begin{split}
+		 &  \bigcap_{m\in\mathbb{N}}\bigcup_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\} &\subset  \bigcup_{k\in\mathbb{N}>0}\bigcap_{m\in\mathbb{N}}\bigcup_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{k}\}\\
+		\Rightarrow & = P\left(\bigcap_{m\in\mathbb{N}}\bigcup_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\}\right) &= 0
+	\end{split}
+\end{equation}
+
+% neuer Abschnitt?
+
+Also
+\begin{equation}
+	\begin{split}
+		0 &= P\left(\bigcap_{m\in\mathbb{N}}\bigcup_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\}\right) \\
+			&= \lim_{m\rightarrow\infty} P\left(P\left(\bigcup_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\}\right)\right) \\
+			&\geq \limsup_{m\rightarrow\infty} P\left(|X_n-X| \leq \frac{1}{n}\right)
+	\end{split}
+\end{equation}
+
+\section{Chebyshevsches schwaches Gesetz der großen Zahlen}
+
+Seien $X_n$ unabhängige, reelle zufallsvariablen, je mit derselben Verteilung. Es sei $E(|X_1|^2)<\infty$.
+Sei $X_n=\frac{1}{n}\cdot \sum_{j=1}^{n}{X_j},\ n\in\mathbb{N}, \mu = E(X_1)$. Dann gilt % X quer?
+\begin{equation}
+	X_n \stackrel{P}{\rightarrow}\mu % x quer
+\end{equation}
+
+\subsection{Beweis}
+Mit der Chebyshevschen Ungleichung und $\mu=E(X_n)$. % x quer
+\begin{equation}
+	P(|X_n-\mu|) \leq \frac{1}{\epsilon^2}Var(X_n)=\frac{1}{\epsilon^2\cdot n^2} \sum_{j=1}^n{Var(X_j)} = \frac{1}{\epsilon\cdot n}Var(X_1) \stackrel{\rightarrow}{(n,\ldots,\infty)} 0
+\end{equation}
+
+\section{Starkes Gesetz der großen Zahlen}
+von Kolmogorov, 1933.
+
+Seien $X_n$ unabhängige reelle Zufallsvariablen, ke mit derselben Verteilung mit endlichen Erwartungswert $\mu$. Dann gilt
+\[ X_n\rightarrow\mu, P\text{-f.s.} \] % x quer
+
+\subsection{Anwendung}
+
+Berechnung von Integralen mittels Monte-Carlo-Simulation
+
+\[g:R^k\rightarrow \mathbb{R}, Q \leq g \leq 1\]
+
+Es sei \[ \int_{-\infty}^{+\infty}\cdots\int_{-\infty}^{+\infty}{g(x_1,\ldots,x_n)\cdot dx_1\cdots dx_k} = \mu < \infty \]
+
+Es ser $f > 0 $ die Dichte eines $k$-dim. Zufallsvektors $X$.
+Dann ist 
+\[ \mu = \int_{-\infty}^{+\infty}\cdots\int_{-\infty}^{+\infty}{\underbrace{\frac{g(x_1,\ldots,x_k}{f(x_1,\ldots,x_k)}}_{= h(x_1,\ldots,x_k)}\cdot f(x_1,\ldots,x_k)\cdot dx_1\cdots dx_k} = E(h(X)) \]
+
+% neuer abschnitt
+
+Seien $X_1,X_2,\ldots$ unabh., je mit derselben Vtl. wie $X$.
+
+$Y_n=h(X_n), n \in \mathbb{N}$ die $X_n$ sind unabh. je mit derselben Vtl. mit $\mu = E(Y_1)$.
+
+\[ \frac{1}{1}\cdot Y_n = \frac{1}{n}\cdot\sum_{j=1}^n{h(X_j}\rightarrow\mu, P-f.s. \] % y quer
+
+Verschaffe Beobachtung $x1,\ldots,x_n$ von $X_1,\ldots,X_n$ und fasse 
+
+$\frac{1}{n}\cdot\sum_{j=1}^{n}h(x_j) $ als Approximation für $\mu =\int\int{g(x_1,\ldots,x_k)dx_1\cdots dx_k}$ % int von -inf +ingf  
+auf

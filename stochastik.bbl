@@ -1,4 +1,4 @@
-\begin{thebibliography}{Hüb09}
+\begin{thebibliography}{Hen09}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -16,5 +16,13 @@ Gerhard Hübner.
 \newblock Vieweg+Teubner5. auflage. , 2009.
 \newblock ISBN 9783834807175.
 \newline\urlprefix\url{http://amazon.de/o/ASIN/3834807176/}
+
+\bibitem[Hen09]{Henze09}
+Norbert Henze.
+\newblock \emph{Stochastik für Einsteiger: Eine Einführung in die faszinierende
+  Welt des Zufalls. Mit über 220 Übungsaufgaben und Lösungen}.
+\newblock Vieweg+Teubner8., erweiterte auflage. , 2009.
+\newblock ISBN 9783834808158.
+\newline\urlprefix\url{http://amazon.de/o/ASIN/3834808156/}
 
 \end{thebibliography}
