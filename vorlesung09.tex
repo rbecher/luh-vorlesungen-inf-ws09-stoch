@@ -4,7 +4,7 @@
 
 Es handelt sich um Grenzwertsätze der Stochastik. Wir müssen uns hierfür erst einmal Konvergenzbegriffe überlegen.
 
-Seien $X,X_n,\ n\in \mathbb{N}$ neue, $d$-dim. Zufallsvariablen auf einem W-Raum $(\Omega,Suett-A,P)$.
+Seien $X,X_n,\ n\in \mathbb{N}$ neue, $d$-dim. Zufallsvariablen auf einem W-Raum $(\Omega,\mathfrak{A},P)$.
 Die Folge der $X_n$ konvergiert ``$p$-fast-sicher'' gegen $X$, wenn gilt
 \begin{equation}
 	P\left( \lim_{n\rightarrow\infty}{X_n=X} \right) = P \left( \bigcap_{l\in\mathbb{N}>0}\bigcup_{m\in\mathbb{N}}\bigcap_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\} \right) = 1
@@ -24,11 +24,11 @@ Schreibweise \[ X_n \stackrel{P}{\rightarrow} X\]
 
 \begin{equation}
 	\begin{split}
-		 & X_n \rightarrow X P\text{-f.s.} &= \iff \text{Es gibt eine P-Nullmenge $N\in Suett-A$, (d.h. $P(N)=0$) mit der Eig., dass}\\
-		 & & \lim_{n\rightarrow\infty}X_n(\omega)=X(\omega) \forall \omega }in N^c\\
+		 & X_n \rightarrow X P\text{-f.s.} &= \iff \text{Es gibt eine P-Nullmenge $N\in \mathfrak{A}$, (d.h. $P(N)=0$) mit der Eig., dass}\\
+		 & & \lim_{n\rightarrow\infty}X_n(\omega)=X(\omega) \forall \omega \in N^c\\
 		"`\Rightarrow"' & \text{Wähle } N &=\left( \bigcap_{l\in\mathbb{N}>0}\bigcup_{m\in\mathbb{N}}\bigcap_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\}\right)^c \\
 		& & =  \bigcup_{l\in\mathbb{N}>0}\bigcap_{m\in\mathbb{N}}\bigcup_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\}\\
-		"`\Leftarrow"' & N^c & \subset  \bigcap_{l\in\mathbb{N}>0}\bigcup_{m\in\mathbb{N}}\bigcap_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\}
+		"`\Leftarrow"' & N^c & \subset \bigcap_{l\in\mathbb{N}>0}\bigcup_{m\in\mathbb{N}}\bigcap_{n=m}^{\infty}\{|X_n-X| \leq \frac{1}{n}\}
 	\end{split}
 \end{equation}
 

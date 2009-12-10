@@ -1,0 +1,76 @@
+\subsection{Anwendung}
+
+Einzelexperiment, bei dem ein bestimmtes Ereignis A mit der W-keit $p \in [0,1]$ eintritt, und unbeschr‰nkt of unabh‰ngig wiederholt.
+Es sei $B_n$ das Ereignis, dass $A$ bei der $n$-ten Wiederholung eintritt, $n \in \mathbb{N}$. Die $B_n$ sind unabh‰ngig, es ist $P(B_n)=p$ f¸r jedes $n\in\mathbb{N}$. Sei $X_n = I_{B_n}$. Die $X_n$ sind unabh‰ngig, je mit derselben $Suett-B(1,p)$-Verteilung.
+
+Dan gilt
+\begin{equation}
+	\frac{1}{n} \sum_{j=1}^{n}{X_j} = \underbrace{\frac{1}{n} \sum_{j=1}^n{I_{B_j}}}_{\substack{\text{relative H‰ufigkeit}\\\text{des Eintretens von $A$}\\\text{bei den ersten $n$ Wdh.}}} \longrightarrow \mu = E(X_1)=p\ \text{$P$-fast sicher}
+\end{equation}
+
+\subsection{Die empirische Vertelungsfunktion}
+
+Seien $X_1,X_2\ldots$ unabh‰ngige, reelle Zufallsvariablen, je mit derselben Verteilungs(funktion)
+\begin{equation*}
+	\begin{split}
+		F(x) &= P(X_1 \leq x), x\in\mathbb{R}\\
+		F_n(x) &= \frac{1}{n} \sum_{j=1}^n{I(X_j \leq x)} \longrightarrow E(I(X_1 \leq x)) = P(X_1 \leq x) = F(x), P\text{-fast sicher $\forall x\in\mathbb{R}$}
+	\end{split}
+\end{equation*}
+Die Funktion $F_n(x)$ heiﬂt empirische Verteilungsfunktion der $X_1,\ldots,X_n$.\\
+$F_n$ ist die Verteilungsfunktion der empirischen Verteilung $P_n = \frac{1}{n} \sum_{j=1}^n{\delta_{X_j}}$, denn:
+\begin{equation}
+	\begin{split}
+		P_n((-\infty,x]) &= \frac{1}{n} \sum_{j=1}^n{\underbrace{\delta_{X_j}}_{=\begin{cases}1, & X_j \leq x\\0, & X_j > x\end{cases}}}\cdot ((-\infty,x]) \\
+										 &= \frac{1}{n} \sum_{j=1}^n{I(X_j \leq x)} = F_n(x), x\in\mathbb{R}
+	\end{split}
+\end{equation}
+
+F¸r beobachtete Werte $x_1,\ldots,x_n$ von $X_1,\ldots,X_n$ heiﬂt
+\[  \frac{1}{n} \sum_{j=1}^n{I(x_j \leq x)}, \text{die beobachtete empirische Verteilungsfkt. der $X_1,\ldots,X_n$}\]
+die beobachtete empirische Verteilung der $X_1,\ldots,X_n$.
+
+\section{Satz von Glivenko-Cantelli}
+
+\begin{equation}
+	P\left( \lim_{n\rightarrow\infty} \sup_{x\in\mathbb{R}} |F_n(x)-F(x)|=0 \right) = 1
+\end{equation}
+
+\part{Verteilungen von positiven ganzzahligen Zufallsvariablen}
+% Verteilungen von nicht negativen ganzzahligen Zufallsvariablen, erzeugende Funktionen
+
+%\section{} % Name?
+
+Sei f¸r $n\in\mathbb{n}$ $X_n \sim \mathfrak{B}(n,p)$. Es gelte \[ \lim_{n\rightarrow n}{n\cdot p_n} = \lambda \in (0,\infty) \]
+
+F¸r jedes $k \in \mathbb{N}$ ist im Falle $n \geq k$
+\begin{equation}
+	\begin{split}
+		P(X_n=k) &= \binom{n}{k}\cdot p_n^k\cdot (1-p_n)^{n-k} \\
+						 &= \frac{n\cdot(n-1)\cdots(n-k+1)}{k!}\cdot p_n^k\cdot (1-p_n)^{n-k} \\
+						 &= \frac{1}{k!}\cdot (n\cdot p_n) \cdot (n-1)\cdot p_n \cdots (n-k+1)\cdot p_n \cdot (1 - \frac{n\cdot p_n}{n})^{n-k} \\
+						 & \longrightarrow \frac{\lambda^k}{k!} \cdot \exp{-\lambda}
+	\end{split}
+\end{equation}
+
+\section{Definition}
+
+Eine $\mathbb{N}_0$-wertige Zufallsvariable $X$, deren Verteilung festgesetzt ist durch \[ P(X=k) = e^{-\lambda}\cdot \frac{\lambda^k}{k!} \]
+heiﬂt Poisson-verteilt mit dem Parameter $\lambda > 0$.
+
+Schreibweise: \[ X \sim \mathfrak{P}(\lambda) \]
+
+\section{Das Gesetz der seltenen Ereignisse}
+
+Es gilt daher bei $X_n \sim \mathfrak{B}(n,p_n)$ mit $\lim_{n\rightarrow\infty}n\cdot p_n = \lambda \in (0,\infty)$ und $X \sim \mathfrak{P}(\lambda)$
+\begin{equation}
+	\lim_{n\rightarrow\infty}{P(X_n=k)} = P(X=k), k\in\mathbb{N}_0
+\end{equation}
+
+\section{Definition Erzeugende Funktionen}
+
+Sei $X$ $\mathbb{N}_0$-verteilt Zufallsvariable. Dann heiﬂt
+\begin{equation}
+	f_x(t) = E(t^X) = \sum_{k=0}^{\infty}{t^k\cdot P(X=k)},\ |t| \leq 1
+\end{equation}
+erzeugende Funktion von $X$ (genauer: der Verteilung von $X$).
