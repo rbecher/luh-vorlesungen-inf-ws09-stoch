@@ -1,0 +1,90 @@
+\subsection{Beispiel}
+
+$X_n \sim \mathfrak{B}(n,p$ sei eine binomialverteilte Zufallsvariable. Dann
+% X_j ~ B(1,p) je unabhängig, E(X_j) = p, Var(X_j) = p(1-p)
+\[\lim_{n\rightarrow\infty}{P\left( a \leq \frac{X_n - n\cdot p}{\sqrt{n\cdot p\cdot (1-p)}}\right)} = \Phi(b)-\Phi(a)\]
+
+Angenähert gilt
+\[P\left( a \leq \frac{X_n - n\cdot p}{\sqrt{n\cdot p\cdot (1-p)}}\right) \approx \Phi(b)-\Phi(a)\]
+\begin{equation*}
+	\begin{split}
+	P(a\leq X_n \leq b) &= P\left(\frac{a-n\cdot p}{\sqrt{n\cdot p\cdot (1-p)}} \leq \frac{X_n-n\cdot p}{\sqrt{n\cdot p\cdot (1-p)}} \leq \frac{b-n\cdot p}{\sqrt{n\cdot p\cdot (1-p)}}\right)\\ 
+	&\approx \Phi\left(\frac{b-n\cdot p}{\sqrt{n\cdot p\cdot (1-p)}}\right) - \Phi\left(\frac{a-n\cdot p}{\sqrt{n\cdot p\cdot (1-p)}}\right)
+	\end{split}
+\end{equation*}
+
+\subsection{Beispiel}
+$X_1,X_2,\ldots$ sind unabhängige Zufallsvariablen, je $\mathfrak{P}(\lambda)$ verteilt. $\lambda = E(X_j) = Var(X_j)$. % Poisson
+Dann
+\[\lim_{n\rightarrow\infty}{P\left( a \leq \frac{\sum_{j=1}^nX_j-n\cdot\lambda}{\sqrt{n\cdot\lambda}} \leq b \right)} = \Phi(b)-\Phi(a)\]
+Hier $\sum_{j=1}^nX_j \sim \mathfrak{P}(n\cdot\lambda)$. Also
+\[P\left( a \leq \frac{\sum_{j=1}^nX_j-n\cdot\lambda}{\sqrt{n\cdot\lambda}} \leq b \right) \approx \Phi\left(\frac{b-n\cdot\lambda}{\sqrt{n\cdot\lambda}}\right)-\Phi\left(\frac{a-n\cdot\lambda}{\sqrt{n\cdot\lambda}}\right)\]
+\[P(a\leq S_n\leq b) = P\left(\frac{a-n\cdot\lambda}{\sqrt{n\cdot\lambda}} \leq \frac{S_n-n\cdot\lambda}{\sqrt{n\cdot\lambda}} \leq \frac{b-n\cdot\lambda}{\sqrt{n\cdot\lambda}}\right) \approx \Phi\left(\frac{b-n\cdot\lambda}{\sqrt{n\cdot\lambda}}\right) - \Phi\left(\frac{a-n\cdot\lambda}{\sqrt{n\cdot\lambda}}\right)\]
+
+\section{Grenzwertsätze für ausgewählte Verteilungen}
+\subsection{Lokaler zentraler Grenzwertsatz für die Poisson-Verteilung}
+Tatsächlich lässt sich zeigen bei $X_\lambda \sim \mathfrak{P}(\lambda)$:
+\begin{equation}
+	P(X_\lambda=k) \sim \frac{1}{\sqrt{2\cdot\pi\cdot\lambda}}\cdot\exp{\left(-\frac{1}{2}\cdot\frac{(k-\lambda)^2}{\lambda}\right)}
+\end{equation}
+für $\lambda \rightarrow n, |k-\lambda|= \text{const}\cdot\sqrt{\lambda}$ das heißt
+\begin{equation}
+	\sup_{\substack{k\in\mathbb{N}\\|k-\lamda|\leq\text{const}\cdot\sqrt{\lambda}}}{\left| \frac{P(X_k=k)}{\frac{1}{\sqrt{2\cdot\pi\cdot\lambda}}\cdot\exp{(-0.5\cdot\frac{(k-\lambda)^2}{\lambda})}}-1 \right|}\longrightarrow 0
+\end{equation}
+
+\subsection{Lokaler zentraler Grenzwertsatz für die Binomial-Verteilung}
+Analaog für $X_n \sim \mathfrak{P}(n,p)$
+\begin{equation}
+	\binom{n}{k}p^k(1-p)^{n-k} = P(X_n=k) \sim \frac{1}{\sqrt{2\cdot\pi\cdot n\cdot p\cdot(1-p)}}\cdot \exp{(-\frac{1}{2})\cdot \frac{(k-np)^2}{np(1-p)}},\ n\rightarrow\infty
+\end{equation}
+
+\section{Satz von der stetigen Abbildung}
+Auch genannt "`Continuous Mapping Theorem"'.\\
+Seien $X_1,\ldots,X_n,\ n\in\mathbb{N}$ $d$-dim. Zufallsvariablen mit $X_n \stackrel{v}{\rightarrow}X$. $h:\mathbb{R}^d\rightarrow\mathbb{R}^p$ stetig. Dann gilt
+\begin{equation}
+	h(X_n)\stackrel{v}{\rightarrow}h(X)
+\end{equation}
+\subsection{Beweis}
+Sei $f:\mathbb{R}^d\rightarrow\mathbb{R}$ stetig und beschränkt. Dann
+\[ E(f(h(X_n))) = E(\underbrace{f\cdot h}_{\text{stetig, beschränkt}}(X_n)) \longrightarrow E(f\cdot h(X)) = E(f(h(X_n))) \]
+
+\subsection{Satz}
+Seien $X, X_n, Y_n$ reelle Zufallsvarieblen, $c \in \mathbb{R}$ konstant. Es gelte $X_n\stackrel{v}{\rightarrow}X, Y_n\stackrel{P}{\rightarrow}c$ (d.h.: Für jedes $\epsilon > 0$ gilt $\lim_{n\rightarrow{\infty}}{P(|Y_n-c|>\epsilon)=0}$) . Dann 
+\begin{equation}
+	\binom{X_n}{Y_n}\stackrel{v}{\rightarrow}\binom{X}{c}
+\end{equation}
+
+%\subsubsection{Beweis}
+%wird ausgelassen
+
+\subsection{Anwendung}
+	$X_n \stackrel{v}{\rightarrow} X, Y_n \stackrel{P}{\rightarrow} c$. Dann
+	\begin{enumerate}
+			\item $X_n + Y_n \stackrel{v}{\rightarrow} X + c$
+			\item $X_n \cdot Y_n \stackrel{v}{\rightarrow} X\cdot c$
+			\item $\frac{X_n}{Y_n} \stackrel{v}{\rightarrow} \frac{X}{c},\ c \neq 0$
+		\end{enumerate}
+		
+\section{Satz: Fehlerfortpflanzungsgesetz}
+$X_n$ reelle Zufallsvariablen, $a_n>0, n\in\mathbb{N}$ reelle Zahlen mit $a_n\rightarrow\infty$. Es gelte \[a_n\cdot(X_n-\mu) \stackrel{v}{\rightarrow} N(0,\sigma^2) \]
+Es sei $f:\mathbb{R}\rightarrow\mathbb{R}$ differenzierbar in $\mu$ mit $f'(\mu)\neq 0$.
+Dann gilt
+\begin{equation}
+	a_n\cdot(f(X_n) - f(\mu)) \stackrel{v}{\rightarrow} N(0,\sigma^2\cdot f'(\mu)^2)
+\end{equation}
+Allgemein
+\(f:\mathbb{R} \rightarrow \mathbb{R} \cup \{+\infty,-\infty\}, f|_U\) reellwertig für eine Umgebung U von $\mu$.
+Dann gilt
+\[\lim_{n\rightarrow\infty}{P(a_n(f(X_n) - f(a)) \leq x} = P(Z\leq x), Z\sim(N(0,\sigma^2f'(\mu)^2)\]
+Schreibweise: $a_n(f(X_n)-f(\mu)) \stackrel{v}{\rightarrow} N(0,\sigma^2f'(\mu)^2)$
+
+$X_\lambda \sim \mathfrak{P}(\lambda)$\\
+$2(\sqrt{X_\lambda}-\sqrt{\lambda}) \stackrel{v}{\rightarrow} N(0,1)$
+"`Wurzeltransformation bei Poisson-Verteilung"'
+
+% 6 Aufgaben a 6 Punkten
+% Ausrechnen: Erwartungswerte (2 Methoden, Dichte oder als Summe von Indikatorvariablen)
+% Erzeugende Funktionen, 
+% Zentraler Grenzwertsatz (Approximation)
+% Varianz, Unabhängiglkeit von ZVA
+% keine Fourier-Transformierte
