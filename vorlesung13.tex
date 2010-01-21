@@ -1,0 +1,85 @@
+\part{Das Gesetz der großen Zahlen}
+
+\section{Verteilungskonvrgenz, Fourier-Transformierte, der zentrale Grenzwertsatz}
+
+Seien $X,X^{(n)}$ $d$-dimensionale Zufallsvektoren, $X = (X_1,\ldots,X_d)^T$, $X^{(n)} = (X^{(n)}_1,\ldots,X^{(n)}_d)^T$.
+Die Folge $(X^{(n)})_{n\in\mathbb{N}}$ konvergiert in Verteilung gegen $X$, in jedem $X^{(n)} \stackrel{v}{\rightarrow}X$, wenn gilt:\\
+Für jede beschränkte, stetige Funktion $f:\mathbb{R}^d\rightarrow\mathbb{R}$,gilt \[\lim_{n\rightarrow\infty}{E(f(X^{(n)}))=E(f(X))}\]
+
+\subsection{Satz}
+
+Seien $F,F_n$ die Verteilungsfunktionen von $X,X^{(n)}, n\in \mathbb{N}$.
+Dann gilt $X^{(n)}\stackrel{v}{\rightarrow}X$ genau dann, wenn $\lim_{n\rightarrow\infty}{F_n(x)=F(x)}$ für jede $x\in\mathbb{R}^d$, $x$ Stetigkeitsstelle von $F$.
+
+\subsubsection{Konkreter Anwendungsfall}
+Seien $X,X_n$ relle Zufallsvariablen mit $X_n\stackrel{v}{\rightarrow}X$. Dann
+\begin{equation}
+	\begin{split}
+		F_n(x) &= P(X_n \leq x)\\
+		{\small(n\rightarrow\infty)}\downarrow & \\
+		F(x)	&= P(X\leq x), \forall x\in\mathbb{R}
+	\end{split}
+\end{equation}
+Dann gilt auch für jede $a,b \in \mathbb{R}, a < b$
+\begin{equation}
+	\begin{split}
+		P(a<X_n \leq b) &= P(X_n \leq b) - P(X_n \leq a)\\
+										& \downarrow \\
+										&\stackrel{{\small(n\rightarrow\infty)}}{\rightarrow} P(X \leq b) - P(X \leq a) = P(a < X \leq b)
+	\end{split}
+\end{equation}
+
+Also:
+\begin{equation}
+	\begin{split}
+		\lim_{n\rightarrow \infty}{P(a<X_n\leq b) &= P(a<X\leq b) \\
+																							&= P(a \leq X \leq b) \\
+																							&= P(a\leq X < b)\\
+																							&= P(a y X < b)
+	\end{split}
+\end{equation}
+
+Dann gilt auch 
+\begin{equation}
+	\begin{split}
+		P(a \leq X_n \leq b) &\geq P(a < X_n \leq b)\\
+		\liminf_{n\rightarrow\infty}{P(a\leq X_n \leq b} &\geq P(a\leq X \leq b)\\
+		P(a \leq X_n \leq b) &\leq P(a- \epsilon < X_n \leq b),\ \forall \epsilon>0\\
+		\limsup_{n\rightarrow\infty}{P(a\leq X_n \leq b)} &\leq P(a-\epsilon < X \leq b),\ \forall \epsilon>0
+	\end{split}
+\end{equation}
+
+Also \[P(a \leq X \leq b) \leq \liminf_{n\rightarrow\infty}{P(a\leq X_n \leq b)} \leq \limsup_{n\rightarrow\infty}{P(a\leq X_n \leq b)} \leq P(a\leq X \leq b)\]
+
+\section{Fourier-Transformierte}
+
+Siehe Datei im Stud.Ip "`Eigenschaften von Fourier-Transformierten"'
+
+\section{Der zentrale Grenzwertsatz von Lindeberg-Levy}
+
+Seien $X_1,X_2,\ldots$ unabhängig je mit derselben Verteilung mit $E(X_1)=0, Var(X_1)=1$.
+Dann gilt:
+\[ \frac{1}{\sqrt{n}} \sum_{j=1}^n{X_j} \stackrel{v}{\longrightarrow} X, X \sim N(0,1)\]
+
+\subsection{Beweis}
+Die Fourier-Transformierte $N(0,1)$-Verteilung ist
+\begin{equation}
+	\begin{split}
+		\phi_X(z) &= \int_{-\infty}^{+\infty}{\omega (z\cdot x) \frac{1}{\sqrt{2\cdot \pi}}\cdot \exp{-\frac{x^2}{2}\cdot dx}} + \underbrace{\int_{-\infty}^{+\infty}{\sin{(z\cdot x)} \frac{1}{\sqrt{2\cdot \pi}}\cdot \exp{-\frac{x^2}{2}\cdot dx}}}_{=0}\\
+		&= \exp{-\frac{z^2}{2}}
+	\end{split}
+\end{equation}
+
+\subsection{Anwendung}
+Seien $X_1,X_2,\ldots$ unabhängig, je mit derselben Verteilung mit $E(X_1^2) < \infty$. Sei $\mu = E(X_1)$, sei $\sigma^2=Var(X_1)>0$. Dann gilt
+\begin{equation}
+	\frac{1}{\sqrt{n}}\cdot \sum_{j=1}^n{\frac{X_i-\mu}{\sqrt{\sigma^2}}} = \underbrace{\frac{\sum_{j=1}^n{X_j-n\cdot\mu}}{\sqrt{\mu\cdot\sigma^2}}}_{=\frac{\sqrt{n}\left(\sum_{j=1}^n{X_j-\mu}\right)}{\sqrt{\sigma^2}}} \stackrel{v}{\longrightarrow} N(0,1)
+\end{equation}
+
+Für $-\infty < a < b < +\infty$ gilt:
+\begin{equation}
+	\begin{split}
+		P(a \leq \sum_{j=1}^n{X_j} \leq b) &= P\left(\frac{a-n\cdot\mu}{\sqrt{n\cdot\sigma^2}} \leq \frac{\sum_{j=1}^n{X_j-n\cdot\mu}}{\sqrt{n\cdot\sigma^2}} \leq \frac{b-n\cdot\mu}{\sqrt{n\cdot\sigma^2}} \right)\\
+			& \approx \Phi(\frac{b-n\cdot\mu}{\sqrt{n\cdot\sigma^2}})-\Phi(\frac{a-n\cdot\mu}{\sqrt{n\cdot\sigma^2}})
+	\end{split}
+\end{equation}
