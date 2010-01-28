@@ -79,12 +79,12 @@ Seien $ X, Y $ \textbf{unabhängige} Zufallsvariablen auf dem Wahrscheinlichkeits
 	$ P(X = 1) = frac{1}{2} $ \\
 	$ P(Y = 0) = frac{1}{2} $ \\
 	
-\subsection{Ungleichungen}
+\section{Ungleichungen}
 
-\subsubsection{Satz} Seien $ X, Y $ reelle Zufallsvariablen mit $ E(X^2 ) < \infty $ , $ E(Y^2 ) < \infty $ . Dann gilt:
+\subsection{Satz} Seien $ X, Y $ reelle Zufallsvariablen mit $ E(X^2 ) < \infty $ , $ E(Y^2 ) < \infty $ . Dann gilt:
 \[ E( \vert XY \vert ) \leq \sqrt{E(X^2 ) E(Y^2 )} \] (Cauchy-Schwarz-Ungleichung)
 
-\subsubsection{Beweis}
+\subsection{Beweis}
 \begin{eqnarray*}
 	0 & \leq & (\vert X \vert - a\vert Y \vert )^2 \\
 	0 & \leq & E((\vert X \vert - a\vert Y \vert )^2 ) \\
@@ -102,16 +102,16 @@ ohne Einschränkung: $ E(Y^2 ) > 0 $ (Sonst ist $ P(Y=0)=1 $ , also auch $ E(\ver
 \end{eqnarray*}
 %Beweisende-KÃ€stchen
 
-\subsubsection{Folgerung}
+\subsection{Folgerung}
 $ \vert E(XY) \vert \leq E(\vert XY \vert \leq \sqrt{E(X^2 )E(Y^2)} $
 
-\subsubsection{Folgerung}
+\subsection{Folgerung}
 \begin{eqnarray*}
 	\underbrace{ \vert ([X-E(X)][Y-E(Y)]) \vert } & \leq & \sqrt{E([X-E(X)]^2 )E([Y-E(Y)]^2 )} \\
 	\vert Cov(X,Y) \vert & \leq & \sqrt{Var(X) Var(Y)}
 \end{eqnarray*}
 
-\subsubsection{Definition}
+\subsection{Definition}
 Seien $ X, Y $ relle Zufallsvariablen mit $ E(X^2 ) < \infty $ , $ E(Y^2 ) < \infty $ . Dann heiÃ?t
 \[ \rho (X, Y) = \frac{Cov(X,Y}{\sqrt{Var(X)Var(Y)}} \]
 \textbf{Korrelationskoeffizient} von X und Y. \\ 
@@ -119,7 +119,7 @@ $ \rho (X,Y) := 0 $ , falls $ Var(X) = 0 $ oder $ Var(Y) = 0 $ , also nur wenn e
 Einsicht: $ -1 \leq \rho (X, Y) \leq 1 $ . \\
 %Es folgte ein mÃŒndliches Beispiel: Korrelation zwischen Rauchen und Lungenkrebs. Bekomme ich leider nicht mehr zusammen.
 
-\subsubsection{Neuer Sinnabschnitt} %Ohne Titel :)
+\subsection{Neuer Sinnabschnitt} %Ohne Titel :)
 Seien $ X, Y $ reelle Zufallsvariablen mit $ E(X) = 0 = E(Y) $ und $ E(X^2 ) = 1 = E(Y^2 ) $ .
 \begin{eqnarray*}
 	\inf\limits_{a, b \in \mathbb{R} } E((X-(\underbrace{aY+b}_\textrm{affin lineare Funktion von Y} ))^2 ) & = & \inf\limits_{a, b \in \mathbb{R} } [E(X^2 + a^2 Y^2 + 2abY + b^2 - 2X(aY+b))] \\
@@ -159,12 +159,12 @@ Beispiel für eine "Unsinnskorrelation": Anzahl der Störche, Zahl der Geburten :)
 In der Presse sind "Korrelationen" meist (empirische) Schätzwerte.\\
 %</mÃŒndliche ErgÃ€nzung vom Prof>
 
-\subsubsection{Satz:}
+\subsection{Satz:}
 Sei X eine reelle Zufallsvariable mit $ E(X^2) < \infty $ . Für jedes $ \varepsilon > 0 $ gilt:
 \[ P(\vert X-E(X) \vert \geq \varepsilon ) \leq \frac{1}{\varepsilon^2}Var(X) \]
 (Chebyshevsche Ungleichung)
 
-\subsubsection{Beweis:} %"furchtbar elementar :)
+\subsection{Beweis:} %"furchtbar elementar :)
 \begin{eqnarray*}
 	Var(X) & = & E([X-E(X)]^2) \\
 	& \geq & E([X-E(X)]^2 I(\vert X-E(X)\vert \geq \varepsilon )) \\
@@ -173,12 +173,12 @@ Sei X eine reelle Zufallsvariable mit $ E(X^2) < \infty $ . Für jedes $ \varepsi
 \end{eqnarray*} 
 %Beweiskästchen
 
-\subsubsection{Satz:}
+\subsection{Satz:}
 Sei X eine reelle Zufallsvariable, $ f:[0,\infty ) \rightarrow [0, \infty ) $ monoton wachsend, $ \varepsilon > 0, f(\varepsilon )>0 $. Dann gilt
 \[ P(\vert X \vert \geq \varepsilon ) \leq \frac{1}{f(\varepsilon )}E(f(\vert X \vert )) \]
 (Markovsche Ungleichung).
 
-\subsubsection{Beweis:}
+\subsection{Beweis:}
 \begin{eqnarray*}
 	E(f(\vert X \vert )) & \geq & E(\underbrace{f(\vert X \vert )}_\textrm{$ \geq \varepsilon $} I(\vert X \vert \geq \varepsilon ) \\
 	& \geq & f(\varepsilon )P(\vert X\vert \geq \varepsilon )
@@ -187,7 +187,7 @@ Sei X eine reelle Zufallsvariable, $ f:[0,\infty ) \rightarrow [0, \infty ) $ mo
 Auf diese Weise lassen sich noch unzählige weitere Ungleichungen beweisen.\\
 Mit Chebyshev kann man das Gesetz der groÃ?en Zahlen beweisen, das Grundlage für so gut wie alle Simulationsverfahren ist.
 
-\subsubsection{Bemerkung zur letzten Vorlesung}
+\subsection{Bemerkung zur letzten Vorlesung}
 Fehlerkorrektur. $ X\sim \mathfrak{R}(a,b) $ Rechteckverteilung.
 \[ Var(X) = \frac{1}{b-a} \int\limits_a^1 (x-\frac{a+b}{2})^2 dx \]
 (Der Bruch vor dem Integral wurde vergessen).
