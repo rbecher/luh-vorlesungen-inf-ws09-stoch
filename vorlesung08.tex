@@ -1,0 +1,193 @@
+Seien $ X, Y $ \textbf{unabhängige} Zufallsvariablen auf dem Wahrscheinlichkeitsraum $ (\Omega, \mathfrak{A}, P) $.
+%\renewcommand{\labelenumi}{\roman{\theenumi}} 
+\begin{enumerate}
+	\item 
+		$ X=I_A, Y=I_B. $ Dann sind A und B unabhängig. \\
+		\begin{eqnarray*} E(XY) & = & E(I_A I_B) =  E(I_{A\cap B}) \\
+			& = & P(A\cap B) = P(A)P(B) \\
+			& = & E(I_A)E(I_B) \\
+			& = & E(X)E(Y) 
+		\end{eqnarray*}
+	\item
+		\[ 0 \leq X = \sum\limits_{i=1}^m \alpha_i I_{A_i} \] 
+		mit paarweise verschiedenen $ \alpha_1 , ...,\alpha_m $ , paarweise disjunkten $ A_1 , ..., A_m , A_1\cap ...\cap A_m = \Omega $. \\
+		\[ 0\leq Y = \sum\limits_{j = 1}^n \beta_j I_{B_j} \]
+		mit paarweise verschiedenen $ \beta_1 , ...,\beta_n $ , paarweise disjunkten $ B_1 , ..., B_n , B_1\cap ...\cap B_n = \Omega $. \\
+		Dann ist \[ A_i = \{ X = \alpha_i \} , \,i = 1, ..., m \] \\
+		%Zeichnung #1
+		\[ B_j = \{ Y = \beta_j \} , \,j = 1, ..., n \] \\
+		und die Ereignisse $ A_i, 1 \leq i \leq m $, sind unabhängig von den Ereignissen $ B_1, ..., B_n $ . \\
+		\begin{eqnarray*}
+			E(XY) & = & E( \sum\limits_{i = 1}^m \sum\limits_{j = 1}^n \alpha_i \beta_j \underbrace{ I_{A_i} I_{B_j} }_\textrm{ $ = I_{A_i \cap B_j} $ }) \\
+			& = & \sum\limits_{i = 1}^m \sum\limits_{j = 1}^n \alpha_i \beta_j \underbrace{ P(A_i\cap B_j }_\textrm{ $ = P(A_i)P(B_j) $ } \\
+			& = & ( \sum\limits_{i = 1}^m \alpha_i P(A_i)) ( \sum\limits_{j = 1}^n \beta_j P(B_i)) \\
+			& = & E(X) E(Y)
+		\end{eqnarray*}
+	\item
+		Sei $ 0 \leq X, (X_n)_{n = 1}^\infty $ Folge von nicht negativen einfachen Zufallsvariablen $ X_n = f_n (X) $ der Form (ii) und sei  $ 0 \leq Y, (Y_n)_{n = 1}^\infty $ Folge von nicht negativen einfachen Zufallsvariablen $ Y_n = g_n (Y) $ der Form (ii) mit $ x_n \leq X_{n + 1}, Y_n \leq Y_{n + 1}, n \in \mathbb{N} $ \\
+		\begin{eqnarray*}
+			X & = & \sup\limits_{ n \leftarrow \infty } X_n = \lim\limits_{ n \rightarrow \infty } X_n \\
+			Y & = & \sup\limits_{ n \leftarrow \infty } Y_n = \lim\limits_{ n \rightarrow \infty } Y_n, 
+		\end{eqnarray*}
+		$ X_n, Y_n $ sind unabhängig. \\
+		Dann ist $ XY = \lim\limits{n \rightarrow \infty } X_n Y_n , X_n Y_n \leq X_{n+1} Y_{n+1} $ .
+		\begin{eqnarray*}
+			E(XY) & = & \lim\limits{n \rightarrow \infty } E(X_n Y_n) \\
+			& \mathop{=}\limits^{(ii)} & \lim\limits{n \rightarrow \infty } E(X_n ) E(Y_n ) \\
+			& = & \lim\limits{n \rightarrow \infty } E(X_n) \lim\limits{n \rightarrow \infty } E(Y_n)  \\
+			& = & E(X) E(Y)
+		\end{eqnarray*}
+	\item
+		$ X = X^+ - X^- , Y = Y^+ - Y^- $ \\
+		$ E(X^+ ) < \infty , E(X^- ) < \infty , E(Y^+ ) < \infty , E(Y^- ) < \infty $ \\
+		$ XY = X^+ Y^+ - X^+ Y^- - X^- Y^+ + X^- Y^- $ \\
+		$ X^+ , X^- , Y^+ , Y^- $ sind unabhängig.
+		\begin{eqnarray*}
+			E(XY) & = & E(X^+ ) E(Y^+ ) - E(X^+ ) E(Y^- ) - E(X^- )E(Y^+ ) + E(X^- ) E(Y^- ) \\
+			& = & (E(X^+ ) - E(X^- ))(E(Y^- ) - E(Y^ )) \\
+			& = & E(X) E(Y)
+		\end{eqnarray*}
+\end{enumerate}
+\textbf{Also}: Seien $ X, Y $ reelle undabhängige Zufallsvariablen.
+\begin{enumerate}
+	\item $ X, Y \geq 0 \Rightarrow E(XY) = E(X) E(Y) $
+	\item 
+		$ E(\vert X \vert ) < \infty $ \\ %Hier ist die Sache mit der Klammer :)
+		$ E(\vert Y \vert ) < \infty  \Rightarrow E(\vert XY \vert ) < \infty $ und $ E(XY) = E(X) E(Y) $
+\end{enumerate}
+
+\textbf{Folgerung}: Sind $ X, Y $ \textbf{unabhängig} mit $ E(X^2 ) < \infty , E(Y^2 ) < \infty $ , so ist
+\[ Cov(X, Y) = E(XY) - E(X)E(Y) = 0 \]
+%Die Umkehrung gilt im Allgemeinen nicht \rightarrow binomial verteilte Zufallsvariable \\
+
+\textbf{Bemerkung} : Aus $ Cov(X,Y) = 0 $ folgt im Allgemeinen \textbf{nicht} $ X, Y $ unabhängig. \\
+
+\textbf{Beispiel} dazu:
+	\begin{eqnarray*}
+		X_1 , X_2 \sim \mathfrak{B} (1, \frac{1}{2} ) \\ %unabhÃ€ngig \\
+		X & = & X_1 + X_2 \sim \mathfrak{B} (2, \frac{1}{2} ) \\
+		Y & = & X_1 - X_2
+	\end{eqnarray*}
+	\begin{eqnarray*}
+		Cov(X, Y) & = & Cov(X_1 + X_2 , X_1 - X_2 ) \\
+		& = & E((X_1 + X_2 )(X_1 - X_2 )) - (E(X_1 ) + E(X_2 ))\underbrace{(E(X_1 ) - E(X_2 ))}_\textrm{ = 0 } \\
+		& \mathop{=}\limits^{3. Bin. Formel} & E(X_1^2 ) - E(X_1 X_2 ) + E(X_1 X_2 ) - E(X_2^2 ) \\
+		& = & E(X_1^2 ) - E(X_2^2 ) \\
+		& = & 0
+	\end{eqnarray*}
+	$ P(X = 1, Y = 0 ) = 0 \neq \frac{1}{4} = P(X = 1)P(Y = 0) $ \\
+	$ P(X = 1) = frac{1}{2} $ \\
+	$ P(Y = 0) = frac{1}{2} $ \\
+	
+\subsection{Ungleichungen}
+
+\subsubsection{Satz} Seien $ X, Y $ reelle Zufallsvariablen mit $ E(X^2 ) < \infty $ , $ E(Y^2 ) < \infty $ . Dann gilt:
+\[ E( \vert XY \vert ) \leq \sqrt{E(X^2 ) E(Y^2 )} \] (Cauchy-Schwarz-Ungleichung)
+
+\subsubsection{Beweis}
+\begin{eqnarray*}
+	0 & \leq & (\vert X \vert - a\vert Y \vert )^2 \\
+	0 & \leq & E((\vert X \vert - a\vert Y \vert )^2 ) \\
+	& = & E(X^2 ) - 2aE(\vert X \vert \vert Y \vert ) + a^2 E(Y^2 ) \\
+	& := & f(a)
+\end{eqnarray*}
+ohne Einschränkung: $ E(Y^2 ) > 0 $ (Sonst ist $ P(Y=0)=1 $ , also auch $ E(\vert X \vert \vert Y \vert ) = 0 $
+\begin{eqnarray*}
+	f'(a) = 2a E(Y^2 ) - 2E(\vert X \vert \vert Y \vert ) \mathop{=}\limits^{!} 0 \\
+	\Leftrightarrow a = a^* = frac{E(\vert X \vert \vert Y \vert)}{E(Y^2 )} \\
+	0 \leq f(a^*) & = & E(X^2 ) - 2\frac{E(\vert XY \vert )^2}{E(Y^2 )} + \frac{E(\vert XY \vert )^2}{E(Y^2 )^2} E(Y^2 ) \\
+	& = & E(X^2 ) - \frac{E(\vert XY \vert )^2}{E(Y^2 )} \\
+	\Rightarrow E(\vert XY \vert )^2 \leq E(X^2 )E(Y^2 ) \\
+	\Rightarrow E(\vert XY \vert ) \leq \sqrt{E(X^2 )E(Y^2 )}
+\end{eqnarray*}
+%Beweisende-KÃ€stchen
+
+\subsubsection{Folgerung}
+$ \vert E(XY) \vert \leq E(\vert XY \vert \leq \sqrt{E(X^2 )E(Y^2)} $
+
+\subsubsection{Folgerung}
+\begin{eqnarray*}
+	\underbrace{ \vert ([X-E(X)][Y-E(Y)]) \vert } & \leq & \sqrt{E([X-E(X)]^2 )E([Y-E(Y)]^2 )} \\
+	\vert Cov(X,Y) \vert & \leq & \sqrt{Var(X) Var(Y)}
+\end{eqnarray*}
+
+\subsubsection{Definition}
+Seien $ X, Y $ relle Zufallsvariablen mit $ E(X^2 ) < \infty $ , $ E(Y^2 ) < \infty $ . Dann heiÃ?t
+\[ \rho (X, Y) = \frac{Cov(X,Y}{\sqrt{Var(X)Var(Y)}} \]
+\textbf{Korrelationskoeffizient} von X und Y. \\ 
+$ \rho (X,Y) := 0 $ , falls $ Var(X) = 0 $ oder $ Var(Y) = 0 $ , also nur wenn eine Zufallsvariable mit der Wahrscheinlichkeit 1 eine Konstante ist. \\
+Einsicht: $ -1 \leq \rho (X, Y) \leq 1 $ . \\
+%Es folgte ein mÃŒndliches Beispiel: Korrelation zwischen Rauchen und Lungenkrebs. Bekomme ich leider nicht mehr zusammen.
+
+\subsubsection{Neuer Sinnabschnitt} %Ohne Titel :)
+Seien $ X, Y $ reelle Zufallsvariablen mit $ E(X) = 0 = E(Y) $ und $ E(X^2 ) = 1 = E(Y^2 ) $ .
+\begin{eqnarray*}
+	\inf\limits_{a, b \in \mathbb{R} } E((X-(\underbrace{aY+b}_\textrm{affin lineare Funktion von Y} ))^2 ) & = & \inf\limits_{a, b \in \mathbb{R} } [E(X^2 + a^2 Y^2 + 2abY + b^2 - 2X(aY+b))] \\
+	& = & \inf\limits_{a, b \in \mathbb{R} } [1 + a^2 - 1 + 0 + b^2 - 2aE(XY)] \\
+	& \mathop{=}\limits^{b=0} & \inf\limits_{a \in \mathbb{R} } (1 + a^2 - 2aE(XY)) \\
+	& \mathop{=}\limits^{a=a^*=E(XY)} & 1 + (E(XY))^2 - 2(E(XY))^2 \\
+	& = & 1 - (E(XY)) ^2 \\
+	& = & 1 - \rho (XY)^2
+\end{eqnarray*}
+\textbf{Allgemein}: X, Y reelle Zufallsvariablen. $ E(X^2 ) < \infty , Var(X) > 0 , Var(Y) > 0 $. \\
+\textbf{Standardisieren}:
+\begin{eqnarray*}
+	X^* & = & \frac{X-E(X)}{\sqrt{Var(X)}}\\
+	Y^* & = & \frac{Y-E(Y)}{\sqrt{Var(Y)}}
+\end{eqnarray*}
+Dann: $ E(X^* )=E(Y^* ) =0 , E((X^{*})^2 )=E((Y^{*})^2 )=1 $ \\
+\begin{eqnarray*}
+	\inf\limits_{a, b \in \mathbb{R} } E((X-(aY+b))^2 ) = ? \\
+	E((X-(aY+b))^2 ) & = & E((\sqrt{Var(X)}X^* + E(X) - (a\sqrt{Var(Y)}Y^* + aE(Y)+b))^2 ) \\
+	& = & Var(X) E(X^* - (\frac{ a \sqrt{Var(Y)}Y^* + aE(Y) + b - E(X) }{\sqrt{Var(X)}}))^2 ) \\
+	\frac{a\sqrt{Var(Y)}}{\sqrt{Var(X)}} = a^* , \frac{aE(Y)+b-E(X)}{\sqrt{Var(X)}} = b^* \\
+	& = & Var(X) E(X^* -(a^*Y^*+b^*))
+\end{eqnarray*}
+\begin{eqnarray*}
+	\Rightarrow \inf\limits_{a, b \in \mathbb{R} } E((X-(aY+b))^2) & = & Var(X)(1-\underbrace{\rho (X^*,Y^*)^2}_\textrm{$ = E(X^*Y^*)^2 $}) \\
+	& = & Var(X)(1-\rho (X,Y)^2)
+\end{eqnarray*}
+%<mÃŒndliche ergÃ€nzung vom prof>
+Die bestmögliche Approximation von X durch eine affin lineare Funktion Y im quadratischen Mittel ist bestensfalls dieses Ergebnis. \\
+Der Korrelationskeoffizient ist also ein Maß für den affin linearen Zusammenhang zwischen X und Y. \\
+Eine perfekte Vorhersage für X ist möglich, falls Y bekannt (die Werte von X, Y müssen auf einer Gerade liegen). \\
+%Skizze: positives Koordinatensystem, Achsen X und Y (Y steht an der X-Achse), mon. steigende linere Funktion eingezeichnet
+Nur dieser Fall wird durch den Korrelationskoeffizienten abgedeckt, es ist aber auch so etwas möglich: \\
+%Skizze: gleiches System wie obenn, nur statt linearer Funktion ist etwas sehr kurviges, monoton steigendes eingezeichnet
+$ \Rightarrow $ Der Korrelationskoeffizient hat nicht so viel Bedeutung, wie man oft glaubt. \\
+Beispiel für eine "Unsinnskorrelation": Anzahl der Störche, Zahl der Geburten :) \\
+In der Presse sind "Korrelationen" meist (empirische) Schätzwerte.\\
+%</mÃŒndliche ErgÃ€nzung vom Prof>
+
+\subsubsection{Satz:}
+Sei X eine reelle Zufallsvariable mit $ E(X^2) < \infty $ . Für jedes $ \varepsilon > 0 $ gilt:
+\[ P(\vert X-E(X) \vert \geq \varepsilon ) \leq \frac{1}{\varepsilon^2}Var(X) \]
+(Chebyshevsche Ungleichung)
+
+\subsubsection{Beweis:} %"furchtbar elementar :)
+\begin{eqnarray*}
+	Var(X) & = & E([X-E(X)]^2) \\
+	& \geq & E([X-E(X)]^2 I(\vert X-E(X)\vert \geq \varepsilon )) \\
+	& \geq & E(\varepsilon^2 I(\vert X-E(X)\vert \geq \varepsilon ) \\
+	& = & \varepsilon P(\vert X-E(X) \vert \geq \varepsilon )
+\end{eqnarray*} 
+%Beweiskästchen
+
+\subsubsection{Satz:}
+Sei X eine reelle Zufallsvariable, $ f:[0,\infty ) \rightarrow [0, \infty ) $ monoton wachsend, $ \varepsilon > 0, f(\varepsilon )>0 $. Dann gilt
+\[ P(\vert X \vert \geq \varepsilon ) \leq \frac{1}{f(\varepsilon )}E(f(\vert X \vert )) \]
+(Markovsche Ungleichung).
+
+\subsubsection{Beweis:}
+\begin{eqnarray*}
+	E(f(\vert X \vert )) & \geq & E(\underbrace{f(\vert X \vert )}_\textrm{$ \geq \varepsilon $} I(\vert X \vert \geq \varepsilon ) \\
+	& \geq & f(\varepsilon )P(\vert X\vert \geq \varepsilon )
+\end{eqnarray*}
+%mÃŒndliche Bemerkung
+Auf diese Weise lassen sich noch unzählige weitere Ungleichungen beweisen.\\
+Mit Chebyshev kann man das Gesetz der groÃ?en Zahlen beweisen, das Grundlage für so gut wie alle Simulationsverfahren ist.
+
+\subsubsection{Bemerkung zur letzten Vorlesung}
+Fehlerkorrektur. $ X\sim \mathfrak{R}(a,b) $ Rechteckverteilung.
+\[ Var(X) = \frac{1}{b-a} \int\limits_a^1 (x-\frac{a+b}{2})^2 dx \]
+(Der Bruch vor dem Integral wurde vergessen).
