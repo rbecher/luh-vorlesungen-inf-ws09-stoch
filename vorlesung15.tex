@@ -1,0 +1,90 @@
+\subsection{Anwendung}
+
+$X_1,X_2,\ldots$ unabhängig, jemit derselben Poisson-Verteilung $X_i \sim \mathfrak{P}(\lambda),\ \lambda > 0$.
+\begin{equation}
+	\sqrt{n}\cdot\left(\frac{1}{n}\cdot\sum_{j=1}^n{X_j} - \lambda\right) \stackrel{\nu}{\rightarrow}N(0,\lambda)
+\end{equation}
+
+Sei $f(x)=\sqrt{x}$ für $x\geq 0$ für differenzierbar in $\lambda>0$ und $f'(\lambda)=\frac{1}{2}\lambda^{-1/2}$.\\
+Damit gilt
+\begin{equation}
+	\sqrt{n}\cdot\left(\sqrt{\frac{1}{n}\cdot\sum_{j=1}^n{X_j}} - \sqrt{\lambda}\right) \stackrel{\nu}{\rightarrow}N(0,\lambda\cdot\frac{1}{4}\cdot\lambda^{-1}) = N(0,\frac{1}{4})
+\end{equation}
+Allgemein gilt
+\begin{equation}
+	2\cdot\sqrt{n}\cdot\left(\frac{1}{n}\cdot\sum_{j=1}^n{X_j} - \lambda\right) \stackrel{\nu}{\rightarrow}N(0,1)
+\end{equation}
+
+\subsection{Spezialfall}
+
+Sei $\lambda=1$. Dann ist \[S_N := \sum_{j=1}^n{X_j} \sim \mathfrak{P}(n)\]
+Es ist dann \[2\cdot\left(\sqrt{S_n}-\sqrt{n}\right) \stackrel{\nu}{\rightarrow}N(0,1)\]
+Allgemein soll \[2\cdot\left(\sqrt{X_j}-\sqrt{\lambda}\right) \stackrel{\nu}{\rightarrow}N(0,1),\ \forall \lambda \rightarrow \infty\] gezeigt werden.
+Zeige zunächst \[\frac{X_\lambda-\lambda}{\sqrt{\lambda}} \stackrel{\nu}{\rightarrow}N(0,1)\]
+
+Beweis mit Fourier-Transformierte (ausgelassen).
+
+\subsection{Wurzeltransformation für die Poisson-Verteilung}
+
+Es gilt also
+\begin{equation}
+	\sqrt{\lambda}\cdot\left(\frac{X_\lambda}{\lambda}-1\right) \stackrel{\nu}{\rightarrow}N(0,1)
+\end{equation}
+Mit dem Fehlerfortpflanzungsgesetz folgt
+\begin{equation}
+	\sqrt{\lambda}\cdot\left(\sqrt{\frac{X_\lambda}{\lambda}}-\sqrt{1}\right) \stackrel{\nu}{\rightarrow}N(0,\frac{1}{4})
+\end{equation}
+so dass gilt
+\begin{equation}
+	\left(\sqrt{X_\lambda}-\sqrt{\lambda}\right) \stackrel{\nu}{\rightarrow}N(0,\frac{1}{4})
+\end{equation}
+oder alternativ
+\begin{equation}
+	2\cdot\left(\sqrt{X_\lambda}-\sqrt{\lambda}\right) \stackrel{\nu}{\rightarrow}N(0,1)
+\end{equation}
+Diese Wurzeltransformation ist eine varianzstabilisierende Transformation für die Poissonverteilung.
+
+\subsection{Bemerkung}
+
+Als Ergänzung zu den lokalen zentralen Grenzwertsätzen für die Binomial-, bzw. Poisson-Verteilung lässt sich auch ein lokaler zentraler Grenzwertsatz für Hypergeometrische Verteilung formulieren:\\
+Für $n\in\mathbb{N}$ sei $X_n\sim\mathfrak{h}(a_n,r_n,n)$ mit $Var(X_n)=n\cdot\frac{r_n}{a_n}\cdot\frac{a_n-r_n}{a_n}\cdot{a_n-n}{a_n-1} \rightarrow \infty,\ (n\rightarrow\infty)$. Dann gilt der "`Zentrale Grenzwertsatz für die Hypergeometrsiche Verteilung in lokaler Form"':
+\begin{equation}
+	P(X_n=k) \sim \frac{1}{\sqrt{2\cdot\pi\cdot Var(X_n)}}\cdot \exp{\left(- \frac{1}{2}\cdot \frac{(k-E(X_n))^2}{Var(X_n)}\right)}
+\end{equation}
+für $|k-E(X_n)| \leq const\ \sqrt{Var(X_n)},\ n\rightarrow\infty$.
+
+Damit gilt für $-\infty < a \leq b < +\infty$ der "`Zentrale Grenzwertsatzfür die Hypergeometrische Verteilung in kumulativer Form"':
+\begin{equation}
+	P\left(a \leq \frac{X_n-E(X_n)}{\sqrt{Var(X_n)}} \leq b\right) \rightarrow \frac{1}{\sqrt{2\cdot\pi}} \int_a^b{\exp{\left(-\frac{1}{2}\cdot x^2\right)}\cdot dx}
+\end{equation}
+
+% Bemerkungen zur Klausur:
+% Mit zwei von sechs gelösten Aufgaben ist die Klausur bestanden (Überhangklausur)
+% kombinatorik
+% Urnenmodelle
+% Erwartungswerte berechnen (3 Techniken: 
+% 1) ZVA besitzt Dichte. Dann E(X) = \int_{-\infty}^{+\infty}{f(x)dx}
+% 2) diskrete Verteilung. Dann E(X) = \sum_{x\in R} x\cdot P(X=x)
+% 3) Summe von Indikatorvariablen (X = \sum_i^n I_A_i). Dann E(X) = \sum_i^n P(A_i)
+% 4) Wenn X Nullwertig \in N_0-verteilt. Dann E(X) = \sum_n=0^\infty P(X>n)
+% Varianzen und Co-Varianzen
+% Cov(X_1,X_2) = E(X_1,X_2) - E(X_1)E(X_2)
+% Cov(X_1,X_2) = E(X_1 - E(X_1))(X_2 - E(X_2))
+% Verteilungen:
+% - Poisson, Binomial, Hypergeometrisch, Negativ-Binomial , Laplace(alle diskret)
+% - Normal, Exponential, Rechteck/Gleichverteilung (stetig)
+% Ungleichungen
+% Cauchy-Schwartz, Chebyshev und Markov
+% Chebyshev: P(|X-E(X)|\geq\epsilon) \leq \frac{1}{\epsilon^2}\cdot Var(X)
+% Erzeugende Funktionen:
+% Sei f_X erz. Fkt. von X, dann
+%  E(X) = f_X'(1)
+%  Var(f_X''(1)+f_X'(1)-(f_X'(1))^2
+%  f_X(t) = \sum P(X=k) t^k
+
+% Unabhängigkeit
+% X;Y unabhängig P(X \leq x, Y \leq y) = P(X \leq x) P(Y\leq <y)
+% X N_0 wertig: P(X=k,Y\leq y) = P(X=k) P(Y \leq y)
+% E(X Y) = E(X) E(Y), falls X,Y unabhängig
+
+% Dichte von Exp(\lambda): f_X(x) = \lambda \exp(-\lambda x) für x \geq 0 und 0 sonst
